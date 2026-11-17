@@ -88,7 +88,11 @@
       '<div class="yk-mnav-list">' + ITEMS.slice(0, 3).map(row).join('') +
       '<p class="yk-mnav-sep">Kategori</p>' + ITEMS.slice(3, 7).map(row).join('') +
       '<p class="yk-mnav-sep">Akun</p>' + ITEMS.slice(7).map(row).join('') + '</div>' +
-      '<div class="yk-mnav-foot">Yarka Moslem Wear<br>#IringiLangkahBaik</div></nav>';
+      '<div class="yk-mnav-foot">' + (document.getElementById('ykso-instagram') ? '<div class="yk-soc-row flex flex-wrap gap-2 mb-4">' +
+        [['instagram', 'Instagram', 'https://www.instagram.com/yarka_indonesia/'], ['tiktok', 'TikTok', 'https://www.tiktok.com/@yarka_indonesia'],
+         ['shopee', 'Shopee', 'https://id.shp.ee/wkBoyzxg'], ['telegram', 'Telegram', 'https://t.me/yarkaindonesia'], ['whatsapp', 'WhatsApp', 'https://wa.me/6285282437954']]
+          .map(function (s) { return '<a class="yk-soc yk-soc-' + s[0] + '" href="' + s[2] + '" target="_blank" rel="noopener" aria-label="' + s[1] + ' Yarka"><svg class="yk-soc-ico" viewBox="0 0 24 24" aria-hidden="true"><use href="#ykso-' + s[0] + '"/></svg></a>'; }).join('') +
+        '</div>' : '') + 'Yarka Moslem Wear<br>#IringiLangkahBaik</div></nav>';
     document.body.appendChild(nav);
     btn.setAttribute('aria-controls', 'yk-mnav'); btn.setAttribute('aria-expanded', 'false');
     function setOpen(on) {

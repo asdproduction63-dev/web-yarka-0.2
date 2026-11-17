@@ -85,3 +85,21 @@ CATATAN
   (Settings > Advanced > Export chat history).
 
 Dibuat/diperbarui via scraper PowerShell 5.1 + System.Drawing.
+
+UPDATE 2026-11-17 (KOLEKSI APR-OKT 2026, PER KATEGORI)
+------------------------------------------------------
+- Folder baru: Koleksi Apr-Okt 2026/ (tanpa nomor), salinan dari arsip yang
+  sudah ada, mulai Nawa Abaya (post 10117, 16 Apr 2026) s/d Hawa Abaya
+  (post 11039, 28 Okt 2026). Belum ada post baru setelah 28 Okt 2026.
+- 858 foto + 32 file deskripsi, disusun Kategori > Produk:
+  - Abaya/ : 21 produk (Nawa, Loka, Noora Vol 3, Nooren, Launa Vol 2, Zhora,
+    Bhumi, Jamia, Calla, Seruni, Ulira, Halia V3, Mozaic, Syahdu, Daisy,
+    Otba Outer Abaya, Ara, Ruwa, Hanna V2, Karaz, Hawa)
+  - Khimar dan Bergo/ : 11 produk (Nonpad Jannah Vol 2, FK Jannah, Berlin
+    Jiya, Berlin Alure, Berlin Jannah Mini, Pastan Binar, French Square
+    Rubina, Berlin Zanera, Berlin Zhaa, Pastan Zhaa, Berlin Zela)
+- Nama file: "<Produk> - <warna> N.jpg" (jika caption ada warna) atau
+  "<Produk> N.jpg". Deskripsi: "<Produk> - Deskripsi.txt".
+- French Square Airy (post 10186) hanya deskripsi, tidak ada foto.
+- Peta file baru -> post Telegram: Koleksi Apr-Okt 2026/_daftar_file.csv
+- Folder lama (00-09) tidak diubah.

@@ -8,7 +8,10 @@
   var state = { color: col.n, size: null, qty: 1 };
   window.YarkaProduk = { p: p, state: state }; // dipakai toko.js (keranjang & wishlist)
   var IMG = 'assets/img/warna/';
-  function src(g) { return (g.indexOf('/') > -1 ? 'assets/img/' : IMG) + g + '.jpg'; }
+  function src(g) {
+    if (/^assets\//.test(g)) return g; // path lengkap (foto Koleksi Apr–Okt 2026)
+    return (g.indexOf('/') > -1 ? 'assets/img/' : IMG) + g + '.jpg';
+  }
   var SIZE_LABEL = { ALL: 'All Size', KECIL: 'Kecil (Shoulder)', BESAR: 'Besar (Berlin)' };
   if (p.id === 'zhaa') SIZE_LABEL = { S: 'Mini (S)', M: 'Medium (M)' };
   if (p.sizeLabels) for (var sk in p.sizeLabels) SIZE_LABEL[sk] = p.sizeLabels[sk];
@@ -75,28 +78,27 @@
       if (label) label.textContent = c.n;
       $$('.yk-sw').forEach(function (b) { var on = b.getAttribute('data-warna') === c.n; b.classList.toggle('is-on', on); b.setAttribute('aria-pressed', on); });
       setMain(c.img, p.name + ' warna ' + c.n);
-      var ti = $$('#gallery-thumbs img');
-      if (ti[0]) ti[0].src = c.img;
-      if (adaFlat && ti[1]) { ti[1].src = c.flat || c.img; ti[1].parentElement.style.display = c.flat ? '' : 'none'; }
-      markThumb(0);
-      if (push) try { history.replaceState(null, '', '?p=' + p.id + '&w=' + Y.slug(c.n)); } catch (e) {}
+      buildGallery(c);
+      if (push) try { history.replaceState(null, '', location.pathname + '?p=' + p.id + '&w=' + Y.slug(c.n)); } catch (e) {}
     }
 
-    // Galeri: foto warna terpilih + foto koleksi/detail + tabel ukuran
+    // Galeri: foto warna terpilih (foto utama, flat-lay, semua foto warna itu) + foto koleksi/detail + tabel ukuran.
+    // Disusun ulang setiap kali warna diganti.
     var thumbs = $('#gallery-thumbs');
-    // Galeri: foto warna terpilih (+ flat-lay warna itu bila ada) + foto koleksi/detail + tabel ukuran
-    var adaFlat = p.colors.some(function (c) { return c.flat; });
-    var gal = [col.img].concat(adaFlat ? [col.flat || col.img] : [], p.gallery.map(src), p.sizeChart ? [src(p.sizeChart)] : []);
-    if (!adaFlat) gal = gal.filter(function (g, i) { return gal.indexOf(g) === i; }); // buang foto dobel
-    if (thumbs) {
-      thumbs.innerHTML = gal.map(function (src, i) {
+    if (thumbs) thumbs.classList.add('md:max-h-[640px]', 'md:overflow-y-auto');
+    function buildGallery(c) {
+      if (!thumbs) return;
+      var gal = [c.img].concat(c.flat ? [c.flat] : [], (c.photos || []).map(src), (p.gallery || []).map(src), p.sizeChart ? [src(p.sizeChart)] : []);
+      gal = gal.filter(function (g, i) { return g && gal.indexOf(g) === i; }); // buang foto dobel
+      thumbs.innerHTML = gal.map(function (s, i) {
         return '<button type="button" class="thumb-btn w-20 md:w-24 aspect-[4/5] rounded overflow-hidden shadow-sm bg-surface-container transition-all shrink-0" data-i="' + i + '">' +
-          '<img class="w-full h-full object-cover" alt="' + esc(p.name) + ' foto ' + (i + 1) + '" src="' + src + '"></button>';
+          '<img class="w-full h-full object-cover" alt="' + esc(p.name) + ' foto ' + (i + 1) + '" src="' + s + '"' + (i > 5 ? ' loading="lazy"' : '') + '></button>';
       }).join('');
       $$('.thumb-btn', thumbs).forEach(function (b, i) {
         b.addEventListener('click', function () { setMain(b.querySelector('img').src, p.name); markThumb(i); });
       });
-      thumbs.classList.add('md:max-h-[640px]', 'md:overflow-y-auto');
+      thumbs.scrollTop = 0; thumbs.scrollLeft = 0;
+      markThumb(0);
     }
     function markThumb(i) { $$('#gallery-thumbs .thumb-btn').forEach(function (b, j) { b.style.opacity = i === j ? '1' : '.55'; }); }
 
@@ -130,7 +132,7 @@
       if (ul2) ul2.innerHTML = p.features.map(function (f) {
         return '<li class="flex items-center gap-2"><span class="material-symbols-outlined text-secondary text-[18px]">check_circle</span><span><strong>' + esc(f[0]) + ':</strong> ' + esc(f[1]) + '</span></li>';
       }).join('');
-      var di = $('img', td); if (di) { di.src = src(p.gallery[0]); di.alt = p.name; di.removeAttribute('data-alt'); }
+      var di = $('img', td); if (di) { di.src = p.gallery && p.gallery[0] ? src(p.gallery[0]) : p.colors[0].img; di.alt = p.name; di.removeAttribute('data-alt'); }
     }
     // Tab detail kain
     var tm = $('#tab-material');

@@ -180,7 +180,7 @@
       var sz = state.size === 'ALL' ? 'All Size' : (SIZE_LABEL[state.size] || state.size);
       var qty = parseInt(($('#qty-val') || {}).textContent, 10) || 1;
       var msg = 'Halo Yarka, saya ingin memesan ' + p.name + ' warna ' + state.color + ' ukuran ' + sz + ' sejumlah ' + qty + ' pcs.';
-      window.open('https://wa.me/6281384767525?text=' + encodeURIComponent(msg), '_blank');
+      window.open('https://wa.me/6285282437954?text=' + encodeURIComponent(msg), '_blank');
     };
     var oldAdd = window.handleAddToCart;
     window.handleAddToCart = function () { syncToast(); if (oldAdd) oldAdd(); };

@@ -2,7 +2,7 @@
 // Tanpa data pesanan, halaman tetap menampilkan contoh bawaan.
 (function () {
   var Y = window.YARKA, T = window.YarkaToko;
-  var page = (location.pathname.split('/').pop() || '').toLowerCase();
+  var page = (location.pathname.split('/').pop() || 'index.html').toLowerCase(); if (!/\.html$/.test(page)) page += '.html'; // URL bersih (/katalog) -> katalog.html
   var o; try { o = JSON.parse(localStorage.getItem('yarka_order') || 'null'); } catch (e) { o = null; }
   if (!Y || !o || !o.items) return;
   var root = /\/mobile\//.test(location.pathname.replace(/\\/g, '/')) ? '../' : '';

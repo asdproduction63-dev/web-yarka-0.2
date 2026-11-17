@@ -4,7 +4,7 @@
   var inMobile = /\/mobile\//.test(location.pathname.replace(/\\/g, '/'));
   var root = inMobile ? '../' : '';
   var m = inMobile ? '' : 'mobile/';
-  var page = (location.pathname.split('/').pop() || 'index.html').toLowerCase();
+  var page = (location.pathname.split('/').pop() || 'index.html').toLowerCase(); if (!/\.html$/.test(page)) page += '.html'; // URL bersih (/katalog) -> katalog.html
 
   var PATHS = {
     beranda: root + 'index.html',
@@ -109,6 +109,23 @@
     document.addEventListener('keydown', function (e) { if (e.key === 'Escape' && nav.classList.contains('is-open')) setOpen(false); });
   }
 
+  // URL bersih di server (Vercel cleanUrls): katalog.html -> /katalog, index.html -> /.
+  // Saat dibuka langsung dari file (file://) tautan dibiarkan .html agar pratinjau lokal tetap jalan.
+  var CLEAN = location.protocol === 'http:' || location.protocol === 'https:';
+  function cleanHref(h) {
+    var m = /^(?:\.\.\/|\.\/|\/)?([a-z0-9-]+)\.html(\?[^#]*)?(#.*)?$/i.exec(h || '');
+    if (!m) return null;
+    return '/' + (m[1].toLowerCase() === 'index' ? '' : m[1]) + (m[2] || '') + (m[3] || '');
+  }
+  function cleanLinks() {
+    if (!CLEAN) return;
+    each('a[href*=".html"]', function (a) { var c = cleanHref(a.getAttribute('href')); if (c) a.setAttribute('href', c); });
+  }
+  if (CLEAN && /\.html$/i.test(location.pathname) && window.history && history.replaceState) {
+    var cp = cleanHref(location.pathname.split('/').pop());
+    if (cp && !inMobile) history.replaceState(null, '', cp + location.search + location.hash);
+  }
+
   // Tablet & HP: bingkai kartu tergambar saat kartu masuk layar (pasangan CSS: assets/yarka-hover.css §5).
   function touchReveal() {
     var mm = window.matchMedia;
@@ -190,6 +207,16 @@
       case 'akun.html':
         link('beli lagi', root + 'katalog.html');
         break;
+    }
+
+    // 4. URL bersih untuk semua tautan, termasuk yang dibuat belakangan (keranjang, wishlist, pesanan)
+    cleanLinks();
+    if (CLEAN) {
+      var cleanPending = false;
+      new MutationObserver(function () {
+        if (cleanPending) return; cleanPending = true;
+        requestAnimationFrame(function () { cleanPending = false; cleanLinks(); });
+      }).observe(document.body, { childList: true, subtree: true });
     }
   });
 })();

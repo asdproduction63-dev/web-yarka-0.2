@@ -8,7 +8,7 @@
   var P = window.YARKA_PRODUCTS, Y = window.YARKA;
   if (!P || !Y) return;
   var root = /\/mobile\//.test(location.pathname.replace(/\\/g, '/')) ? '../' : '';
-  var page = (location.pathname.split('/').pop() || 'index.html').toLowerCase();
+  var page = (location.pathname.split('/').pop() || 'index.html').toLowerCase(); if (!/\.html$/.test(page)) page += '.html'; // URL bersih (/katalog) -> katalog.html
   var KC = 'yarka_cart', KW = 'yarka_wish', ONGKIR_GRATIS = 500000, MAX_QTY = 10;
   var SIZE_LABEL = { ALL: 'All Size', KECIL: 'Kecil (Shoulder)', BESAR: 'Besar (Berlin)' };
   var mem = {}, subs = [];

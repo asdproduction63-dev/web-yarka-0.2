@@ -1,0 +1,129 @@
+/* ==========================================================================
+   Yarka — animasi hover pada border (dipakai semua halaman)
+   1. Kartu: garis rose-gold "tergambar" dari tengah atas, menyusuri kedua
+      sisi, lalu bertemu di bawah — seperti bingkai yang dijahit perlahan.
+   2. Tombol & ikon berbingkai: bingkai yang sama, lebih cepat.
+   3. Kolom isian: warna border berpindah halus + cahaya lembut saat fokus.
+   4. Tautan teks (navbar, footer): garis bawah tergambar dari kiri.
+   Hanya aktif di perangkat dengan kursor (bukan layar sentuh).
+   ========================================================================== */
+
+@property --yk-trace {
+  syntax: '<percentage>';
+  inherits: false;
+  initial-value: 0%;
+}
+
+/* ---------- 1. Kartu ---------- */
+:is(
+  [data-produk],                              /* kartu produk (beranda, katalog) */
+  #wishlist-grid [data-wl],                   /* kartu wishlist */
+  .yo-card,                                   /* kartu pesanan (akun) */
+  main a.group[class*="hover:shadow"],        /* kartu kategori beranda */
+  main [class*="hover:shadow"]:not(:has(input, select, textarea))  /* kartu pilar, testimoni, dll. */
+) {
+  position: relative;
+}
+
+@media (hover: hover) and (pointer: fine) {
+  :is(
+    [data-produk],
+    #wishlist-grid [data-wl],
+    .yo-card,
+    main a.group[class*="hover:shadow"],
+    main [class*="hover:shadow"]:not(:has(input, select, textarea)),
+    footer a.border
+  )::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    z-index: 3;
+    border-radius: inherit;
+    padding: 1.5px;
+    pointer-events: none;
+    background: conic-gradient(
+      from 0deg,
+      #A67C6E 0 calc(var(--yk-trace) / 2),
+      transparent 0 calc(100% - var(--yk-trace) / 2),
+      #C79685 0
+    );
+    -webkit-mask: linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0);
+    -webkit-mask-composite: xor;
+    mask: linear-gradient(#000 0 0) content-box exclude, linear-gradient(#000 0 0);
+    transition: --yk-trace .55s cubic-bezier(.65, 0, .35, 1);
+  }
+
+  :is(
+    [data-produk],
+    #wishlist-grid [data-wl],
+    .yo-card,
+    main a.group[class*="hover:shadow"],
+    main [class*="hover:shadow"]:not(:has(input, select, textarea)),
+    footer a.border
+  ):hover::after {
+    --yk-trace: 100%;
+    transition-duration: 1.1s;
+  }
+
+  /* Kartu sedikit terangkat dengan bayangan hangat */
+  :is([data-produk], #wishlist-grid [data-wl], main [class*="hover:shadow"]:not(:has(input, select, textarea))) {
+    transition: transform .6s cubic-bezier(.22, .61, .36, 1), box-shadow .6s cubic-bezier(.22, .61, .36, 1);
+  }
+  :is([data-produk], #wishlist-grid [data-wl], main [class*="hover:shadow"]:not(:has(input, select, textarea))):hover {
+    transform: translateY(-3px);
+    box-shadow: 0 18px 40px -22px rgba(166, 124, 110, .45);
+  }
+
+  /* ---------- 2. Ikon berbingkai di footer (Instagram, TikTok, WhatsApp) ---------- */
+  footer a.border { position: relative; }
+  footer a.border:hover::after { transition-duration: .7s; }
+
+  /* Tombol berbingkai (outline) di halaman: warna border berpindah halus */
+  main :is(a, button)[class*="border"]:not([class*="border-b"]):not([data-produk] *) {
+    transition: border-color .45s ease, color .45s ease, background-color .45s ease, box-shadow .45s ease;
+  }
+  main :is(a, button)[class*="border"]:not([class*="border-b"]):not([data-produk] *):hover {
+    border-color: #A67C6E;
+    box-shadow: 0 0 0 3px rgba(166, 124, 110, .12);
+  }
+
+  /* ---------- 4. Tautan teks: garis bawah tergambar dari kiri ---------- */
+  header nav a:not([aria-current]),
+  footer li > a {
+    background-image: linear-gradient(90deg, #A67C6E, #C79685);
+    background-repeat: no-repeat;
+    background-position: 0 100%;
+    background-size: 0% 1px;
+    transition: background-size .5s cubic-bezier(.65, 0, .35, 1), color .3s ease;
+  }
+  header nav a:not([aria-current]) { padding-bottom: 2px; }
+  header nav a:not([aria-current]):hover,
+  footer li > a:hover {
+    background-size: 100% 1px;
+    color: #1A1A1A;
+  }
+}
+
+/* ---------- 3. Kolom isian (berlaku juga di layar sentuh) ---------- */
+main :is(input:not([type="radio"]):not([type="checkbox"]):not([type="range"]), select, textarea),
+footer input[type="email"] {
+  transition: border-color .35s ease, box-shadow .35s ease, background-color .35s ease;
+}
+@media (hover: hover) {
+  main :is(input:not([type="radio"]):not([type="checkbox"]):not([type="range"]), select, textarea):hover,
+  footer input[type="email"]:hover {
+    border-color: #D9C3B9;
+  }
+}
+main :is(input:not([type="radio"]):not([type="checkbox"]):not([type="range"]), select, textarea):focus,
+footer input[type="email"]:focus {
+  border-color: #A67C6E;
+  box-shadow: 0 0 0 4px rgba(166, 124, 110, .14);
+}
+
+/* Gerak dikurangi: tampilkan bingkai langsung tanpa animasi */
+@media (prefers-reduced-motion: reduce) {
+  *::after { transition-duration: 0s !important; }
+  [data-produk], #wishlist-grid [data-wl], main [class*="hover:shadow"] { transition: none !important; }
+  [data-produk]:hover, #wishlist-grid [data-wl]:hover, main [class*="hover:shadow"]:hover { transform: none !important; }
+}

@@ -20,12 +20,13 @@
   #wishlist-grid [data-wl],                   /* kartu wishlist */
   .yo-card,                                   /* kartu pesanan (akun) */
   main a.group[class*="hover:shadow"],        /* kartu kategori beranda */
-  main [class*="hover:shadow"]:not(:has(input, select, textarea))  /* kartu pilar, testimoni, dll. */
+  main [class*="hover:shadow"]:not(:has(input, select, textarea)), /* kartu pilar, testimoni, dll. */
+  footer a.border                             /* ikon sosial footer */
 ) {
   position: relative;
 }
 
-@media (hover: hover) and (pointer: fine) {
+/* Lapisan bingkai (tak terlihat sampai --yk-trace bertambah) */
   :is(
     [data-produk],
     #wishlist-grid [data-wl],
@@ -53,6 +54,7 @@
     transition: --yk-trace .55s cubic-bezier(.65, 0, .35, 1);
   }
 
+@media (hover: hover) and (pointer: fine) {
   :is(
     [data-produk],
     #wishlist-grid [data-wl],
@@ -121,9 +123,53 @@ footer input[type="email"]:focus {
   box-shadow: 0 0 0 4px rgba(166, 124, 110, .14);
 }
 
+/* ==========================================================================
+   5. Tablet & HP (layar sentuh, tanpa hover)
+   assets/nav.js memberi <html> kelas "yk-touch" dan menandai kartu dengan
+   "yk-seen" saat kartu masuk layar. Bingkai tergambar sekali (berurutan
+   antar kartu), lalu menetap tipis; foto produk zoom-in perlahan;
+   sentuhan memberi efek tekan yang halus.
+   ========================================================================== */
+.yk-touch .yk-seen::after {
+  --yk-trace: 100%;
+  opacity: .55;
+  transition:
+    --yk-trace 1.5s cubic-bezier(.65, 0, .35, 1) var(--yk-d, 0s),
+    opacity 1.2s ease calc(var(--yk-d, 0s) + 1.6s);
+}
+.yk-touch :is([data-produk], #wishlist-grid [data-wl]) img.yk-img,
+.yk-touch #wishlist-grid [data-wl] img {
+  transform: scale(1.06);
+  transition: transform 1.8s cubic-bezier(.22, .61, .36, 1) var(--yk-d, 0s), opacity .25s ease;
+}
+.yk-touch .yk-seen img.yk-img,
+.yk-touch #wishlist-grid .yk-seen img {
+  transform: scale(1);
+}
+/* Efek tekan: kartu sedikit mengecil, bingkai menyala penuh */
+.yk-touch :is([data-produk], #wishlist-grid [data-wl], .yo-card, main a.group[class*="hover:shadow"], main [class*="hover:shadow"]:not(:has(input, select, textarea))) {
+  transition: transform .35s cubic-bezier(.22, .61, .36, 1), box-shadow .35s ease;
+  -webkit-tap-highlight-color: transparent;
+}
+.yk-touch :is([data-produk], #wishlist-grid [data-wl], .yo-card, main a.group[class*="hover:shadow"], main [class*="hover:shadow"]:not(:has(input, select, textarea))):active {
+  transform: scale(.985);
+  box-shadow: 0 14px 30px -20px rgba(166, 124, 110, .5);
+}
+.yk-touch .yk-seen:active::after {
+  opacity: 1;
+  transition: opacity .15s ease;
+}
+/* Tombol berbingkai & tautan: umpan balik saat disentuh */
+.yk-touch main :is(a, button)[class*="border"]:not([class*="border-b"]):active {
+  border-color: #A67C6E;
+  box-shadow: 0 0 0 3px rgba(166, 124, 110, .14);
+}
+
 /* Gerak dikurangi: tampilkan bingkai langsung tanpa animasi */
 @media (prefers-reduced-motion: reduce) {
   *::after { transition-duration: 0s !important; }
   [data-produk], #wishlist-grid [data-wl], main [class*="hover:shadow"] { transition: none !important; }
   [data-produk]:hover, #wishlist-grid [data-wl]:hover, main [class*="hover:shadow"]:hover { transform: none !important; }
+  .yk-touch img.yk-img, .yk-touch #wishlist-grid [data-wl] img { transform: none !important; transition: opacity .25s ease !important; }
+  .yk-touch .yk-seen::after { transition: none !important; }
 }

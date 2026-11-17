@@ -105,8 +105,38 @@
     document.addEventListener('keydown', function (e) { if (e.key === 'Escape' && nav.classList.contains('is-open')) setOpen(false); });
   }
 
+  // Tablet & HP: bingkai kartu tergambar saat kartu masuk layar (pasangan CSS: assets/yarka-hover.css §5).
+  function touchReveal() {
+    var mm = window.matchMedia;
+    if (!mm || !mm('(hover: none), (pointer: coarse)').matches || !('IntersectionObserver' in window)) return;
+    document.documentElement.classList.add('yk-touch');
+    var SEL = '[data-produk], #wishlist-grid [data-wl], .yo-card, main a.group[class*="hover:shadow"], main [class*="hover:shadow"]';
+    var batch = 0, timer = null;
+    var io = new IntersectionObserver(function (es) {
+      es.forEach(function (e) {
+        if (!e.isIntersecting) return;
+        var el = e.target;
+        if (el.querySelector('input, select, textarea')) { io.unobserve(el); return; }
+        el.style.setProperty('--yk-d', Math.min(batch++, 5) * 0.12 + 's'); // berurutan antar kartu
+        el.classList.add('yk-seen'); io.unobserve(el);
+      });
+      clearTimeout(timer); timer = setTimeout(function () { batch = 0; }, 400);
+    }, { threshold: 0.25, rootMargin: '0px 0px -6% 0px' });
+    function scan() {
+      each(SEL, function (el) { if (!el._ykObs) { el._ykObs = 1; io.observe(el); } });
+    }
+    scan();
+    // Kartu yang dibuat belakangan (wishlist, pesanan, filter katalog)
+    var pending = false;
+    new MutationObserver(function () {
+      if (pending) return; pending = true;
+      requestAnimationFrame(function () { pending = false; scan(); });
+    }).observe(document.body, { childList: true, subtree: true });
+  }
+
   document.addEventListener('DOMContentLoaded', function () {
     mobileMenu();
+    touchReveal();
     // 1. Tautan dengan data-path dari Stitch
     each('a[data-path]', function (a) {
       var p = PATHS[a.getAttribute('data-path')];

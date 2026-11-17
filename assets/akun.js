@@ -73,7 +73,7 @@
         return '<div class="flex items-center gap-4"><img class="w-16 h-20 rounded-lg object-cover bg-surface-container shrink-0" src="' + esc(it.img) + '" alt="' + esc(it.nama + ' warna ' + it.warna) + '" loading="lazy">' +
           '<div class="min-w-0 flex-1"><p class="font-label-caps-sm text-label-caps-sm uppercase tracking-wider text-secondary font-semibold">' + esc(it.cat || '') + '</p>' +
           '<h4 class="font-body-md text-body-md font-medium text-primary truncate">' + esc(it.nama) + '</h4>' +
-          '<p class="font-body-sm text-body-sm text-on-surface-variant">' + esc(it.warna) + ' • ' + esc(it.ukuran) + '</p></div>' +
+          '<p class="font-body-sm text-body-sm text-on-surface-variant">' + esc(it.warna) + ' • <span class="whitespace-nowrap">' + esc(it.ukuran) + '</span></p></div>' +
           '<div class="text-right shrink-0"><p class="font-body-sm text-body-sm text-on-surface-variant">' + it.q + ' ×</p><p class="font-body-md text-body-md font-semibold text-primary">' + Y.rp(it.total) + '</p></div></div>';
       }).join('') + '</div>' + note +
       '<footer class="flex flex-wrap items-center justify-between gap-4 pt-5 mt-1 border-t border-outline-variant/40">' +

@@ -9,7 +9,7 @@
     paxel: { label: 'Paxel Instant', eta: 'Hari ini, 4–6 jam (Jabodetabek)', cost: 35000 }
   };
   var ASURANSI = 2500, KA = 'yarka_alamat', KO = 'yarka_order';
-  var FIELDS = ['email', 'wa', 'nama', 'telp2', 'prov', 'kota', 'kec', 'kodepos', 'alamat', 'catatan'];
+  var FIELDS = ['email', 'wa', 'nama', 'telp2', 'prov', 'kota', 'kec', 'alamat', 'catatan'];
   function $(id) { return document.getElementById(id); }
   function esc(s) { return String(s).replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/"/g, '&quot;'); }
   function kurir() { var r = document.querySelector('input[name="shipping_service"]:checked'); return r ? r.value : 'jne'; }
@@ -22,19 +22,19 @@
     list.style.display = items.length ? '' : 'none';
     empty.style.display = items.length ? 'none' : '';
     list.innerHTML = items.map(function (it) {
-      return '<div class="flex items-center gap-4 bg-surface-container-low p-3.5 rounded-lg">' +
-        '<a href="' + it.url + '" class="w-20 h-24 rounded-md overflow-hidden bg-surface-container-highest flex-shrink-0"><img class="w-full h-full object-cover" alt="' + esc(it.p.name + ' warna ' + it.col.n) + '" src="' + T.imgSrc(it.col) + '"></a>' +
+      return '<div class="flex items-start gap-3 sm:gap-4 bg-surface-container-low p-3 sm:p-3.5 rounded-lg">' +
+        '<a href="' + it.url + '" class="w-[72px] h-24 sm:w-20 rounded-md overflow-hidden bg-surface-container-highest flex-shrink-0"><img class="w-full h-full object-cover" alt="' + esc(it.p.name + ' warna ' + it.col.n) + '" src="' + T.imgSrc(it.col) + '"></a>' +
         '<div class="flex-1 min-w-0">' +
         '<div class="flex items-start justify-between gap-2"><span class="font-label-caps-sm text-label-caps-sm text-secondary uppercase font-semibold">' + esc(it.p.catLabel) + '</span>' +
-        '<button type="button" class="text-outline hover:text-error transition-colors" data-co="del" data-i="' + it.i + '" aria-label="Hapus ' + esc(it.p.name) + '"><span class="material-symbols-outlined text-[18px]">delete</span></button></div>' +
+        '<button type="button" class="w-9 h-9 -mt-2 -mr-2 flex items-center justify-center flex-shrink-0 rounded-full text-outline hover:text-error transition-colors" data-co="del" data-i="' + it.i + '" aria-label="Hapus ' + esc(it.p.name) + '"><span class="material-symbols-outlined text-[18px]">delete</span></button></div>' +
         '<h3 class="font-body-md text-body-md font-semibold text-primary truncate">' + esc(it.p.name) + '</h3>' +
         '<p class="font-body-sm text-body-sm text-on-surface-variant text-[12px]">' + esc(it.col.n) + ' • ' + esc(it.sLabel) + ' • ' + esc(it.p.bahanLabel) + '</p>' +
-        '<div class="flex items-center justify-between mt-2">' +
+        '<div class="flex items-center justify-between gap-2 mt-2">' +
         '<div class="flex items-center border border-outline-variant rounded bg-surface-container-lowest">' +
-        '<button type="button" class="w-7 h-7 flex items-center justify-center text-on-surface-variant hover:text-primary disabled:opacity-30" data-co="min" data-i="' + it.i + '" aria-label="Kurangi jumlah"' + (it.q <= 1 ? ' disabled' : '') + '>−</button>' +
-        '<span class="w-7 text-center font-label-text text-label-text text-primary font-semibold">' + it.q + '</span>' +
-        '<button type="button" class="w-7 h-7 flex items-center justify-center text-on-surface-variant hover:text-primary disabled:opacity-30" data-co="plus" data-i="' + it.i + '" aria-label="Tambah jumlah"' + (it.q >= 10 ? ' disabled' : '') + '>+</button></div>' +
-        '<p class="font-body-md text-body-md font-bold text-primary">' + Y.rp(it.total) + '</p></div></div></div>';
+        '<button type="button" class="w-9 h-9 flex items-center justify-center text-on-surface-variant hover:text-primary disabled:opacity-30" data-co="min" data-i="' + it.i + '" aria-label="Kurangi jumlah"' + (it.q <= 1 ? ' disabled' : '') + '>−</button>' +
+        '<span class="w-8 text-center font-label-text text-label-text text-primary font-semibold">' + it.q + '</span>' +
+        '<button type="button" class="w-9 h-9 flex items-center justify-center text-on-surface-variant hover:text-primary disabled:opacity-30" data-co="plus" data-i="' + it.i + '" aria-label="Tambah jumlah"' + (it.q >= 10 ? ' disabled' : '') + '>+</button></div>' +
+        '<p class="font-body-md text-body-md font-bold text-primary whitespace-nowrap">' + Y.rp(it.total) + '</p></div></div></div>';
     }).join('');
     $('co-sub-label').textContent = 'Subtotal Produk (' + n + ' Item)';
     $('co-sub').textContent = Y.rp(sub);
@@ -80,7 +80,6 @@
     need('prov', !!val('prov'), 'Pilih provinsi tujuan.');
     need('kota', val('kota').length >= 3, 'Kota / kabupaten wajib diisi.');
     need('kec', val('kec').length >= 3, 'Kecamatan wajib diisi.');
-    need('kodepos', /^\d{5}$/.test(val('kodepos')), 'Kode pos terdiri dari 5 angka.');
     need('alamat', val('alamat').length >= 10, 'Tuliskan alamat lengkap (nama jalan, nomor rumah, RT/RW).');
     return bad;
   }

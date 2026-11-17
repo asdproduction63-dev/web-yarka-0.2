@@ -285,7 +285,7 @@
         '<div class="mt-auto flex flex-col gap-2">' +
         '<label class="sr-only" for="wl-size-' + p.id + '">Ukuran</label>' +
         '<select id="wl-size-' + p.id + '" data-wl-size class="w-full h-10 px-3 bg-surface-container-low rounded font-body-sm text-body-sm text-primary focus:outline-none focus:ring-1 focus:ring-secondary cursor-pointer">' + opts + '</select>' +
-        '<button type="button" data-wl-add class="w-full h-10 bg-primary text-on-primary rounded font-label-caps-sm text-label-caps-sm uppercase tracking-wider flex items-center justify-center gap-1.5 hover:bg-primary-container transition-colors"><span class="material-symbols-outlined text-[16px]">shopping_bag</span><span class="hidden sm:inline">Tambah ke<span class="material-symbols-outlined text-[16px]">shopping_bag</span>Tambah ke Keranjang</button>nbsp;</span>Keranjang</button>' +
+        '<button type="button" data-wl-add class="w-full h-10 bg-primary text-on-primary rounded font-label-caps-sm text-label-caps-sm uppercase tracking-wider flex items-center justify-center gap-1.5 hover:bg-primary-container transition-colors"><span class="material-symbols-outlined text-[16px]">shopping_bag</span><span class="hidden sm:inline">Tambah ke&nbsp;</span>Keranjang</button>' +
         '</div></div></article>';
     }).join('');
   }

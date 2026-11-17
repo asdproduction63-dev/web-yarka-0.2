@@ -50,8 +50,6 @@
       row.className = 'flex flex-wrap items-baseline gap-x-3 gap-y-1';
       row.innerHTML = '<span class="font-headline-md text-headline-md text-primary font-semibold whitespace-nowrap">' + Y.priceText(p) + '</span>' +
         '<span class="font-body-sm text-body-sm text-outline">' + esc(p.priceNote) + '</span>';
-      var cic = row.parentElement.querySelector('strong');
-      if (cic) cic.textContent = Y.rp(Math.ceil(p.price / 3 / 1000) * 1000) + '/bln';
     }
 
     // Warna
@@ -59,7 +57,7 @@
     var oldBtn = $('.color-btn');
     if (oldBtn) {
       var wrap = oldBtn.parentElement;
-      wrap.className = 'flex flex-wrap items-center gap-3';
+      wrap.className = 'flex flex-wrap items-center gap-2.5 sm:gap-3';
       wrap.innerHTML = p.colors.map(function (c) {
         return '<button type="button" class="yk-sw" style="width:30px;height:30px" title="' + c.n + '" aria-label="Warna ' + c.n + '" data-warna="' + c.n + '"></button>';
       }).join('');

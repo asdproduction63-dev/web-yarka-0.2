@@ -11,15 +11,15 @@ a.bg-primary:hover,button.bg-primary:hover{background-color:#8F6658}
 <div class="absolute top-1/2 left-0 w-80 h-80 rounded-full bg-surface-container-highest/50 blur-3xl pointer-events-none"></div>
 <div class="max-w-[1440px] mx-auto px-margin-mobile lg:px-margin py-8 lg:py-12 relative z-10">
 <!-- Checkout Step Progress Header -->
-<section class="mb-10 lg:mb-14">
+<section class="mb-8 lg:mb-14">
 <div class="flex flex-col items-center justify-center text-center">
 <span class="font-label-caps-sm text-label-caps-sm uppercase tracking-widest text-secondary font-semibold mb-2">Penyelesaian Pesanan Eksklusif</span>
-<h1 class="font-headline-lg text-headline-lg text-primary tracking-tight mb-8">Pengiriman Butik Yarka</h1>
+<h1 class="font-headline-lg text-[32px] leading-[38px] sm:text-headline-lg text-primary tracking-tight mb-6 sm:mb-8">Pengiriman Butik Yarka</h1>
 <!-- Multi-step Indicator Bar -->
-<div class="w-full max-w-2xl bg-surface-container-low p-4 lg:p-6 rounded-full shadow-sm flex items-center justify-between relative">
+<div class="w-full max-w-2xl bg-surface-container-low px-4 py-3 sm:p-4 lg:p-6 rounded-2xl sm:rounded-full shadow-sm flex items-center justify-between relative" aria-label="Tahapan checkout">
 <!-- Step 1: Active -->
 <div class="flex items-center gap-3 relative z-10">
-<div class="w-9 h-9 rounded-full bg-primary text-on-primary flex items-center justify-center font-label-caps-lg text-label-caps-lg font-bold shadow-md">
+<div class="w-10 h-10 rounded-full flex-shrink-0 bg-primary text-on-primary flex items-center justify-center font-label-caps-lg text-label-caps-lg font-bold shadow-md">
                 1
               </div>
 <div class="text-left">
@@ -28,12 +28,12 @@ a.bg-primary:hover,button.bg-primary:hover{background-color:#8F6658}
 </div>
 </div>
 <!-- Connector Line 1-2 -->
-<div class="flex-1 mx-3 lg:mx-6 h-[2px] bg-secondary/40 relative">
+<div class="flex-1 min-w-[16px] mx-2.5 sm:mx-3 lg:mx-6 h-[2px] bg-secondary/40 relative">
 <div class="absolute inset-y-0 left-0 w-full bg-primary"></div>
 </div>
 <!-- Step 2: Inactive -->
 <div class="flex items-center gap-3 relative z-10 opacity-70">
-<div class="w-9 h-9 rounded-full bg-surface-container-highest text-on-surface-variant flex items-center justify-center font-label-caps-lg text-label-caps-lg font-bold">
+<div class="w-10 h-10 rounded-full flex-shrink-0 bg-surface-container-highest text-on-surface-variant flex items-center justify-center font-label-caps-lg text-label-caps-lg font-bold">
                 2
               </div>
 <div class="text-left hidden sm:block">
@@ -42,10 +42,10 @@ a.bg-primary:hover,button.bg-primary:hover{background-color:#8F6658}
 </div>
 </div>
 <!-- Connector Line 2-3 -->
-<div class="flex-1 mx-3 lg:mx-6 h-[2px] bg-surface-container-highest"></div>
+<div class="flex-1 min-w-[16px] mx-2.5 sm:mx-3 lg:mx-6 h-[2px] bg-surface-container-highest"></div>
 <!-- Step 3: Inactive -->
 <div class="flex items-center gap-3 relative z-10 opacity-60">
-<div class="w-9 h-9 rounded-full bg-surface-container-highest text-on-surface-variant flex items-center justify-center font-label-caps-lg text-label-caps-lg font-bold">
+<div class="w-10 h-10 rounded-full flex-shrink-0 bg-surface-container-highest text-on-surface-variant flex items-center justify-center font-label-caps-lg text-label-caps-lg font-bold">
                 3
               </div>
 <div class="text-left hidden sm:block">
@@ -57,53 +57,53 @@ a.bg-primary:hover,button.bg-primary:hover{background-color:#8F6658}
 </div>
 </section>
 <!-- Main Layout: 60% Left Form & 40% Right Sticky Order Summary -->
-<div class="grid grid-cols-1 lg:grid-cols-12 gap-gutter items-start">
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-5 sm:gap-gutter items-start">
 <!-- LEFT COLUMN (Approx 60% -> 7 Cols out of 12) -->
-<div class="lg:col-span-7 space-y-8">
+<div class="lg:col-span-7 space-y-5 sm:space-y-8">
 <!-- SECTION 1: Data Kontak & Akun -->
-<div class="bg-surface-container-lowest p-6 lg:p-8 rounded-xl shadow-sm transition-all duration-300 hover:shadow-md">
-<div class="flex items-center justify-between pb-4 mb-6">
+<div class="bg-surface-container-lowest p-5 sm:p-6 lg:p-8 rounded-xl shadow-sm transition-all duration-300 hover:shadow-md">
+<div class="flex items-center justify-between mb-5 sm:mb-6">
 <div class="flex items-center gap-3">
-<div class="w-8 h-8 rounded-full bg-secondary-container flex items-center justify-center text-on-secondary-container">
-<span class="material-symbols-outlined text-[18px]">person</span>
+<div class="w-10 h-10 rounded-full bg-secondary-container flex items-center justify-center text-on-secondary-container flex-shrink-0">
+<span class="material-symbols-outlined text-[20px]">person</span>
 </div>
 <h2 class="font-headline-sm text-headline-sm text-primary">Informasi Kontak &amp; Akun</h2>
 </div>
 
 </div>
-<div class="grid grid-cols-1 md:grid-cols-2 gap-5">
+<div class="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-5">
 <div class="space-y-1.5 md:col-span-1" data-field="email">
 <label class="block font-label-caps-sm text-label-caps-sm uppercase tracking-wider text-on-surface-variant font-semibold">Alamat Email Aktif *</label>
 <div class="relative">
-<span class="material-symbols-outlined absolute left-3.5 top-3.5 text-outline text-[18px]">mail</span>
-<input class="w-full h-12 pl-10 pr-4 bg-surface-container-low rounded-lg font-body-md text-body-md text-primary placeholder:text-outline focus:bg-surface-container-lowest focus:outline-none shadow-sm transition-colors" placeholder="nama@email.com" type="email" id="co-email" autocomplete="email">
+<span class="material-symbols-outlined absolute left-3.5 top-1/2 -translate-y-1/2 text-outline text-[18px]">mail</span>
+<input class="w-full h-12 pl-11 pr-4 bg-surface-container-low rounded-lg font-body-md text-[16px] leading-6 md:text-body-md text-primary placeholder:text-outline focus:bg-surface-container-lowest focus:outline-none shadow-sm transition-colors" placeholder="nama@email.com" type="email" id="co-email" autocomplete="email">
 </div>
-<p class="font-body-sm text-body-sm text-on-surface-variant text-[11px] leading-tight">Konfirmasi faktur dan resi pengiriman dikirimkan ke email ini.</p>
+<p class="font-body-sm text-body-sm text-on-surface-variant text-[12px] leading-snug">Konfirmasi faktur dan resi pengiriman dikirimkan ke email ini.</p>
 </div>
 <div class="space-y-1.5 md:col-span-1" data-field="wa">
 <label class="block font-label-caps-sm text-label-caps-sm uppercase tracking-wider text-on-surface-variant font-semibold">WhatsApp Aktif (Order Alert) *</label>
 <div class="relative">
-<span class="material-symbols-outlined absolute left-3.5 top-3.5 text-secondary text-[18px]">chat</span>
-<input class="w-full h-12 pl-10 pr-4 bg-surface-container-low rounded-lg font-body-md text-body-md text-primary placeholder:text-outline focus:bg-surface-container-lowest focus:outline-none shadow-sm transition-colors" placeholder="08xxxxxxxxxx" type="tel" id="co-wa" autocomplete="tel">
+<span class="material-symbols-outlined absolute left-3.5 top-1/2 -translate-y-1/2 text-secondary text-[18px]">chat</span>
+<input class="w-full h-12 pl-11 pr-4 bg-surface-container-low rounded-lg font-body-md text-[16px] leading-6 md:text-body-md text-primary placeholder:text-outline focus:bg-surface-container-lowest focus:outline-none shadow-sm transition-colors" placeholder="08xxxxxxxxxx" type="tel" id="co-wa" autocomplete="tel">
 </div>
-<p class="font-body-sm text-body-sm text-secondary text-[11px] leading-tight flex items-center gap-1 font-medium">
-<span class="material-symbols-outlined text-[13px]">check_circle</span>
+<p class="font-body-sm text-body-sm text-secondary text-[12px] leading-snug flex items-start gap-1 font-medium">
+<span class="material-symbols-outlined text-[14px] mt-0.5">check_circle</span>
                   Menerima konfirmasi pesanan via WhatsApp Yarka
                 </p>
 </div>
 </div>
-<div class="mt-4 pt-3 flex items-center gap-2">
-<label class="relative flex items-center gap-2.5 cursor-pointer">
-<input checked="" class="w-4 h-4 rounded bg-surface-container text-primary accent-primary" type="checkbox">
+<div class="mt-4 flex items-center gap-2">
+<label class="relative flex items-start gap-3 cursor-pointer min-h-[44px] py-2">
+<input checked="" class="w-5 h-5 flex-shrink-0 rounded bg-surface-container text-primary accent-primary cursor-pointer" type="checkbox">
 <span class="font-body-sm text-body-sm text-on-surface">Kirimkan info eksklusif koleksi Ramadan &amp; Hari Raya mendatang</span>
 </label>
 </div>
 </div>
 <!-- SECTION 2: Alamat Pengiriman Lengkap -->
-<div class="bg-surface-container-lowest p-6 lg:p-8 rounded-xl shadow-sm transition-all duration-300 hover:shadow-md">
-<div class="flex items-center gap-3 pb-4 mb-6">
-<div class="w-8 h-8 rounded-full bg-secondary-container flex items-center justify-center text-on-secondary-container">
-<span class="material-symbols-outlined text-[18px]">location_on</span>
+<div class="bg-surface-container-lowest p-5 sm:p-6 lg:p-8 rounded-xl shadow-sm transition-all duration-300 hover:shadow-md">
+<div class="flex items-center gap-3 mb-5 sm:mb-6">
+<div class="w-10 h-10 rounded-full bg-secondary-container flex items-center justify-center text-on-secondary-container flex-shrink-0">
+<span class="material-symbols-outlined text-[20px]">location_on</span>
 </div>
 <h2 class="font-headline-sm text-headline-sm text-primary">Tujuan Pengiriman</h2>
 </div>
@@ -111,238 +111,234 @@ a.bg-primary:hover,button.bg-primary:hover{background-color:#8F6658}
 <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
 <div class="space-y-1.5" data-field="nama">
 <label class="block font-label-caps-sm text-label-caps-sm uppercase tracking-wider text-on-surface-variant font-semibold">Nama Lengkap Penerima *</label>
-<input class="w-full h-12 px-4 bg-surface-container-low rounded-lg font-body-md text-body-md text-primary focus:bg-surface-container-lowest focus:outline-none shadow-sm transition-colors placeholder:text-outline" type="text" id="co-nama" placeholder="Nama sesuai identitas" autocomplete="name">
+<input class="w-full h-12 px-4 bg-surface-container-low rounded-lg font-body-md text-[16px] leading-6 md:text-body-md text-primary focus:bg-surface-container-lowest focus:outline-none shadow-sm transition-colors placeholder:text-outline" type="text" id="co-nama" placeholder="Nama sesuai identitas" autocomplete="name">
 </div>
 <div class="space-y-1.5" data-field="telp2">
 <label class="block font-label-caps-sm text-label-caps-sm uppercase tracking-wider text-on-surface-variant font-semibold">Nomor Telepon Cadangan</label>
-<input class="w-full h-12 px-4 bg-surface-container-low rounded-lg font-body-md text-body-md text-primary placeholder:text-outline focus:bg-surface-container-lowest focus:outline-none shadow-sm transition-colors" placeholder="0821xxxxxxxx (opsional)" type="tel" id="co-telp2" autocomplete="tel">
+<input class="w-full h-12 px-4 bg-surface-container-low rounded-lg font-body-md text-[16px] leading-6 md:text-body-md text-primary placeholder:text-outline focus:bg-surface-container-lowest focus:outline-none shadow-sm transition-colors" placeholder="0821xxxxxxxx (opsional)" type="tel" id="co-telp2" autocomplete="tel">
 </div>
 </div>
 <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
 <div class="space-y-1.5" data-field="prov">
 <label class="block font-label-caps-sm text-label-caps-sm uppercase tracking-wider text-on-surface-variant font-semibold">Provinsi *</label>
 <div class="relative">
-<select class="w-full h-12 px-4 bg-surface-container-low rounded-lg font-body-md text-body-md text-primary focus:bg-surface-container-lowest focus:outline-none appearance-none shadow-sm cursor-pointer pr-10" id="co-prov" autocomplete="address-level1"><option value="">Pilih provinsi</option><option>Aceh</option><option>Sumatera Utara</option><option>Sumatera Barat</option><option>Riau</option><option>Kepulauan Riau</option><option>Jambi</option><option>Sumatera Selatan</option><option>Kepulauan Bangka Belitung</option><option>Bengkulu</option><option>Lampung</option><option>DKI Jakarta</option><option>Jawa Barat</option><option>Banten</option><option>Jawa Tengah</option><option>DI Yogyakarta</option><option>Jawa Timur</option><option>Bali</option><option>Nusa Tenggara Barat</option><option>Nusa Tenggara Timur</option><option>Kalimantan Barat</option><option>Kalimantan Tengah</option><option>Kalimantan Selatan</option><option>Kalimantan Timur</option><option>Kalimantan Utara</option><option>Sulawesi Utara</option><option>Gorontalo</option><option>Sulawesi Tengah</option><option>Sulawesi Barat</option><option>Sulawesi Selatan</option><option>Sulawesi Tenggara</option><option>Maluku</option><option>Maluku Utara</option><option>Papua</option><option>Papua Barat</option><option>Papua Barat Daya</option><option>Papua Tengah</option><option>Papua Pegunungan</option><option>Papua Selatan</option></select>
-<span class="material-symbols-outlined absolute right-3.5 top-3.5 text-outline pointer-events-none text-[20px]">expand_more</span>
+<select class="w-full h-12 px-4 bg-surface-container-low rounded-lg font-body-md text-[16px] leading-6 md:text-body-md text-primary focus:bg-surface-container-lowest focus:outline-none appearance-none shadow-sm cursor-pointer pr-10" id="co-prov" autocomplete="address-level1"><option value="">Pilih provinsi</option><option>Aceh</option><option>Sumatera Utara</option><option>Sumatera Barat</option><option>Riau</option><option>Kepulauan Riau</option><option>Jambi</option><option>Sumatera Selatan</option><option>Kepulauan Bangka Belitung</option><option>Bengkulu</option><option>Lampung</option><option>DKI Jakarta</option><option>Jawa Barat</option><option>Banten</option><option>Jawa Tengah</option><option>DI Yogyakarta</option><option>Jawa Timur</option><option>Bali</option><option>Nusa Tenggara Barat</option><option>Nusa Tenggara Timur</option><option>Kalimantan Barat</option><option>Kalimantan Tengah</option><option>Kalimantan Selatan</option><option>Kalimantan Timur</option><option>Kalimantan Utara</option><option>Sulawesi Utara</option><option>Gorontalo</option><option>Sulawesi Tengah</option><option>Sulawesi Barat</option><option>Sulawesi Selatan</option><option>Sulawesi Tenggara</option><option>Maluku</option><option>Maluku Utara</option><option>Papua</option><option>Papua Barat</option><option>Papua Barat Daya</option><option>Papua Tengah</option><option>Papua Pegunungan</option><option>Papua Selatan</option></select>
+<span class="material-symbols-outlined absolute right-3.5 top-1/2 -translate-y-1/2 text-outline pointer-events-none text-[20px]">expand_more</span>
 </div>
 </div>
 <div class="space-y-1.5" data-field="kota">
 <label class="block font-label-caps-sm text-label-caps-sm uppercase tracking-wider text-on-surface-variant font-semibold">Kota / Kabupaten *</label>
-<input id="co-kota" type="text" placeholder="Contoh: Jakarta Selatan" class="w-full h-12 px-4 bg-surface-container-low rounded-lg font-body-md text-body-md text-primary placeholder:text-outline focus:bg-surface-container-lowest focus:outline-none shadow-sm transition-colors" autocomplete="address-level2">
+<input id="co-kota" type="text" placeholder="Contoh: Jakarta Selatan" class="w-full h-12 px-4 bg-surface-container-low rounded-lg font-body-md text-[16px] leading-6 md:text-body-md text-primary placeholder:text-outline focus:bg-surface-container-lowest focus:outline-none shadow-sm transition-colors" autocomplete="address-level2">
 </div>
 </div>
-<div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+<div>
 <div class="space-y-1.5" data-field="kec">
 <label class="block font-label-caps-sm text-label-caps-sm uppercase tracking-wider text-on-surface-variant font-semibold">Kecamatan *</label>
-<input class="w-full h-12 px-4 bg-surface-container-low rounded-lg font-body-md text-body-md text-primary focus:bg-surface-container-lowest focus:outline-none shadow-sm transition-colors placeholder:text-outline" type="text" id="co-kec" placeholder="Contoh: Kebayoran Baru">
-</div>
-<div class="space-y-1.5" data-field="kodepos">
-<label class="block font-label-caps-sm text-label-caps-sm uppercase tracking-wider text-on-surface-variant font-semibold">Kode Pos *</label>
-<input class="w-full h-12 px-4 bg-surface-container-low rounded-lg font-body-md text-body-md text-primary focus:bg-surface-container-lowest focus:outline-none shadow-sm transition-colors placeholder:text-outline" type="text" id="co-kodepos" inputmode="numeric" maxlength="5" placeholder="5 digit" autocomplete="postal-code">
+<input class="w-full h-12 px-4 bg-surface-container-low rounded-lg font-body-md text-[16px] leading-6 md:text-body-md text-primary focus:bg-surface-container-lowest focus:outline-none shadow-sm transition-colors placeholder:text-outline" type="text" id="co-kec" placeholder="Contoh: Kebayoran Baru">
 </div>
 </div>
 <div class="space-y-1.5" data-field="alamat">
 <label class="block font-label-caps-sm text-label-caps-sm uppercase tracking-wider text-on-surface-variant font-semibold">Alamat Lengkap &amp; Patokan Rumah *</label>
-<textarea class="w-full p-4 bg-surface-container-low rounded-lg font-body-md text-body-md text-primary focus:bg-surface-container-lowest focus:outline-none shadow-sm transition-colors resize-none" placeholder="Nama Jalan, Nomor Gedung/Rumah, RT/RW, Patokan khusus..." rows="2" id="co-alamat" autocomplete="street-address"></textarea>
+<textarea class="w-full p-4 bg-surface-container-low rounded-lg font-body-md text-[16px] leading-6 md:text-body-md text-primary focus:bg-surface-container-lowest focus:outline-none shadow-sm transition-colors resize-none" placeholder="Nama Jalan, Nomor Gedung/Rumah, RT/RW, Patokan khusus..." rows="3" id="co-alamat" autocomplete="street-address"></textarea>
 </div>
 <div class="space-y-1.5" data-field="catatan">
 <label class="block font-label-caps-sm text-label-caps-sm uppercase tracking-wider text-on-surface-variant font-semibold">Catatan Pengiriman untuk Kurir (Opsional)</label>
 <div class="relative">
-<span class="material-symbols-outlined absolute left-3.5 top-3.5 text-outline text-[18px]">edit_note</span>
-<input class="w-full h-12 pl-10 pr-4 bg-surface-container-low rounded-lg font-body-md text-body-md text-primary placeholder:text-outline focus:bg-surface-container-lowest focus:outline-none shadow-sm transition-colors" placeholder="Contoh: Titipkan di satpam, jangan bunyikan bel siang hari..." type="text" id="co-catatan">
+<span class="material-symbols-outlined absolute left-3.5 top-1/2 -translate-y-1/2 text-outline text-[18px]">edit_note</span>
+<input class="w-full h-12 pl-11 pr-4 bg-surface-container-low rounded-lg font-body-md text-[16px] leading-6 md:text-body-md text-primary placeholder:text-outline focus:bg-surface-container-lowest focus:outline-none shadow-sm transition-colors" placeholder="Contoh: Titipkan di satpam, jangan bunyikan bel siang hari..." type="text" id="co-catatan">
 </div>
 </div>
-<div class="pt-3">
-<label class="inline-flex items-center gap-2.5 cursor-pointer">
-<input checked="" class="w-4 h-4 rounded accent-primary" name="save_address" type="checkbox" id="co-simpan">
+<div class="pt-1">
+<label class="flex items-start gap-3 cursor-pointer min-h-[44px] py-2">
+<input checked="" class="w-5 h-5 flex-shrink-0 rounded accent-primary cursor-pointer" name="save_address" type="checkbox" id="co-simpan">
 <span class="font-body-sm text-body-sm text-on-surface font-medium">Simpan data ini di perangkat untuk belanja berikutnya</span>
 </label>
 </div>
 </div>
 </div>
 <!-- SECTION 3: Pilihan Ekspedisi & Opsi Kemasan Khusus -->
-<div class="bg-surface-container-lowest p-6 lg:p-8 rounded-xl shadow-sm space-y-6">
-<div class="flex items-center gap-3">
-<div class="w-8 h-8 rounded-full bg-secondary-container flex items-center justify-center text-on-secondary-container">
-<span class="material-symbols-outlined text-[18px]">local_shipping</span>
+<div class="bg-surface-container-lowest p-5 sm:p-6 lg:p-8 rounded-xl shadow-sm space-y-5 sm:space-y-6">
+<div class="flex items-start gap-3">
+<div class="w-10 h-10 rounded-full bg-secondary-container flex items-center justify-center text-on-secondary-container flex-shrink-0">
+<span class="material-symbols-outlined text-[20px]">local_shipping</span>
 </div>
-<div>
+<div class="min-w-0">
 <h2 class="font-headline-sm text-headline-sm text-primary">Metode Ekspedisi &amp; Kurir</h2>
-<p class="font-body-sm text-body-sm text-on-surface-variant">Pilihan logistik terpercaya dengan penanganan busana eksklusif</p>
+<p class="font-body-sm text-body-sm text-on-surface-variant mt-0.5">Pilihan logistik terpercaya dengan penanganan busana eksklusif</p>
 </div>
 </div>
 <!-- Shipping Cards Group -->
-<div class="space-y-3.5" id="shipping-options-group">
+<div class="space-y-3" id="shipping-options-group" role="radiogroup" aria-label="Metode ekspedisi">
 <!-- Option 1: JNE (Default Active) -->
 <label class="shipping-option block cursor-pointer group">
 <input checked="" class="peer sr-only" name="shipping_service" type="radio" value="jne">
-<div class="p-4 lg:p-5 rounded-xl bg-surface-container-low peer-checked:bg-surface-container-highest transition-all duration-200 flex items-center justify-between shadow-sm">
-<div class="flex items-center gap-4">
-<div class="w-6 h-6 rounded-full bg-surface-container flex items-center justify-center group-hover:scale-105 transition-transform">
-<div class="w-2.5 h-2.5 rounded-full bg-primary shipping-indicator"></div>
+<div class="min-h-[72px] p-4 sm:p-5 rounded-xl bg-surface-container-low ring-1 ring-transparent peer-checked:bg-surface-container-highest peer-checked:ring-secondary/40 peer-focus-visible:ring-2 peer-focus-visible:ring-primary transition-all duration-200 flex items-start gap-3.5 sm:gap-4 shadow-sm">
+<div class="w-6 h-6 mt-0.5 rounded-full border-2 border-outline-variant bg-surface-container-lowest flex items-center justify-center flex-shrink-0 group-hover:scale-105 transition-transform">
+<div class="w-3 h-3 rounded-full bg-primary shipping-indicator"></div>
 </div>
-<div>
-<div class="flex items-center gap-2">
-<span class="font-body-md text-body-md font-semibold text-primary">JNE Reguler / YES</span>
-<span class="px-2 py-0.5 rounded bg-secondary-container text-on-secondary-container font-label-caps-sm text-label-caps-sm font-bold uppercase tracking-wider" id="co-jne-badge">Bebas Ongkir</span>
+<div class="flex-1 min-w-0">
+<div class="flex items-start justify-between gap-3">
+<div class="flex flex-wrap items-center gap-x-2 gap-y-1.5 min-w-0">
+<span class="font-body-md text-body-md font-semibold text-primary leading-snug">JNE Reguler / YES</span>
+<span class="px-2 py-1 rounded bg-secondary-container text-on-secondary-container font-label-caps-sm text-label-caps-sm font-bold uppercase tracking-wider whitespace-nowrap" id="co-jne-badge">Bebas Ongkir</span>
 </div>
-<p class="font-body-sm text-body-sm text-on-surface-variant mt-0.5">Estimasi 1 - 2 Hari Kerja • Kurir Khusus Kain Halus</p>
-</div>
-</div>
-<div class="text-right">
+<div class="text-right flex-shrink-0 leading-tight">
 <span class="line-through font-body-sm text-body-sm text-outline block" id="co-jne-old">Rp22.000</span>
-<span class="font-body-md text-body-md font-bold text-secondary" id="co-jne-now">Rp0</span>
+<span class="font-body-md text-body-md font-bold text-secondary whitespace-nowrap" id="co-jne-now">Rp0</span>
+</div>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant mt-1.5">Estimasi 1 - 2 Hari Kerja • Kurir Khusus Kain Halus</p>
 </div>
 </div>
 </label>
 <!-- Option 2: SiCepat -->
 <label class="shipping-option block cursor-pointer group">
 <input class="peer sr-only" name="shipping_service" type="radio" value="sicepat">
-<div class="p-4 lg:p-5 rounded-xl bg-surface-container-low peer-checked:bg-surface-container-highest transition-all duration-200 flex items-center justify-between shadow-sm">
-<div class="flex items-center gap-4">
-<div class="w-6 h-6 rounded-full bg-surface-container flex items-center justify-center group-hover:scale-105 transition-transform">
-<div class="w-2.5 h-2.5 rounded-full bg-transparent shipping-indicator"></div>
+<div class="min-h-[72px] p-4 sm:p-5 rounded-xl bg-surface-container-low ring-1 ring-transparent peer-checked:bg-surface-container-highest peer-checked:ring-secondary/40 peer-focus-visible:ring-2 peer-focus-visible:ring-primary transition-all duration-200 flex items-start gap-3.5 sm:gap-4 shadow-sm">
+<div class="w-6 h-6 mt-0.5 rounded-full border-2 border-outline-variant bg-surface-container-lowest flex items-center justify-center flex-shrink-0 group-hover:scale-105 transition-transform">
+<div class="w-3 h-3 rounded-full bg-transparent shipping-indicator"></div>
 </div>
-<div>
-<div class="flex items-center gap-2">
-<span class="font-body-md text-body-md font-semibold text-primary">SiCepat Best Express</span>
-<span class="px-2 py-0.5 rounded bg-surface-container-high text-on-surface font-label-caps-sm text-label-caps-sm uppercase tracking-wider">Next Day</span>
+<div class="flex-1 min-w-0">
+<div class="flex items-start justify-between gap-3">
+<div class="flex flex-wrap items-center gap-x-2 gap-y-1.5 min-w-0">
+<span class="font-body-md text-body-md font-semibold text-primary leading-snug">SiCepat Best Express</span>
+<span class="px-2 py-1 rounded bg-surface-container-high text-on-surface font-label-caps-sm text-label-caps-sm uppercase tracking-wider whitespace-nowrap">Next Day</span>
 </div>
-<p class="font-body-sm text-body-sm text-on-surface-variant mt-0.5">Besok Sampai Sebelum Pukul 18.00 WIB</p>
+<div class="text-right flex-shrink-0 leading-tight">
+<span class="font-body-md text-body-md font-bold text-primary whitespace-nowrap">Rp25.000</span>
 </div>
 </div>
-<div class="text-right">
-<span class="font-body-md text-body-md font-bold text-primary">Rp25.000</span>
+<p class="font-body-sm text-body-sm text-on-surface-variant mt-1.5">Besok Sampai Sebelum Pukul 18.00 WIB</p>
 </div>
 </div>
 </label>
 <!-- Option 3: Paxel Instant -->
 <label class="shipping-option block cursor-pointer group">
 <input class="peer sr-only" name="shipping_service" type="radio" value="paxel">
-<div class="p-4 lg:p-5 rounded-xl bg-surface-container-low peer-checked:bg-surface-container-highest transition-all duration-200 flex items-center justify-between shadow-sm">
-<div class="flex items-center gap-4">
-<div class="w-6 h-6 rounded-full bg-surface-container flex items-center justify-center group-hover:scale-105 transition-transform">
-<div class="w-2.5 h-2.5 rounded-full bg-transparent shipping-indicator"></div>
+<div class="min-h-[72px] p-4 sm:p-5 rounded-xl bg-surface-container-low ring-1 ring-transparent peer-checked:bg-surface-container-highest peer-checked:ring-secondary/40 peer-focus-visible:ring-2 peer-focus-visible:ring-primary transition-all duration-200 flex items-start gap-3.5 sm:gap-4 shadow-sm">
+<div class="w-6 h-6 mt-0.5 rounded-full border-2 border-outline-variant bg-surface-container-lowest flex items-center justify-center flex-shrink-0 group-hover:scale-105 transition-transform">
+<div class="w-3 h-3 rounded-full bg-transparent shipping-indicator"></div>
 </div>
-<div>
-<div class="flex items-center gap-2">
-<span class="font-body-md text-body-md font-semibold text-primary">Paxel Instant / Sameday</span>
-<span class="px-2 py-0.5 rounded bg-surface-container-high text-on-surface font-label-caps-sm text-label-caps-sm uppercase tracking-wider">Jabodetabek</span>
+<div class="flex-1 min-w-0">
+<div class="flex items-start justify-between gap-3">
+<div class="flex flex-wrap items-center gap-x-2 gap-y-1.5 min-w-0">
+<span class="font-body-md text-body-md font-semibold text-primary leading-snug">Paxel Instant / Sameday</span>
+<span class="px-2 py-1 rounded bg-surface-container-high text-on-surface font-label-caps-sm text-label-caps-sm uppercase tracking-wider whitespace-nowrap">Jabodetabek</span>
 </div>
-<p class="font-body-sm text-body-sm text-on-surface-variant mt-0.5">Tiba hari ini dalam kurun waktu 4-6 jam</p>
+<div class="text-right flex-shrink-0 leading-tight">
+<span class="font-body-md text-body-md font-bold text-primary whitespace-nowrap">Rp35.000</span>
 </div>
 </div>
-<div class="text-right">
-<span class="font-body-md text-body-md font-bold text-primary">Rp35.000</span>
+<p class="font-body-sm text-body-sm text-on-surface-variant mt-1.5">Tiba hari ini dalam kurun waktu 4-6 jam</p>
 </div>
 </div>
 </label>
 </div>
 <!-- Kemasan Kado Spesial -->
-<div class="mt-6 pt-6 bg-surface-container-low p-5 rounded-xl flex items-start gap-4">
-<input checked="" class="w-5 h-5 mt-1 rounded bg-surface-container text-primary accent-primary cursor-pointer" id="gift-box-option" type="checkbox">
-<div class="flex-1">
-<div class="flex items-center justify-between">
-<label class="font-body-md text-body-md font-semibold text-primary cursor-pointer flex items-center gap-2" for="gift-box-option">
-<span class="material-symbols-outlined text-secondary text-[20px]">featured_seasonal_and_gifts</span>
-                    Kemasan Kado Yarka + Kartu Ucapan Personal
-                  </label>
-<span class="font-label-caps-sm text-label-caps-sm text-secondary font-bold uppercase tracking-wider bg-secondary-container px-2 py-0.5 rounded">Gratis</span>
-</div>
-<p class="font-body-sm text-body-sm text-on-surface-variant mt-1">
-                  Dikemas rapi dengan kartu ucapan personal, siap diberikan sebagai hantaran atau kado tersayang.
-                </p>
-<div class="mt-3">
-<input class="w-full h-10 px-3.5 bg-surface-container-lowest rounded-lg font-body-sm text-body-sm text-primary placeholder:text-outline focus:outline-none" placeholder="Tuliskan ucapan kado personal (maks. 120 kata)..." type="text" id="co-kado">
-</div>
+<div class="bg-surface-container-low p-4 sm:p-5 rounded-xl">
+<label class="flex items-start gap-3.5 sm:gap-4 cursor-pointer min-h-[44px]" for="gift-box-option">
+<input checked="" class="w-6 h-6 mt-0.5 flex-shrink-0 rounded bg-surface-container text-primary accent-primary cursor-pointer" id="gift-box-option" type="checkbox">
+<span class="flex-1 min-w-0 block">
+<span class="flex items-start gap-2">
+<span class="material-symbols-outlined text-secondary text-[20px] flex-shrink-0 mt-px">featured_seasonal_and_gifts</span>
+<span class="flex flex-wrap items-center gap-x-2 gap-y-1.5 min-w-0">
+<span class="font-body-md text-body-md font-semibold text-primary leading-snug">Kemasan Kado Yarka + Kartu Ucapan Personal</span>
+<span class="font-label-caps-sm text-label-caps-sm text-secondary font-bold uppercase tracking-wider bg-secondary-container px-2 py-1 rounded whitespace-nowrap">Gratis</span>
+</span>
+</span>
+<span class="block font-body-sm text-body-sm text-on-surface-variant mt-1.5">Dikemas rapi dengan kartu ucapan personal, siap diberikan sebagai hantaran atau kado tersayang.</span>
+</span>
+</label>
+<div class="mt-3 sm:pl-10">
+<input class="w-full h-12 px-4 bg-surface-container-lowest rounded-lg font-body-sm text-[16px] leading-6 md:text-body-sm text-primary placeholder:text-outline focus:outline-none focus:ring-1 focus:ring-secondary/50 shadow-sm" placeholder="Tuliskan ucapan kado personal (maks. 120 kata)..." type="text" id="co-kado" aria-label="Ucapan kado personal">
 </div>
 </div>
 </div>
 </div>
 <!-- RIGHT COLUMN (Approx 40% -> 5 Cols out of 12, Sticky Panel) -->
-<div class="lg:col-span-5 lg:sticky lg:top-28 space-y-6">
+<div class="lg:col-span-5 lg:sticky lg:top-28 space-y-5 sm:space-y-6">
 <!-- Ringkasan Pesanan Card -->
-<div class="bg-surface-container-lowest p-6 lg:p-7 rounded-xl shadow-md">
-<div class="flex items-center justify-between pb-4 mb-4">
+<div class="bg-surface-container-lowest p-5 sm:p-6 lg:p-7 rounded-xl shadow-md">
+<div class="flex items-center justify-between gap-3 mb-4 sm:mb-5">
 <h2 class="font-headline-sm text-headline-sm text-primary">Ringkasan Keranjang</h2>
-<span class="font-label-caps-sm text-label-caps-sm text-on-surface-variant uppercase tracking-widest bg-surface-container px-2.5 py-1 rounded" id="co-count">0 Produk</span>
+<span class="font-label-caps-sm text-label-caps-sm text-on-surface-variant uppercase tracking-widest bg-surface-container px-2.5 py-1 rounded whitespace-nowrap" id="co-count">0 Produk</span>
 </div>
 <!-- Cart Items Shelf -->
 <div class="space-y-3 mb-6 max-h-[420px] overflow-y-auto pr-1" id="co-items"></div><div id="co-empty" class="mb-6 rounded-lg bg-surface-container-low p-6 text-center flex flex-col items-center gap-3" style="display:none"><span class="material-symbols-outlined text-outline text-[36px]">shopping_bag</span><p class="font-body-md text-body-md text-primary font-medium">Keranjang Anda masih kosong</p><p class="font-body-sm text-body-sm text-on-surface-variant">Pilih produk favorit di katalog, lalu kembali ke halaman ini.</p><a href="katalog.html" class="inline-flex items-center px-6 h-11 bg-primary text-on-primary rounded font-label-caps-lg text-label-caps-lg uppercase tracking-wider hover:bg-primary-container transition-colors">Mulai Belanja</a></div>
 <!-- Promo Coupon Input & Active Badge -->
 
 <!-- Price Breakdown Calculation -->
-<div class="space-y-3 pb-5 mb-5 bg-surface-container-low p-4 rounded-xl">
-<div class="flex justify-between items-center font-body-sm text-body-sm text-on-surface-variant">
+<div class="space-y-3 mb-5 bg-surface-container-low p-4 sm:p-5 rounded-xl">
+<div class="flex justify-between items-start gap-3 font-body-sm text-body-sm text-on-surface-variant">
 <span id="co-sub-label">Subtotal Produk (2 Item)</span>
 <span class="font-medium text-primary" id="co-sub">Rp618.000</span>
 </div>
 
-<div class="flex justify-between items-center font-body-sm text-body-sm text-on-surface-variant">
+<div class="flex justify-between items-start gap-3 font-body-sm text-body-sm text-on-surface-variant">
 <div class="flex items-center gap-1">
 <span id="co-ship-name">Biaya Pengiriman</span>
 <span class="material-symbols-outlined text-[14px] text-outline" title="Tarif reguler JNE">info</span>
 </div>
-<div class="text-right" id="co-ship">
+<div class="text-right flex-shrink-0" id="co-ship">
 <span class="line-through text-outline text-[12px] mr-1.5">Rp22.000</span>
 <span class="font-bold text-secondary">Bebas Ongkir!</span>
 </div>
 </div>
-<div class="flex justify-between items-center font-body-sm text-body-sm text-on-surface-variant">
+<div class="flex justify-between items-start gap-3 font-body-sm text-body-sm text-on-surface-variant">
 <span>Asuransi Pengiriman Produk</span>
 <span class="font-medium text-primary" id="co-ins">Rp2.500</span>
 </div>
 <!-- Grand Total -->
-<div class="pt-3.5 mt-2 bg-surface-container p-3 rounded-lg flex justify-between items-baseline">
+<div class="mt-2 bg-surface-container p-4 rounded-lg flex justify-between items-center gap-3">
 <div>
 <span class="font-label-caps-sm text-label-caps-sm text-on-surface-variant uppercase tracking-widest block font-bold">Total Pembayaran</span>
-<span class="font-body-sm text-body-sm text-outline text-[11px]">Termasuk PPN &amp; Biaya Penanganan</span>
+<span class="font-body-sm text-body-sm text-outline text-[12px] leading-snug block mt-0.5">Termasuk PPN &amp; Biaya Penanganan</span>
 </div>
-<div class="text-right">
-<span class="font-headline-sm text-headline-sm text-primary font-bold tracking-tight" id="co-total">Rp620.500</span>
+<div class="text-right flex-shrink-0">
+<span class="font-headline-sm text-headline-sm text-primary font-bold tracking-tight whitespace-nowrap" id="co-total">Rp620.500</span>
 </div>
 </div>
 </div>
 <!-- Primary Luxury CTA Button -->
-<a class="w-full h-14 bg-primary text-on-primary rounded-lg font-label-caps-lg text-label-caps-lg uppercase tracking-widest flex items-center justify-center gap-3 shadow-lg hover:bg-primary-container transition-all duration-300 group" href="pembayaran.html" id="co-next">
+<a class="w-full h-14 px-4 bg-primary text-on-primary rounded-lg font-label-caps-lg text-label-caps-lg uppercase tracking-wider sm:tracking-widest flex items-center justify-center gap-3 shadow-lg hover:bg-primary-container transition-all duration-300 group" href="pembayaran.html" id="co-next">
 <span class="material-symbols-outlined text-[20px] group-hover:scale-110 transition-transform">lock</span>
 <span>Lanjut ke Pembayaran</span>
 <span class="material-symbols-outlined text-[18px] group-hover:translate-x-1 transition-transform">arrow_forward</span>
 </a><p id="co-error" role="alert" class="hidden mt-3 text-center font-body-sm text-body-sm text-error"></p>
 <!-- Security Trust Note -->
-<div class="mt-3.5 text-center flex items-center justify-center gap-2 text-outline">
-<span class="material-symbols-outlined text-[16px] text-secondary">verified_user</span>
-<span class="font-label-caps-sm text-label-caps-sm uppercase tracking-wider text-[10px]">Enkripsi SSL 256-Bit Standar Perbankan Terlindungi</span>
+<div class="mt-4 text-center flex items-start justify-center gap-2 text-outline px-2">
+<span class="material-symbols-outlined text-[16px] text-secondary flex-shrink-0">verified_user</span>
+<span class="font-label-caps-sm text-label-caps-sm uppercase tracking-wider text-[10px] leading-4">Enkripsi SSL 256-Bit Standar Perbankan Terlindungi</span>
 </div>
 </div>
 <!-- Trust Badges & Guarantees -->
-<div class="bg-surface-container-low p-5 rounded-xl space-y-3.5 shadow-xs">
+<div class="bg-surface-container-low p-5 sm:p-6 rounded-xl space-y-4 shadow-xs">
 <h4 class="font-label-caps-sm text-label-caps-sm text-on-surface uppercase font-bold tracking-widest text-center mb-2">Jaminan Belanja Butik Yarka</h4>
 <div class="flex items-start gap-3">
-<div class="w-7 h-7 rounded-full bg-secondary-container text-on-secondary-container flex items-center justify-center flex-shrink-0 mt-0.5">
-<span class="material-symbols-outlined text-[16px]">verified</span>
+<div class="w-9 h-9 rounded-full bg-secondary-container text-on-secondary-container flex items-center justify-center flex-shrink-0">
+<span class="material-symbols-outlined text-[18px]">verified</span>
 </div>
 <div>
 <p class="font-body-sm text-body-sm font-semibold text-primary leading-tight">Material Premium Teruji</p>
-<p class="font-body-sm text-body-sm text-on-surface-variant text-[12px] leading-tight mt-0.5">Garansi keaslian bahan busana bersertifikasi standar mutu butik.</p>
+<p class="font-body-sm text-body-sm text-on-surface-variant text-[13px] leading-snug mt-1">Garansi keaslian bahan busana bersertifikasi standar mutu butik.</p>
 </div>
 </div>
 <div class="flex items-start gap-3">
-<div class="w-7 h-7 rounded-full bg-secondary-container text-on-secondary-asi flex items-center justify-center flex-shrink-0 mt-0.5">
-<span class="material-symbols-outlined text-[16px]">published_with_changes</span>
+<div class="w-9 h-9 rounded-full bg-secondary-container text-on-secondary-container flex items-center justify-center flex-shrink-0">
+<span class="material-symbols-outlined text-[18px]">published_with_changes</span>
 </div>
 <div>
 <p class="font-body-sm text-body-sm font-semibold text-primary leading-tight">Garansi Tukar Ukuran 7 Hari</p>
-<p class="font-body-sm text-body-sm text-on-surface-variant text-[12px] leading-tight mt-0.5">Kurang pas? Layanan tukar ukuran gratis dan dipandu oleh concierge kami.</p>
+<p class="font-body-sm text-body-sm text-on-surface-variant text-[13px] leading-snug mt-1">Kurang pas? Layanan tukar ukuran gratis dan dipandu oleh concierge kami.</p>
 </div>
 </div>
 <div class="flex items-start gap-3">
-<div class="w-7 h-7 rounded-full bg-secondary-container text-on-secondary-asi flex items-center justify-center flex-shrink-0 mt-0.5">
-<span class="material-symbols-outlined text-[16px]">support_agent</span>
+<div class="w-9 h-9 rounded-full bg-secondary-container text-on-secondary-container flex items-center justify-center flex-shrink-0">
+<span class="material-symbols-outlined text-[18px]">support_agent</span>
 </div>
 <div>
 <p class="font-body-sm text-body-sm font-semibold text-primary leading-tight">Concierge WhatsApp Responsif</p>
-<p class="font-body-sm text-body-sm text-on-surface-variant text-[12px] leading-tight mt-0.5">Bantuan styling dan pertanyaan pesanan langsung bersama tim kami.</p>
+<p class="font-body-sm text-body-sm text-on-surface-variant text-[13px] leading-snug mt-1">Bantuan styling dan pertanyaan pesanan langsung bersama tim kami.</p>
 </div>
 </div>
 </div>

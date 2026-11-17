@@ -3,6 +3,26 @@
 a.bg-primary,button.bg-primary{background-color:#A67C6E}
 a.bg-primary:hover,button.bg-primary:hover{background-color:#8F6658}
 .font-headline-sm,.font-headline-md,.font-headline-lg,.font-headline-lg-mobile,.font-display-hero,.font-display-hero-mobile{font-weight:500}
+</style><style id="yarka-katalog-mobile">
+/* Ponsel & layar sentuh: kartu produk lebih lega, target sentuh lebih besar */
+@media (max-width:639px){
+  [data-produk] .p-3.5{padding:12px 12px 14px}
+  [data-produk] h3{font-size:14px;line-height:20px}
+  [data-produk] p.font-headline-sm{font-size:17px;line-height:22px;letter-spacing:-.01em;margin-top:4px}
+  [data-produk] .yk-swatches{gap:10px;padding-left:2px}
+  [data-produk] .yk-sw{width:18px;height:18px}
+  [data-produk] .yk-color-name{font-size:11px;line-height:15px;letter-spacing:.03em}
+}
+@media (hover:none),(max-width:639px){
+  [data-produk] .yk-sw{position:relative}
+  [data-produk] .yk-sw::before{content:"";position:absolute;inset:-5px;border-radius:9999px}
+  [data-produk] .yk-sw:hover{transform:none}
+  [data-produk] .wishlist-btn{width:36px;height:36px}
+  [data-produk] .wishlist-btn::after,[data-produk] .quick-add-btn::after{content:"";position:absolute;inset:-4px;border-radius:9999px}
+  /* Tambah Cepat: tanpa hover di layar sentuh -> tombol bulat yang selalu terlihat */
+  [data-produk] .quick-add-btn{transform:none;left:auto;right:10px;bottom:10px;width:36px;height:36px;padding:0;border-radius:9999px;font-size:0;letter-spacing:0;gap:0;box-shadow:0 6px 16px -6px rgba(26,26,26,.45)}
+  [data-produk] .quick-add-btn .material-symbols-outlined{font-size:18px}
+}
 </style><style id="yarka-warna-css">
 .yk-sw{width:16px;height:16px;border-radius:9999px;flex-shrink:0;cursor:pointer;box-shadow:inset 0 0 0 1px rgba(0,0,0,.14);transition:transform .15s ease,box-shadow .15s ease}
 .yk-sw:hover{transform:scale(1.18)}
@@ -12,7 +32,7 @@ a.bg-primary:hover,button.bg-primary:hover{background-color:#8F6658}
 [data-produk] img.yk-img.is-fading{opacity:.35}
 </style></head><body class="bg-surface font-body-md text-on-surface antialiased"><header class="fixed top-0 left-0 right-0 z-50"><div class="bg-primary text-on-primary py-2 px-margin-mobile lg:px-margin text-center tracking-widest uppercase font-label-caps-sm text-label-caps-sm"><p class="truncate">Gratis Pengiriman ke Seluruh Indonesia untuk Pesanan di atas Rp500.000</p></div><div class="h-20 bg-surface/90 backdrop-blur-md border-b border-outline-variant/60 shadow-[0_10px_30px_-10px_rgba(26,26,26,0.05)]"><div class="max-w-[1440px] mx-auto h-full px-margin-mobile lg:px-margin flex items-center justify-between gap-space-md"><div class="relative z-10 flex items-center gap-space-md lg:w-1/3"><button aria-label="Menu Navigasi" class="lg:hidden text-on-surface p-1 hover:text-on-surface-variant transition-colors" id="mobile-nav-toggle" type="button"><span class="material-symbols-outlined text-[24px]">menu</span></button><nav class="hidden lg:flex items-center gap-4 xl:gap-7 whitespace-nowrap" data-active-classes="text-primary border-b border-primary pb-0.5"><a aria-current="page" class="font-label-caps-lg text-label-caps-lg uppercase transition-colors text-primary border-b border-primary pb-0.5" data-path="koleksi" href="#">Koleksi</a><a class="text-on-surface-variant font-label-caps-lg text-label-caps-lg uppercase transition-colors hover:text-on-surface" data-path="cerita" href="#"><span class="xl:hidden">Cerita</span><span class="hidden xl:inline">Cerita Kami</span></a></nav></div><div class="flex items-center justify-center lg:w-1/3"><a class="flex items-center gap-space-sm group" data-path="beranda" href="#"><img alt="Yarka Moslem Wear" class="h-10 w-auto object-contain" src="assets/img/logo.png"></a></div><div class="flex items-center justify-end gap-space-md lg:gap-space-lg lg:w-1/3"><a aria-label="Wishlist" class="relative text-on-surface hover:text-on-surface-variant transition-colors p-1" data-path="wishlist" href="#"><span class="material-symbols-outlined text-[22px]">favorite</span><span class="absolute top-0 right-0 w-4 h-4 bg-secondary text-on-secondary rounded-full font-label-caps-sm text-label-caps-sm flex items-center justify-center leading-none" style="display:none"></span></a><button aria-label="Keranjang Belanja" class="relative text-on-surface hover:text-on-surface-variant transition-colors p-1" id="cart-drawer-toggle" type="button"><span class="material-symbols-outlined text-[22px]">shopping_bag</span><span class="absolute top-0 right-0 w-4 h-4 bg-primary text-on-primary rounded-full font-label-caps-sm text-label-caps-sm flex items-center justify-center leading-none" style="display:none"></span></button><a aria-label="Akun Profil" class="flex items-center gap-space-xs pl-1 text-on-surface hover:text-on-surface-variant transition-colors" data-path="akun" href="#"><img alt="Profile" class="w-8 h-8 rounded-full object-cover border border-outline-variant/60" src="assets/img/foto/look-trio-studio.jpg"></a></div></div></div></header><div class="fixed inset-0 bg-inverse-surface/40 backdrop-blur-xs z-50 hidden transition-opacity" id="cart-overlay"></div><aside class="fixed top-0 right-0 bottom-0 w-full sm:w-[440px] bg-surface-container-lowest z-50 transform translate-x-full transition-transform duration-300 ease-in-out shadow-[0_24px_48px_-12px_rgba(26,26,26,0.08)] flex flex-col" id="cart-drawer"><div class="h-20 px-space-lg flex items-center justify-between border-b border-outline-variant/40"><div class="flex items-center gap-space-sm"><span class="material-symbols-outlined text-primary text-[24px]">shopping_bag</span><h2 class="font-headline-sm text-headline-sm text-primary">Keranjang Butik</h2><span class="bg-surface-container px-2 py-0.5 rounded text-on-surface-variant font-label-caps-sm text-label-caps-sm">2 Item</span></div><button aria-label="Tutup Keranjang" class="text-on-surface-variant hover:text-primary transition-colors p-1.5" id="cart-drawer-close" type="button"><span class="material-symbols-outlined text-[22px]">close</span></button></div><div class="bg-secondary-container/60 px-space-lg py-2.5 flex items-center justify-between border-b border-secondary-container"><div class="flex items-center gap-2"><span class="material-symbols-outlined text-secondary text-[20px]">local_shipping</span><p class="font-label-text text-label-text text-on-secondary-container">Tersisa <strong>Rp21.000</strong> untuk Bebas Ongkir</p></div><span class="font-label-caps-sm text-label-caps-sm text-secondary uppercase font-semibold">96%</span></div><div class="flex-1 overflow-y-auto p-space-lg space-y-space-md"><div class="flex gap-space-md pb-space-md border-b border-outline-variant/30"><div class="w-20 h-24 bg-surface-container-high rounded overflow-hidden flex-shrink-0"><div class="w-full h-full bg-surface-container flex items-center justify-center text-outline-variant"><span class="material-symbols-outlined text-[28px]">styler</span></div></div><div class="flex-1 flex flex-col justify-between"><div><div class="flex justify-between items-start"><h3 class="font-body-md text-body-md text-primary font-medium line-clamp-1">Otba Abaya</h3><button class="text-outline hover:text-error transition-colors"><span class="material-symbols-outlined text-[18px]">delete</span></button></div><p class="font-label-caps-sm text-label-caps-sm text-on-surface-variant uppercase mt-1">Terracotta • Size L</p></div><div class="flex items-center justify-between mt-2"><div class="flex items-center border border-outline-variant rounded"><button class="px-2 py-0.5 text-on-surface-variant hover:text-primary transition-colors">−</button><span class="px-2 text-label-text font-label-text text-primary">1</span><button class="px-2 py-0.5 text-on-surface-variant hover:text-primary transition-colors">+</button></div><span class="font-body-md text-body-md text-primary font-semibold">Rp479.000</span></div></div></div></div><div class="p-space-lg bg-surface border-t border-outline-variant/40 space-y-space-sm"><div class="flex items-center justify-between text-on-surface-variant font-body-sm text-body-sm"><span>Subtotal Produk</span><span class="text-primary font-medium">Rp479.000</span></div><div class="flex items-center justify-between text-on-surface-variant font-body-sm text-body-sm"><span>Estimasi Pajak &amp; Ongkir</span><span class="text-secondary font-medium">Dihitung saat checkout</span></div><div class="flex items-center justify-between pt-space-xs border-t border-outline-variant/30 font-headline-sm text-headline-sm text-primary"><span>Total</span><span>Rp479.000</span></div><a class="block w-full text-center bg-primary text-on-primary py-3.5 rounded font-label-caps-lg text-label-caps-lg uppercase tracking-wider hover:bg-primary-container transition-colors" data-path="checkout" href="#">Lanjut ke Pembayaran</a><p class="text-center font-label-caps-sm text-label-caps-sm text-outline uppercase">Material Premium Original Yarka</p></div></aside><main class="w-full pt-28 bg-surface"><div class="flex flex-col w-full">
 <!-- Editorial Header & Breadcrumb -->
-<section class="max-w-[1440px] mx-auto w-full px-margin-mobile lg:px-margin pt-4 pb-10">
+<section class="max-w-[1440px] mx-auto w-full px-margin-mobile lg:px-margin pt-4 pb-6 sm:pb-10">
 <nav class="flex items-center gap-2 text-on-surface-variant mb-6 font-label-caps-sm text-label-caps-sm uppercase tracking-widest">
 <a class="hover:text-primary transition-colors" href="#">Beranda</a>
 <span class="text-outline-variant font-normal">/</span>
@@ -21,7 +41,7 @@ a.bg-primary:hover,button.bg-primary:hover{background-color:#8F6658}
 <div class="flex flex-col md:flex-row md:items-end justify-between gap-6 pb-8">
 <div class="max-w-2xl space-y-3">
 <span class="inline-block px-3 py-1 bg-secondary-container text-on-secondary-container font-label-caps-sm text-label-caps-sm uppercase tracking-widest rounded-full">Koleksi Yarka</span>
-<h1 class="font-headline-lg text-headline-lg text-primary tracking-tight">
+<h1 class="font-headline-lg text-headline-lg max-sm:text-[34px] max-sm:leading-[40px] text-primary tracking-tight">
           Koleksi Busana &amp; Hijab
         </h1>
 <p class="font-body-md text-body-md text-on-surface-variant leading-relaxed">Abaya, bergo, dan khimar Yarka dengan pilihan warna lengkap. Pilih kategori, lalu klik titik warna di setiap produk untuk melihat warnanya.</p>
@@ -34,7 +54,7 @@ a.bg-primary:hover,button.bg-primary:hover{background-color:#8F6658}
 </div>
 </div>
 <!-- Quick Category Horizontal Pills -->
-<div class="flex items-center gap-2 overflow-x-auto pb-2 scrollbar-none"><button class="bg-primary text-on-primary px-5 py-2 rounded font-label-caps-sm text-label-caps-sm uppercase tracking-wider transition-all whitespace-nowrap shadow-sm" data-filter="semua">Semua Koleksi</button>
+<div class="flex items-center gap-2 overflow-x-auto pb-2 scrollbar-none -mx-margin-mobile px-margin-mobile lg:mx-0 lg:px-0 max-sm:[&>button]:min-h-[40px]"><button class="bg-primary text-on-primary px-5 py-2 rounded font-label-caps-sm text-label-caps-sm uppercase tracking-wider transition-all whitespace-nowrap shadow-sm" data-filter="semua">Semua Koleksi</button>
 <button class="bg-surface-container text-on-surface-variant hover:text-primary hover:bg-surface-container-high px-5 py-2 rounded font-label-caps-sm text-label-caps-sm uppercase tracking-wider transition-all whitespace-nowrap" data-filter="abaya">Abaya</button>
 <button class="bg-surface-container text-on-surface-variant hover:text-primary hover:bg-surface-container-high px-5 py-2 rounded font-label-caps-sm text-label-caps-sm uppercase tracking-wider transition-all whitespace-nowrap" data-filter="set">Set</button>
 <button class="bg-surface-container text-on-surface-variant hover:text-primary hover:bg-surface-container-high px-5 py-2 rounded font-label-caps-sm text-label-caps-sm uppercase tracking-wider transition-all whitespace-nowrap" data-filter="bergo-tali">Bergo Tali</button>
@@ -50,20 +70,20 @@ a.bg-primary:hover,button.bg-primary:hover{background-color:#8F6658}
 <!-- Catalog Grid + Sorting Bar -->
 <main class="space-y-6">
 <!-- Sorting Bar & Active Filter Badges -->
-<div class="bg-surface-container-lowest p-4 rounded-xl shadow-sm flex flex-col sm:flex-row sm:items-center justify-between gap-4">
+<div class="bg-surface-container-lowest px-4 py-3 sm:p-4 rounded-xl shadow-sm flex flex-row items-center justify-between gap-3 sm:gap-4">
 <!-- Active Tags -->
-<div class="flex flex-wrap items-center gap-2">
-<span class="font-label-caps-sm text-label-caps-sm uppercase text-outline mr-1">Aktif:</span><span id="active-filter-label" class="font-label-caps-sm text-label-caps-sm uppercase tracking-wider text-primary">Semua Koleksi</span>
+<div class="flex items-center gap-2 min-w-0">
+<span class="font-label-caps-sm text-label-caps-sm uppercase text-outline mr-1 shrink-0">Aktif:</span><span id="active-filter-label" class="truncate font-label-caps-sm text-label-caps-sm uppercase tracking-wider text-primary">Semua Koleksi</span>
 
 
 
 </div>
 <!-- Sort Selector -->
-<div class="flex items-center gap-2 self-end sm:self-auto flex-shrink-0">
-<label class="font-label-caps-sm text-label-caps-sm uppercase text-outline whitespace-nowrap" for="sort-select">Urutkan:</label>
+<div class="flex items-center gap-2 flex-shrink-0">
+<label class="max-sm:sr-only font-label-caps-sm text-label-caps-sm uppercase text-outline whitespace-nowrap" for="sort-select">Urutkan:</label>
 <div class="relative bg-surface-container-low rounded">
-<select class="appearance-none bg-transparent pl-3 pr-8 py-2 font-label-text text-label-text text-primary outline-none cursor-pointer" id="sort-select"><option value="newest">Rilis Terbaru</option><option value="price-asc">Harga Terendah</option><option value="price-desc">Harga Tertinggi</option><option value="name">Nama A–Z</option></select>
-<span class="material-symbols-outlined absolute right-2 top-2.5 text-outline pointer-events-none text-[18px]">expand_more</span>
+<select class="appearance-none bg-transparent pl-3 pr-8 py-2 max-sm:min-h-[40px] font-label-text text-label-text text-primary outline-none cursor-pointer" id="sort-select"><option value="newest">Rilis Terbaru</option><option value="price-asc">Harga Terendah</option><option value="price-desc">Harga Tertinggi</option><option value="name">Nama A–Z</option></select>
+<span class="material-symbols-outlined absolute right-2 top-1/2 -translate-y-1/2 text-outline pointer-events-none text-[18px]">expand_more</span>
 </div>
 </div>
 </div>
@@ -108,7 +128,7 @@ a.bg-primary:hover,button.bg-primary:hover{background-color:#8F6658}
 <div>
 <p class="font-label-caps-sm text-label-caps-sm uppercase text-secondary font-semibold">Abaya</p>
 <h3 class="font-body-md text-body-md text-primary font-medium line-clamp-1 mt-0.5">Hawa Abaya</h3>
-<p class="font-headline-sm text-headline-sm text-primary mt-1">Rp499.000 – 519.000</p>
+<p class="font-headline-sm text-headline-sm text-primary mt-1">Rp499.000 <span class="whitespace-nowrap">– 519.000</span></p>
 </div>
 <div class="flex flex-col items-start gap-1 pt-1">
 <div class="yk-swatches flex flex-wrap items-center gap-2 py-1" aria-label="4 pilihan warna"><button type="button" class="yk-sw is-on" style="background:#DFA1A2" title="Peony Pink" aria-label="Warna Peony Pink" aria-pressed="true" data-warna="Peony Pink"></button><button type="button" class="yk-sw" style="background:#577FB2" title="Blue Azure" aria-label="Warna Blue Azure" aria-pressed="false" data-warna="Blue Azure"></button><button type="button" class="yk-sw" style="background:#C7BB95" title="Khaki" aria-label="Warna Khaki" aria-pressed="false" data-warna="Khaki"></button><button type="button" class="yk-sw" style="background:#2F3237" title="Charcoal" aria-label="Warna Charcoal" aria-pressed="false" data-warna="Charcoal"></button></div>
@@ -130,7 +150,7 @@ a.bg-primary:hover,button.bg-primary:hover{background-color:#8F6658}
 <div>
 <p class="font-label-caps-sm text-label-caps-sm uppercase text-secondary font-semibold">Abaya</p>
 <h3 class="font-body-md text-body-md text-primary font-medium line-clamp-1 mt-0.5">Karaz Abaya</h3>
-<p class="font-headline-sm text-headline-sm text-primary mt-1">Rp479.000 – 499.000</p>
+<p class="font-headline-sm text-headline-sm text-primary mt-1">Rp479.000 <span class="whitespace-nowrap">– 499.000</span></p>
 </div>
 <div class="flex flex-col items-start gap-1 pt-1">
 <div class="yk-swatches flex flex-wrap items-center gap-2 py-1" aria-label="3 pilihan warna"><button type="button" class="yk-sw is-on" style="background:#4F6891" title="Moonlight Blue" aria-label="Warna Moonlight Blue" aria-pressed="true" data-warna="Moonlight Blue"></button><button type="button" class="yk-sw" style="background:#A77F88" title="Pale Mauve" aria-label="Warna Pale Mauve" aria-pressed="false" data-warna="Pale Mauve"></button><button type="button" class="yk-sw" style="background:#0A3E3C" title="Forest Biome" aria-label="Warna Forest Biome" aria-pressed="false" data-warna="Forest Biome"></button></div>
@@ -174,7 +194,7 @@ a.bg-primary:hover,button.bg-primary:hover{background-color:#8F6658}
 <div>
 <p class="font-label-caps-sm text-label-caps-sm uppercase text-secondary font-semibold">Bergo Tali</p>
 <h3 class="font-body-md text-body-md text-primary font-medium line-clamp-1 mt-0.5">Berlin Zela</h3>
-<p class="font-headline-sm text-headline-sm text-primary mt-1">Rp119.000 – 199.000</p>
+<p class="font-headline-sm text-headline-sm text-primary mt-1">Rp119.000 <span class="whitespace-nowrap">– 199.000</span></p>
 </div>
 <div class="flex flex-col items-start gap-1 pt-1">
 <div class="yk-swatches flex flex-wrap items-center gap-2 py-1" aria-label="7 pilihan warna"><button type="button" class="yk-sw is-on" style="background:#201F24" title="Black (Marbella)" aria-label="Warna Black (Marbella)" aria-pressed="true" data-warna="Black (Marbella)"></button><button type="button" class="yk-sw" style="background:#3E3344" title="Blackberry Glam" aria-label="Warna Blackberry Glam" aria-pressed="false" data-warna="Blackberry Glam"></button><button type="button" class="yk-sw" style="background:#CDB9A8" title="Khaki" aria-label="Warna Khaki" aria-pressed="false" data-warna="Khaki"></button><button type="button" class="yk-sw" style="background:#D4B5B3" title="Blush Pink" aria-label="Warna Blush Pink" aria-pressed="false" data-warna="Blush Pink"></button><button type="button" class="yk-sw" style="background:#904035" title="Burnt Clay" aria-label="Warna Burnt Clay" aria-pressed="false" data-warna="Burnt Clay"></button><button type="button" class="yk-sw" style="background:#232730" title="Black (Crinkle)" aria-label="Warna Black (Crinkle)" aria-pressed="false" data-warna="Black (Crinkle)"></button><button type="button" class="yk-sw" style="background:#ECEAEA" title="White (Crinkle)" aria-label="Warna White (Crinkle)" aria-pressed="false" data-warna="White (Crinkle)"></button></div>
@@ -196,7 +216,7 @@ a.bg-primary:hover,button.bg-primary:hover{background-color:#8F6658}
 <div>
 <p class="font-label-caps-sm text-label-caps-sm uppercase text-secondary font-semibold">Abaya</p>
 <h3 class="font-body-md text-body-md text-primary font-medium line-clamp-1 mt-0.5">Ruwa Abaya</h3>
-<p class="font-headline-sm text-headline-sm text-primary mt-1">Rp399.000 – 419.000</p>
+<p class="font-headline-sm text-headline-sm text-primary mt-1">Rp399.000 <span class="whitespace-nowrap">– 419.000</span></p>
 </div>
 <div class="flex flex-col items-start gap-1 pt-1">
 <div class="yk-swatches flex flex-wrap items-center gap-2 py-1" aria-label="5 pilihan warna"><button type="button" class="yk-sw is-on" style="background:#AF7F4F" title="Butterscotch" aria-label="Warna Butterscotch" aria-pressed="true" data-warna="Butterscotch"></button><button type="button" class="yk-sw" style="background:#687D76" title="Pale Teal" aria-label="Warna Pale Teal" aria-pressed="false" data-warna="Pale Teal"></button><button type="button" class="yk-sw" style="background:#5D5A49" title="Burnt Olive" aria-label="Warna Burnt Olive" aria-pressed="false" data-warna="Burnt Olive"></button><button type="button" class="yk-sw" style="background:#1B2735" title="Navy" aria-label="Warna Navy" aria-pressed="false" data-warna="Navy"></button><button type="button" class="yk-sw" style="background:#1D2527" title="Black" aria-label="Warna Black" aria-pressed="false" data-warna="Black"></button></div>
@@ -218,7 +238,7 @@ a.bg-primary:hover,button.bg-primary:hover{background-color:#8F6658}
 <div>
 <p class="font-label-caps-sm text-label-caps-sm uppercase text-secondary font-semibold">Abaya</p>
 <h3 class="font-body-md text-body-md text-primary font-medium line-clamp-1 mt-0.5">Ara Abaya</h3>
-<p class="font-headline-sm text-headline-sm text-primary mt-1">Rp399.000 – 419.000</p>
+<p class="font-headline-sm text-headline-sm text-primary mt-1">Rp399.000 <span class="whitespace-nowrap">– 419.000</span></p>
 </div>
 <div class="flex flex-col items-start gap-1 pt-1">
 <div class="yk-swatches flex flex-wrap items-center gap-2 py-1" aria-label="5 pilihan warna"><button type="button" class="yk-sw is-on" style="background:#8A977B" title="Sage Green" aria-label="Warna Sage Green" aria-pressed="true" data-warna="Sage Green"></button><button type="button" class="yk-sw" style="background:#9C6A45" title="Almond" aria-label="Warna Almond" aria-pressed="false" data-warna="Almond"></button><button type="button" class="yk-sw" style="background:#E5D3A1" title="Butter Yellow" aria-label="Warna Butter Yellow" aria-pressed="false" data-warna="Butter Yellow"></button><button type="button" class="yk-sw" style="background:#DFDFD7" title="Baby Powder" aria-label="Warna Baby Powder" aria-pressed="false" data-warna="Baby Powder"></button><button type="button" class="yk-sw" style="background:#23282C" title="Black" aria-label="Warna Black" aria-pressed="false" data-warna="Black"></button></div>
@@ -262,7 +282,7 @@ a.bg-primary:hover,button.bg-primary:hover{background-color:#8F6658}
 <div>
 <p class="font-label-caps-sm text-label-caps-sm uppercase text-secondary font-semibold">Bergo Tali</p>
 <h3 class="font-body-md text-body-md text-primary font-medium line-clamp-1 mt-0.5">Berlin Zhaa</h3>
-<p class="font-headline-sm text-headline-sm text-primary mt-1">Rp219.000 – 259.000</p>
+<p class="font-headline-sm text-headline-sm text-primary mt-1">Rp219.000 <span class="whitespace-nowrap">– 259.000</span></p>
 </div>
 <div class="flex flex-col items-start gap-1 pt-1">
 <div class="yk-swatches flex flex-wrap items-center gap-2 py-1" aria-label="9 pilihan warna"><button type="button" class="yk-sw is-on" style="background:#26304A" title="Navy" aria-label="Warna Navy" aria-pressed="true" data-warna="Navy"></button><button type="button" class="yk-sw" style="background:#E2BFD0" title="Icy Pink" aria-label="Warna Icy Pink" aria-pressed="false" data-warna="Icy Pink"></button><button type="button" class="yk-sw" style="background:#1F1F1F" title="Black" aria-label="Warna Black" aria-pressed="false" data-warna="Black"></button><button type="button" class="yk-sw" style="background:#D8C8B4" title="Summer Sand" aria-label="Warna Summer Sand" aria-pressed="false" data-warna="Summer Sand"></button><button type="button" class="yk-sw" style="background:#E9DEC0" title="Butter Yellow" aria-label="Warna Butter Yellow" aria-pressed="false" data-warna="Butter Yellow"></button><button type="button" class="yk-sw" style="background:#A9B395" title="Sage" aria-label="Warna Sage" aria-pressed="false" data-warna="Sage"></button><button type="button" class="yk-sw" style="background:#4E2128" title="Deep Mahogany" aria-label="Warna Deep Mahogany" aria-pressed="false" data-warna="Deep Mahogany"></button><button type="button" class="yk-sw" style="background:#A6A26C" title="Olive" aria-label="Warna Olive" aria-pressed="false" data-warna="Olive"></button><button type="button" class="yk-sw" style="background:#BFC2CE" title="Light Gray" aria-label="Warna Light Gray" aria-pressed="false" data-warna="Light Gray"></button></div>
@@ -284,7 +304,7 @@ a.bg-primary:hover,button.bg-primary:hover{background-color:#8F6658}
 <div>
 <p class="font-label-caps-sm text-label-caps-sm uppercase text-secondary font-semibold">Bergo Tali</p>
 <h3 class="font-body-md text-body-md text-primary font-medium line-clamp-1 mt-0.5">Berlin Zanera</h3>
-<p class="font-headline-sm text-headline-sm text-primary mt-1">Rp219.000 – 239.000</p>
+<p class="font-headline-sm text-headline-sm text-primary mt-1">Rp219.000 <span class="whitespace-nowrap">– 239.000</span></p>
 </div>
 <div class="flex flex-col items-start gap-1 pt-1">
 <div class="yk-swatches flex flex-wrap items-center gap-2 py-1" aria-label="8 pilihan warna"><button type="button" class="yk-sw is-on" style="background:#22324F" title="Navy" aria-label="Warna Navy" aria-pressed="true" data-warna="Navy"></button><button type="button" class="yk-sw" style="background:#D9A6AE" title="Blush Pink" aria-label="Warna Blush Pink" aria-pressed="false" data-warna="Blush Pink"></button><button type="button" class="yk-sw" style="background:#E8C8B6" title="Soft Peach" aria-label="Warna Soft Peach" aria-pressed="false" data-warna="Soft Peach"></button><button type="button" class="yk-sw" style="background:#A9C6E0" title="Soft Blue" aria-label="Warna Soft Blue" aria-pressed="false" data-warna="Soft Blue"></button><button type="button" class="yk-sw" style="background:#7FA88E" title="Basil Green" aria-label="Warna Basil Green" aria-pressed="false" data-warna="Basil Green"></button><button type="button" class="yk-sw" style="background:#9C7656" title="Macchiato" aria-label="Warna Macchiato" aria-pressed="false" data-warna="Macchiato"></button><button type="button" class="yk-sw" style="background:#A8A8A6" title="Dove" aria-label="Warna Dove" aria-pressed="false" data-warna="Dove"></button><button type="button" class="yk-sw" style="background:#1F1F1F" title="Black" aria-label="Warna Black" aria-pressed="false" data-warna="Black"></button></div>
@@ -328,7 +348,7 @@ a.bg-primary:hover,button.bg-primary:hover{background-color:#8F6658}
 <div>
 <p class="font-label-caps-sm text-label-caps-sm uppercase text-secondary font-semibold">Pashmina Instan</p>
 <h3 class="font-body-md text-body-md text-primary font-medium line-clamp-1 mt-0.5">Pastan Binar</h3>
-<p class="font-headline-sm text-headline-sm text-primary mt-1">Rp189.000 – 219.000</p>
+<p class="font-headline-sm text-headline-sm text-primary mt-1">Rp189.000 <span class="whitespace-nowrap">– 219.000</span></p>
 </div>
 <div class="flex flex-col items-start gap-1 pt-1">
 <div class="yk-swatches flex flex-wrap items-center gap-2 py-1" aria-label="7 pilihan warna"><button type="button" class="yk-sw is-on" style="background:#B5A0BF" title="Orchid Petal" aria-label="Warna Orchid Petal" aria-pressed="true" data-warna="Orchid Petal"></button><button type="button" class="yk-sw" style="background:#DCC3C9" title="Dusty Pink" aria-label="Warna Dusty Pink" aria-pressed="false" data-warna="Dusty Pink"></button><button type="button" class="yk-sw" style="background:#F1C1CD" title="Candy Pink" aria-label="Warna Candy Pink" aria-pressed="false" data-warna="Candy Pink"></button><button type="button" class="yk-sw" style="background:#CB7E74" title="Baked Clay" aria-label="Warna Baked Clay" aria-pressed="false" data-warna="Baked Clay"></button><button type="button" class="yk-sw" style="background:#D89C68" title="Apricot Tan" aria-label="Warna Apricot Tan" aria-pressed="false" data-warna="Apricot Tan"></button><button type="button" class="yk-sw" style="background:#23262B" title="Black" aria-label="Warna Black" aria-pressed="false" data-warna="Black"></button><button type="button" class="yk-sw" style="background:#28272C" title="Black Robe" aria-label="Warna Black Robe" aria-pressed="false" data-warna="Black Robe"></button></div>
@@ -394,7 +414,7 @@ a.bg-primary:hover,button.bg-primary:hover{background-color:#8F6658}
 <div>
 <p class="font-label-caps-sm text-label-caps-sm uppercase text-secondary font-semibold">Abaya</p>
 <h3 class="font-body-md text-body-md text-primary font-medium line-clamp-1 mt-0.5">Zen Abaya</h3>
-<p class="font-headline-sm text-headline-sm text-primary mt-1">Rp429.000 – 449.000</p>
+<p class="font-headline-sm text-headline-sm text-primary mt-1">Rp429.000 <span class="whitespace-nowrap">– 449.000</span></p>
 </div>
 <div class="flex flex-col items-start gap-1 pt-1">
 <div class="yk-swatches flex flex-wrap items-center gap-2 py-1" aria-label="9 pilihan warna"><button type="button" class="yk-sw is-on" style="background:#E6DCC8" title="Buttercream" aria-label="Warna Buttercream" aria-pressed="true" data-warna="Buttercream"></button><button type="button" class="yk-sw" style="background:#CFCBC3" title="Cool Grey" aria-label="Warna Cool Grey" aria-pressed="false" data-warna="Cool Grey"></button><button type="button" class="yk-sw" style="background:#EBCFC6" title="Peach Dust" aria-label="Warna Peach Dust" aria-pressed="false" data-warna="Peach Dust"></button><button type="button" class="yk-sw" style="background:#93AFCB" title="Baby Blue" aria-label="Warna Baby Blue" aria-pressed="false" data-warna="Baby Blue"></button><button type="button" class="yk-sw" style="background:#97A784" title="Sage Green" aria-label="Warna Sage Green" aria-pressed="false" data-warna="Sage Green"></button><button type="button" class="yk-sw" style="background:#C98A45" title="Soft Orange" aria-label="Warna Soft Orange" aria-pressed="false" data-warna="Soft Orange"></button><button type="button" class="yk-sw" style="background:#8A5A3B" title="Cocoa" aria-label="Warna Cocoa" aria-pressed="false" data-warna="Cocoa"></button><button type="button" class="yk-sw" style="background:#5C3B2E" title="Hazelnut Brown" aria-label="Warna Hazelnut Brown" aria-pressed="false" data-warna="Hazelnut Brown"></button><button type="button" class="yk-sw" style="background:#4D4F52" title="Gray White" aria-label="Warna Gray White" aria-pressed="false" data-warna="Gray White"></button></div>
@@ -416,7 +436,7 @@ a.bg-primary:hover,button.bg-primary:hover{background-color:#8F6658}
 <div>
 <p class="font-label-caps-sm text-label-caps-sm uppercase text-secondary font-semibold">Abaya</p>
 <h3 class="font-body-md text-body-md text-primary font-medium line-clamp-1 mt-0.5">Halia Abaya V.3</h3>
-<p class="font-headline-sm text-headline-sm text-primary mt-1">Rp429.000 – 449.000</p>
+<p class="font-headline-sm text-headline-sm text-primary mt-1">Rp429.000 <span class="whitespace-nowrap">– 449.000</span></p>
 </div>
 <div class="flex flex-col items-start gap-1 pt-1">
 <div class="yk-swatches flex flex-wrap items-center gap-2 py-1" aria-label="10 pilihan warna"><button type="button" class="yk-sw is-on" style="background:#A8A58A" title="Khaki" aria-label="Warna Khaki" aria-pressed="true" data-warna="Khaki"></button><button type="button" class="yk-sw" style="background:#9EA3A8" title="Quiet Gray" aria-label="Warna Quiet Gray" aria-pressed="false" data-warna="Quiet Gray"></button><button type="button" class="yk-sw" style="background:#2A3346" title="Midnight Sky" aria-label="Warna Midnight Sky" aria-pressed="false" data-warna="Midnight Sky"></button><button type="button" class="yk-sw" style="background:#4F6680" title="Denim Blue" aria-label="Warna Denim Blue" aria-pressed="false" data-warna="Denim Blue"></button><button type="button" class="yk-sw" style="background:#5A1F27" title="Deep Maroon" aria-label="Warna Deep Maroon" aria-pressed="false" data-warna="Deep Maroon"></button><button type="button" class="yk-sw" style="background:#5C4033" title="Americano" aria-label="Warna Americano" aria-pressed="false" data-warna="Americano"></button><button type="button" class="yk-sw" style="background:#4B3F30" title="Sour" aria-label="Warna Sour" aria-pressed="false" data-warna="Sour"></button><button type="button" class="yk-sw" style="background:#2E4A62" title="Prussian Blue" aria-label="Warna Prussian Blue" aria-pressed="false" data-warna="Prussian Blue"></button><span class="font-label-caps-sm text-label-caps-sm text-outline">+2</span></div>
@@ -438,7 +458,7 @@ a.bg-primary:hover,button.bg-primary:hover{background-color:#8F6658}
 <div>
 <p class="font-label-caps-sm text-label-caps-sm uppercase text-secondary font-semibold">Abaya</p>
 <h3 class="font-body-md text-body-md text-primary font-medium line-clamp-1 mt-0.5">Noora Abaya</h3>
-<p class="font-headline-sm text-headline-sm text-primary mt-1">Rp529.000 – 549.000</p>
+<p class="font-headline-sm text-headline-sm text-primary mt-1">Rp529.000 <span class="whitespace-nowrap">– 549.000</span></p>
 </div>
 <div class="flex flex-col items-start gap-1 pt-1">
 <div class="yk-swatches flex flex-wrap items-center gap-2 py-1" aria-label="9 pilihan warna"><button type="button" class="yk-sw is-on" style="background:#6E5363" title="Plum" aria-label="Warna Plum" aria-pressed="true" data-warna="Plum"></button><button type="button" class="yk-sw" style="background:#5A4438" title="Dark Mocha" aria-label="Warna Dark Mocha" aria-pressed="false" data-warna="Dark Mocha"></button><button type="button" class="yk-sw" style="background:#D6BBA6" title="Nude" aria-label="Warna Nude" aria-pressed="false" data-warna="Nude"></button><button type="button" class="yk-sw" style="background:#D9C9AE" title="Beige" aria-label="Warna Beige" aria-pressed="false" data-warna="Beige"></button><button type="button" class="yk-sw" style="background:#D9AFA8" title="Blush" aria-label="Warna Blush" aria-pressed="false" data-warna="Blush"></button><button type="button" class="yk-sw" style="background:#4A4A4C" title="Asphalt" aria-label="Warna Asphalt" aria-pressed="false" data-warna="Asphalt"></button><button type="button" class="yk-sw" style="background:#4F6680" title="Denim" aria-label="Warna Denim" aria-pressed="false" data-warna="Denim"></button><button type="button" class="yk-sw" style="background:#1E2A44" title="Navy" aria-label="Warna Navy" aria-pressed="false" data-warna="Navy"></button><span class="font-label-caps-sm text-label-caps-sm text-outline">+1</span></div>
@@ -460,7 +480,7 @@ a.bg-primary:hover,button.bg-primary:hover{background-color:#8F6658}
 <div>
 <p class="font-label-caps-sm text-label-caps-sm uppercase text-secondary font-semibold">Bergo Tali</p>
 <h3 class="font-body-md text-body-md text-primary font-medium line-clamp-1 mt-0.5">Berlin Zafeera</h3>
-<p class="font-headline-sm text-headline-sm text-primary mt-1">Rp259.000 – 279.000</p>
+<p class="font-headline-sm text-headline-sm text-primary mt-1">Rp259.000 <span class="whitespace-nowrap">– 279.000</span></p>
 </div>
 <div class="flex flex-col items-start gap-1 pt-1">
 <div class="yk-swatches flex flex-wrap items-center gap-2 py-1" aria-label="15 pilihan warna"><button type="button" class="yk-sw is-on" style="background:#6E4433" title="Cinnamon" aria-label="Warna Cinnamon" aria-pressed="true" data-warna="Cinnamon"></button><button type="button" class="yk-sw" style="background:#A8746E" title="Woodrose" aria-label="Warna Woodrose" aria-pressed="false" data-warna="Woodrose"></button><button type="button" class="yk-sw" style="background:#E0BDB3" title="Creole Pink" aria-label="Warna Creole Pink" aria-pressed="false" data-warna="Creole Pink"></button><button type="button" class="yk-sw" style="background:#E8C6C4" title="Petal Pink" aria-label="Warna Petal Pink" aria-pressed="false" data-warna="Petal Pink"></button><button type="button" class="yk-sw" style="background:#B99572" title="Tortilla" aria-label="Warna Tortilla" aria-pressed="false" data-warna="Tortilla"></button><button type="button" class="yk-sw" style="background:#E6D5BC" title="Irish Cream" aria-label="Warna Irish Cream" aria-pressed="false" data-warna="Irish Cream"></button><button type="button" class="yk-sw" style="background:#C7B8D0" title="Cotton Lilac" aria-label="Warna Cotton Lilac" aria-pressed="false" data-warna="Cotton Lilac"></button><button type="button" class="yk-sw" style="background:#B5ADA4" title="Dove" aria-label="Warna Dove" aria-pressed="false" data-warna="Dove"></button><span class="font-label-caps-sm text-label-caps-sm text-outline">+7</span></div>
@@ -482,7 +502,7 @@ a.bg-primary:hover,button.bg-primary:hover{background-color:#8F6658}
 <div>
 <p class="font-label-caps-sm text-label-caps-sm uppercase text-secondary font-semibold">Pashmina Instan</p>
 <h3 class="font-body-md text-body-md text-primary font-medium line-clamp-1 mt-0.5">Pastan Jannah</h3>
-<p class="font-headline-sm text-headline-sm text-primary mt-1">Rp159.000 – 189.000</p>
+<p class="font-headline-sm text-headline-sm text-primary mt-1">Rp159.000 <span class="whitespace-nowrap">– 189.000</span></p>
 </div>
 <div class="flex flex-col items-start gap-1 pt-1">
 <div class="yk-swatches flex flex-wrap items-center gap-2 py-1" aria-label="19 pilihan warna"><button type="button" class="yk-sw is-on" style="background:#A9B5C6" title="Cashmere Blue" aria-label="Warna Cashmere Blue" aria-pressed="true" data-warna="Cashmere Blue"></button><button type="button" class="yk-sw" style="background:#5E1F27" title="Maroon" aria-label="Warna Maroon" aria-pressed="false" data-warna="Maroon"></button><button type="button" class="yk-sw" style="background:#BDB79F" title="Lint" aria-label="Warna Lint" aria-pressed="false" data-warna="Lint"></button><button type="button" class="yk-sw" style="background:#8A8B6A" title="Dried Herb" aria-label="Warna Dried Herb" aria-pressed="false" data-warna="Dried Herb"></button><button type="button" class="yk-sw" style="background:#7A5238" title="Pecan Brown" aria-label="Warna Pecan Brown" aria-pressed="false" data-warna="Pecan Brown"></button><button type="button" class="yk-sw" style="background:#5A3F31" title="Roasted Coffee" aria-label="Warna Roasted Coffee" aria-pressed="false" data-warna="Roasted Coffee"></button><button type="button" class="yk-sw" style="background:#3D2B24" title="Dark Choco" aria-label="Warna Dark Choco" aria-pressed="false" data-warna="Dark Choco"></button><button type="button" class="yk-sw" style="background:#E8C6C4" title="Petal Pink" aria-label="Warna Petal Pink" aria-pressed="false" data-warna="Petal Pink"></button><span class="font-label-caps-sm text-label-caps-sm text-outline">+11</span></div>
@@ -504,7 +524,7 @@ a.bg-primary:hover,button.bg-primary:hover{background-color:#8F6658}
 <div>
 <p class="font-label-caps-sm text-label-caps-sm uppercase text-secondary font-semibold">Abaya</p>
 <h3 class="font-body-md text-body-md text-primary font-medium line-clamp-1 mt-0.5">Mishra Abaya</h3>
-<p class="font-headline-sm text-headline-sm text-primary mt-1">Rp389.000 – 399.000</p>
+<p class="font-headline-sm text-headline-sm text-primary mt-1">Rp389.000 <span class="whitespace-nowrap">– 399.000</span></p>
 </div>
 <div class="flex flex-col items-start gap-1 pt-1">
 <div class="yk-swatches flex flex-wrap items-center gap-2 py-1" aria-label="4 pilihan warna"><button type="button" class="yk-sw is-on" style="background:#1F1F21" title="Black" aria-label="Warna Black" aria-pressed="true" data-warna="Black"></button><button type="button" class="yk-sw" style="background:#5B3E2E" title="Brown" aria-label="Warna Brown" aria-pressed="false" data-warna="Brown"></button><button type="button" class="yk-sw" style="background:#1E2A44" title="Navy" aria-label="Warna Navy" aria-pressed="false" data-warna="Navy"></button><button type="button" class="yk-sw" style="background:#2F3B33" title="Dark Eden" aria-label="Warna Dark Eden" aria-pressed="false" data-warna="Dark Eden"></button></div>
@@ -526,7 +546,7 @@ a.bg-primary:hover,button.bg-primary:hover{background-color:#8F6658}
 <div>
 <p class="font-label-caps-sm text-label-caps-sm uppercase text-secondary font-semibold">Anak</p>
 <h3 class="font-body-md text-body-md text-primary font-medium line-clamp-1 mt-0.5">Kemko Mishra Kiddy</h3>
-<p class="font-headline-sm text-headline-sm text-primary mt-1">Rp179.000 – 199.000</p>
+<p class="font-headline-sm text-headline-sm text-primary mt-1">Rp179.000 <span class="whitespace-nowrap">– 199.000</span></p>
 </div>
 <div class="flex flex-col items-start gap-1 pt-1">
 <div class="yk-swatches flex flex-wrap items-center gap-2 py-1" aria-label="4 pilihan warna"><button type="button" class="yk-sw is-on" style="background:#1F1F21" title="Black" aria-label="Warna Black" aria-pressed="true" data-warna="Black"></button><button type="button" class="yk-sw" style="background:#5B3E2E" title="Brown" aria-label="Warna Brown" aria-pressed="false" data-warna="Brown"></button><button type="button" class="yk-sw" style="background:#1E2A44" title="Navy" aria-label="Warna Navy" aria-pressed="false" data-warna="Navy"></button><button type="button" class="yk-sw" style="background:#2F3B33" title="Dark Eden" aria-label="Warna Dark Eden" aria-pressed="false" data-warna="Dark Eden"></button></div>
@@ -548,7 +568,7 @@ a.bg-primary:hover,button.bg-primary:hover{background-color:#8F6658}
 <div>
 <p class="font-label-caps-sm text-label-caps-sm uppercase text-secondary font-semibold">Abaya</p>
 <h3 class="font-body-md text-body-md text-primary font-medium line-clamp-1 mt-0.5">Kalaya Abaya</h3>
-<p class="font-headline-sm text-headline-sm text-primary mt-1">Rp289.000 – 299.000</p>
+<p class="font-headline-sm text-headline-sm text-primary mt-1">Rp289.000 <span class="whitespace-nowrap">– 299.000</span></p>
 </div>
 <div class="flex flex-col items-start gap-1 pt-1">
 <div class="yk-swatches flex flex-wrap items-center gap-2 py-1" aria-label="3 pilihan warna"><button type="button" class="yk-sw is-on" style="background:#A9AEAD" title="Grey Blue" aria-label="Warna Grey Blue" aria-pressed="true" data-warna="Grey Blue"></button><button type="button" class="yk-sw" style="background:#B8BCB0" title="Dark Matcha" aria-label="Warna Dark Matcha" aria-pressed="false" data-warna="Dark Matcha"></button><button type="button" class="yk-sw" style="background:#D9B9A8" title="Caramel" aria-label="Warna Caramel" aria-pressed="false" data-warna="Caramel"></button></div>
@@ -592,7 +612,7 @@ a.bg-primary:hover,button.bg-primary:hover{background-color:#8F6658}
 <div>
 <p class="font-label-caps-sm text-label-caps-sm uppercase text-secondary font-semibold">Abaya</p>
 <h3 class="font-body-md text-body-md text-primary font-medium line-clamp-1 mt-0.5">Yumna Abaya</h3>
-<p class="font-headline-sm text-headline-sm text-primary mt-1">Rp279.000 – 299.000</p>
+<p class="font-headline-sm text-headline-sm text-primary mt-1">Rp279.000 <span class="whitespace-nowrap">– 299.000</span></p>
 </div>
 <div class="flex flex-col items-start gap-1 pt-1">
 <div class="yk-swatches flex flex-wrap items-center gap-2 py-1" aria-label="7 pilihan warna"><button type="button" class="yk-sw is-on" style="background:#5B3E2E" title="Chocolate Brown" aria-label="Warna Chocolate Brown" aria-pressed="true" data-warna="Chocolate Brown"></button><button type="button" class="yk-sw" style="background:#6B5F5A" title="After Dark" aria-label="Warna After Dark" aria-pressed="false" data-warna="After Dark"></button><button type="button" class="yk-sw" style="background:#5E1E2D" title="Burgundy" aria-label="Warna Burgundy" aria-pressed="false" data-warna="Burgundy"></button><button type="button" class="yk-sw" style="background:#4E3437" title="Chocolate Plum" aria-label="Warna Chocolate Plum" aria-pressed="false" data-warna="Chocolate Plum"></button><button type="button" class="yk-sw" style="background:#3B2A22" title="Espresso" aria-label="Warna Espresso" aria-pressed="false" data-warna="Espresso"></button><button type="button" class="yk-sw" style="background:#1F1F21" title="Black" aria-label="Warna Black" aria-pressed="false" data-warna="Black"></button><button type="button" class="yk-sw" style="background:#1E2A44" title="Navy" aria-label="Warna Navy" aria-pressed="false" data-warna="Navy"></button></div>
@@ -614,7 +634,7 @@ a.bg-primary:hover,button.bg-primary:hover{background-color:#8F6658}
 <div>
 <p class="font-label-caps-sm text-label-caps-sm uppercase text-secondary font-semibold">Khimar</p>
 <h3 class="font-body-md text-body-md text-primary font-medium line-clamp-1 mt-0.5">FK &amp; Nonpad Yumna</h3>
-<p class="font-headline-sm text-headline-sm text-primary mt-1">Rp209.000 – 219.000</p>
+<p class="font-headline-sm text-headline-sm text-primary mt-1">Rp209.000 <span class="whitespace-nowrap">– 219.000</span></p>
 </div>
 <div class="flex flex-col items-start gap-1 pt-1">
 <div class="yk-swatches flex flex-wrap items-center gap-2 py-1" aria-label="7 pilihan warna"><button type="button" class="yk-sw is-on" style="background:#6B5F5A" title="After Dark" aria-label="Warna After Dark" aria-pressed="true" data-warna="After Dark"></button><button type="button" class="yk-sw" style="background:#5E1E2D" title="Burgundy" aria-label="Warna Burgundy" aria-pressed="false" data-warna="Burgundy"></button><button type="button" class="yk-sw" style="background:#4E3437" title="Chocolate Plum" aria-label="Warna Chocolate Plum" aria-pressed="false" data-warna="Chocolate Plum"></button><button type="button" class="yk-sw" style="background:#5B3E2E" title="Chocolate Brown" aria-label="Warna Chocolate Brown" aria-pressed="false" data-warna="Chocolate Brown"></button><button type="button" class="yk-sw" style="background:#3B2A22" title="Espresso" aria-label="Warna Espresso" aria-pressed="false" data-warna="Espresso"></button><button type="button" class="yk-sw" style="background:#1F1F21" title="Black" aria-label="Warna Black" aria-pressed="false" data-warna="Black"></button><button type="button" class="yk-sw" style="background:#1E2A44" title="Navy" aria-label="Warna Navy" aria-pressed="false" data-warna="Navy"></button></div>
@@ -636,7 +656,7 @@ a.bg-primary:hover,button.bg-primary:hover{background-color:#8F6658}
 <div>
 <p class="font-label-caps-sm text-label-caps-sm uppercase text-secondary font-semibold">Abaya</p>
 <h3 class="font-body-md text-body-md text-primary font-medium line-clamp-1 mt-0.5">Mecca Abaya</h3>
-<p class="font-headline-sm text-headline-sm text-primary mt-1">Rp349.000 – 359.000</p>
+<p class="font-headline-sm text-headline-sm text-primary mt-1">Rp349.000 <span class="whitespace-nowrap">– 359.000</span></p>
 </div>
 <div class="flex flex-col items-start gap-1 pt-1">
 <div class="yk-swatches flex flex-wrap items-center gap-2 py-1" aria-label="2 pilihan warna"><button type="button" class="yk-sw is-on" style="background:#2A2624" title="Cotton Etnik" aria-label="Warna Cotton Etnik" aria-pressed="true" data-warna="Cotton Etnik"></button><button type="button" class="yk-sw" style="background:#1F1F21" title="Brukat" aria-label="Warna Brukat" aria-pressed="false" data-warna="Brukat"></button></div>
@@ -680,7 +700,7 @@ a.bg-primary:hover,button.bg-primary:hover{background-color:#8F6658}
 <div>
 <p class="font-label-caps-sm text-label-caps-sm uppercase text-secondary font-semibold">Abaya</p>
 <h3 class="font-body-md text-body-md text-primary font-medium line-clamp-1 mt-0.5">Maira Abaya</h3>
-<p class="font-headline-sm text-headline-sm text-primary mt-1">Rp279.000 – 299.000</p>
+<p class="font-headline-sm text-headline-sm text-primary mt-1">Rp279.000 <span class="whitespace-nowrap">– 299.000</span></p>
 </div>
 <div class="flex flex-col items-start gap-1 pt-1">
 <div class="yk-swatches flex flex-wrap items-center gap-2 py-1" aria-label="4 pilihan warna"><button type="button" class="yk-sw is-on" style="background:#34465E" title="Dark Denim" aria-label="Warna Dark Denim" aria-pressed="true" data-warna="Dark Denim"></button><button type="button" class="yk-sw" style="background:#1E2A44" title="Navy Blue" aria-label="Warna Navy Blue" aria-pressed="false" data-warna="Navy Blue"></button><button type="button" class="yk-sw" style="background:#1F1F21" title="Black" aria-label="Warna Black" aria-pressed="false" data-warna="Black"></button><button type="button" class="yk-sw" style="background:#8C9196" title="Faded Grey" aria-label="Warna Faded Grey" aria-pressed="false" data-warna="Faded Grey"></button></div>
@@ -702,7 +722,7 @@ a.bg-primary:hover,button.bg-primary:hover{background-color:#8F6658}
 <div>
 <p class="font-label-caps-sm text-label-caps-sm uppercase text-secondary font-semibold">Khimar</p>
 <h3 class="font-body-md text-body-md text-primary font-medium line-clamp-1 mt-0.5">FK, Berlin &amp; Nonpad Liya</h3>
-<p class="font-headline-sm text-headline-sm text-primary mt-1">Rp189.000 – 199.000</p>
+<p class="font-headline-sm text-headline-sm text-primary mt-1">Rp189.000 <span class="whitespace-nowrap">– 199.000</span></p>
 </div>
 <div class="flex flex-col items-start gap-1 pt-1">
 <div class="yk-swatches flex flex-wrap items-center gap-2 py-1" aria-label="10 pilihan warna"><button type="button" class="yk-sw is-on" style="background:#6E6E70" title="Grey Maze" aria-label="Warna Grey Maze" aria-pressed="true" data-warna="Grey Maze"></button><button type="button" class="yk-sw" style="background:#A79CB0" title="Nirvana" aria-label="Warna Nirvana" aria-pressed="false" data-warna="Nirvana"></button><button type="button" class="yk-sw" style="background:#5B5654" title="Cinder" aria-label="Warna Cinder" aria-pressed="false" data-warna="Cinder"></button><button type="button" class="yk-sw" style="background:#3E3E41" title="Dark Shadow" aria-label="Warna Dark Shadow" aria-pressed="false" data-warna="Dark Shadow"></button><button type="button" class="yk-sw" style="background:#9A8A6A" title="Desert Palm" aria-label="Warna Desert Palm" aria-pressed="false" data-warna="Desert Palm"></button><button type="button" class="yk-sw" style="background:#4A3529" title="Coffee Bean" aria-label="Warna Coffee Bean" aria-pressed="false" data-warna="Coffee Bean"></button><button type="button" class="yk-sw" style="background:#2E3F66" title="Pageant Blue" aria-label="Warna Pageant Blue" aria-pressed="false" data-warna="Pageant Blue"></button><button type="button" class="yk-sw" style="background:#1B2236" title="Deep Navy" aria-label="Warna Deep Navy" aria-pressed="false" data-warna="Deep Navy"></button><span class="font-label-caps-sm text-label-caps-sm text-outline">+2</span></div>
@@ -768,7 +788,7 @@ a.bg-primary:hover,button.bg-primary:hover{background-color:#8F6658}
 <div>
 <p class="font-label-caps-sm text-label-caps-sm uppercase text-secondary font-semibold">Abaya</p>
 <h3 class="font-body-md text-body-md text-primary font-medium line-clamp-1 mt-0.5">Baluna Abaya</h3>
-<p class="font-headline-sm text-headline-sm text-primary mt-1">Rp229.000 – 239.000</p>
+<p class="font-headline-sm text-headline-sm text-primary mt-1">Rp229.000 <span class="whitespace-nowrap">– 239.000</span></p>
 </div>
 <div class="flex flex-col items-start gap-1 pt-1">
 <div class="yk-swatches flex flex-wrap items-center gap-2 py-1" aria-label="3 pilihan warna"><button type="button" class="yk-sw is-on" style="background:#5D5A49" title="Burnt Olive" aria-label="Warna Burnt Olive" aria-pressed="true" data-warna="Burnt Olive"></button><button type="button" class="yk-sw" style="background:#1E2A44" title="Navy" aria-label="Warna Navy" aria-pressed="false" data-warna="Navy"></button><button type="button" class="yk-sw" style="background:#1F1F21" title="Black" aria-label="Warna Black" aria-pressed="false" data-warna="Black"></button></div>
@@ -790,7 +810,7 @@ a.bg-primary:hover,button.bg-primary:hover{background-color:#8F6658}
 <div>
 <p class="font-label-caps-sm text-label-caps-sm uppercase text-secondary font-semibold">Abaya</p>
 <h3 class="font-body-md text-body-md text-primary font-medium line-clamp-1 mt-0.5">Seema Abaya</h3>
-<p class="font-headline-sm text-headline-sm text-primary mt-1">Rp219.000 – 229.000</p>
+<p class="font-headline-sm text-headline-sm text-primary mt-1">Rp219.000 <span class="whitespace-nowrap">– 229.000</span></p>
 </div>
 <div class="flex flex-col items-start gap-1 pt-1">
 <div class="yk-swatches flex flex-wrap items-center gap-2 py-1" aria-label="6 pilihan warna"><button type="button" class="yk-sw is-on" style="background:#1F1F21" title="Black" aria-label="Warna Black" aria-pressed="true" data-warna="Black"></button><button type="button" class="yk-sw" style="background:#1E2A44" title="Navy" aria-label="Warna Navy" aria-pressed="false" data-warna="Navy"></button><button type="button" class="yk-sw" style="background:#8E8F93" title="Grey" aria-label="Warna Grey" aria-pressed="false" data-warna="Grey"></button><button type="button" class="yk-sw" style="background:#A9744A" title="Caramel" aria-label="Warna Caramel" aria-pressed="false" data-warna="Caramel"></button><button type="button" class="yk-sw" style="background:#9A9468" title="Honey Mustard" aria-label="Warna Honey Mustard" aria-pressed="false" data-warna="Honey Mustard"></button><button type="button" class="yk-sw" style="background:#E5D7C0" title="Dawn Cream" aria-label="Warna Dawn Cream" aria-pressed="false" data-warna="Dawn Cream"></button></div>
@@ -852,11 +872,11 @@ a.bg-primary:hover,button.bg-primary:hover{background-color:#8F6658}
 </div>
 </section>
 <!-- Info Layanan Butik (Editorial Trust Pillars) -->
-<section class="w-full bg-surface-container-low py-16">
+<section class="w-full bg-surface-container-low py-12 sm:py-16">
 <div class="max-w-[1440px] mx-auto px-margin-mobile lg:px-margin">
 <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
 <!-- Pillar 1 -->
-<div class="bg-surface-container-lowest p-8 rounded-xl shadow-sm space-y-4 relative overflow-hidden">
+<div class="bg-surface-container-lowest p-6 sm:p-8 rounded-xl shadow-sm space-y-4 relative overflow-hidden">
 <div class="w-12 h-12 rounded-lg bg-secondary-container text-on-secondary-container flex items-center justify-center">
 <span class="material-symbols-outlined text-[24px]">published_with_changes</span>
 </div>
@@ -871,7 +891,7 @@ a.bg-primary:hover,button.bg-primary:hover{background-color:#8F6658}
           </span>
 </div>
 <!-- Pillar 2 -->
-<div class="bg-surface-container-lowest p-8 rounded-xl shadow-sm space-y-4 relative overflow-hidden">
+<div class="bg-surface-container-lowest p-6 sm:p-8 rounded-xl shadow-sm space-y-4 relative overflow-hidden">
 <div class="w-12 h-12 rounded-lg bg-secondary-container text-on-secondary-container flex items-center justify-center">
 <span class="material-symbols-outlined text-[24px]">support_agent</span>
 </div>
@@ -886,7 +906,7 @@ a.bg-primary:hover,button.bg-primary:hover{background-color:#8F6658}
           </a>
 </div>
 <!-- Pillar 3 -->
-<div class="bg-surface-container-lowest p-8 rounded-xl shadow-sm space-y-4 relative overflow-hidden">
+<div class="bg-surface-container-lowest p-6 sm:p-8 rounded-xl shadow-sm space-y-4 relative overflow-hidden">
 <div class="w-12 h-12 rounded-lg bg-secondary-container text-on-secondary-container flex items-center justify-center">
 <span class="material-symbols-outlined text-[24px]">featured_seasonal_and_gifts</span>
 </div>

@@ -3,6 +3,18 @@
 a.bg-primary,button.bg-primary{background-color:#A67C6E}
 a.bg-primary:hover,button.bg-primary:hover{background-color:#8F6658}
 .font-headline-sm,.font-headline-md,.font-headline-lg,.font-headline-lg-mobile,.font-display-hero,.font-display-hero-mobile{font-weight:500}
+</style><style id="yarka-produk-mobile">
+/* Ponsel & layar sentuh */
+#gallery-thumbs{scroll-snap-type:x mandatory;scrollbar-width:none}
+#gallery-thumbs .thumb-btn{scroll-snap-align:start}
+@media (max-width:767px){#gallery-thumbs .thumb-btn{width:68px}}
+@media (hover:none),(max-width:639px){
+  .yk-sw{position:relative}
+  .yk-sw::before{content:"";position:absolute;inset:-6px;border-radius:9999px}
+  .yk-sw:hover{transform:none}
+}
+#product-tab-headers{scrollbar-width:none}
+#size-guide-modal th{white-space:nowrap}
 </style><style id="yarka-warna-css">
 .yk-sw{width:16px;height:16px;border-radius:9999px;flex-shrink:0;cursor:pointer;box-shadow:inset 0 0 0 1px rgba(0,0,0,.14);transition:transform .15s ease,box-shadow .15s ease}
 .yk-sw:hover{transform:scale(1.18)}
@@ -22,7 +34,7 @@ a.bg-primary:hover,button.bg-primary:hover{background-color:#8F6658}
 </nav>
 </div>
 <!-- Primary PDP Section: Editorial Split Grid -->
-<section class="max-w-[1440px] mx-auto w-full px-margin-mobile lg:px-margin pb-20">
+<section class="max-w-[1440px] mx-auto w-full px-margin-mobile lg:px-margin pb-12 sm:pb-20">
 <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-14 items-start">
 <!-- Left Column: Editorial Vertical Gallery -->
 <div class="lg:col-span-7 flex flex-col-reverse md:flex-row gap-4">
@@ -91,9 +103,9 @@ a.bg-primary:hover,button.bg-primary:hover{background-color:#8F6658}
 <span class="font-body-sm text-body-sm text-outline ">L–XL Rp449.000</span>
 <span class="bg-secondary/15 text-secondary font-label-caps-sm text-label-caps-sm px-2 py-0.5 rounded font-bold uppercase">XS–M</span>
 </div>
-<p class="font-body-sm text-body-sm text-on-surface-variant flex items-center gap-1.5">
-<span class="material-symbols-outlined text-secondary text-[16px]">credit_card</span>
-            Atau 3x cicilan bunga 0% sebesar <strong class="text-primary font-medium">Rp143.000/bln</strong> via SpayLater &amp; GoPay
+<p class="font-body-sm text-body-sm text-on-surface-variant flex items-start gap-1.5">
+<span class="material-symbols-outlined text-secondary text-[16px] mt-0.5 shrink-0">account_balance</span>
+<span>Pembayaran via transfer bank BCA, Mandiri &amp; BSI atau QRIS</span>
           </p>
 </div>
 <!-- Color Selection -->
@@ -124,7 +136,7 @@ a.bg-primary:hover,button.bg-primary:hover{background-color:#8F6658}
 <div class="space-y-3 pt-1">
 <div class="flex justify-between items-center">
 <span class="font-label-text text-label-text text-on-surface-variant font-medium">Ukuran Busana:</span>
-<button class="flex items-center gap-1.5 text-secondary hover:text-primary transition-colors font-label-caps-sm text-label-caps-sm uppercase tracking-wider font-semibold" onclick="toggleSizeModal(true)" type="button">
+<button class="flex items-center gap-1.5 max-sm:min-h-[40px] max-sm:-my-2 text-secondary hover:text-primary transition-colors font-label-caps-sm text-label-caps-sm uppercase tracking-wider font-semibold" onclick="toggleSizeModal(true)" type="button">
 <span class="material-symbols-outlined text-[16px]">straighten</span>
               Panduan Ukuran (Size Guide)
             </button>
@@ -145,18 +157,18 @@ a.bg-primary:hover,button.bg-primary:hover{background-color:#8F6658}
 </div>
 </div>
 <!-- Quantity Counter & Primary Actions -->
-<div class="space-y-4 pt-2">
-<div class="flex items-center gap-3">
+<div class="space-y-3 sm:space-y-4 pt-2">
+<div class="flex items-center gap-2 sm:gap-3">
 <!-- Stepper -->
 <div class="flex items-center bg-surface-container-low rounded p-1 shadow-sm shrink-0">
-<button class="w-10 h-10 flex items-center justify-center text-on-surface-variant hover:text-primary transition-colors text-lg font-medium" onclick="adjustQty(-1)" type="button">−</button>
-<span class="w-10 text-center font-label-caps-lg text-label-caps-lg font-semibold text-primary" id="qty-val">1</span>
-<button class="w-10 h-10 flex items-center justify-center text-on-surface-variant hover:text-primary transition-colors text-lg font-medium" onclick="adjustQty(1)" type="button">+</button>
+<button aria-label="Kurangi jumlah" class="w-10 h-10 flex items-center justify-center text-on-surface-variant hover:text-primary transition-colors text-lg font-medium" onclick="adjustQty(-1)" type="button">−</button>
+<span class="w-8 sm:w-10 text-center font-label-caps-lg text-label-caps-lg font-semibold text-primary" id="qty-val">1</span>
+<button aria-label="Tambah jumlah" class="w-10 h-10 flex items-center justify-center text-on-surface-variant hover:text-primary transition-colors text-lg font-medium" onclick="adjustQty(1)" type="button">+</button>
 </div>
 <!-- Add to Cart Primary Button -->
-<button class="flex-1 h-12 bg-primary text-on-primary rounded font-label-caps-lg text-label-caps-lg uppercase tracking-wider flex items-center justify-center gap-2 hover:bg-primary-container transition-colors shadow-sm" onclick="handleAddToCart()" type="button">
-<span class="material-symbols-outlined text-[20px]">shopping_bag</span>
-<span>Tambah ke Keranjang</span>
+<button class="flex-1 min-w-0 h-12 px-3 bg-primary text-on-primary rounded font-label-caps-lg text-label-caps-lg uppercase tracking-wider max-sm:tracking-[0.08em] flex items-center justify-center gap-2 hover:bg-primary-container transition-colors shadow-sm whitespace-nowrap" onclick="handleAddToCart()" type="button">
+<span class="material-symbols-outlined text-[20px] shrink-0">shopping_bag</span>
+<span class="sm:hidden">Keranjang</span><span class="hidden sm:inline">Tambah ke Keranjang</span>
 </button>
 <!-- Wishlist Heart Button -->
 <button aria-label="Simpan ke Wishlist" class="w-12 h-12 bg-surface-container-low text-primary rounded flex items-center justify-center hover:bg-surface-container transition-colors shadow-sm shrink-0" onclick="toggleWishlist(this)" type="button">
@@ -170,20 +182,20 @@ a.bg-primary:hover,button.bg-primary:hover{background-color:#8F6658}
 </button>
 </div>
 <!-- Trust Badges Strip -->
-<div class="grid grid-cols-3 gap-2 pt-4">
+<div class="grid grid-cols-3 gap-2 pt-2 sm:pt-4">
 <div class="bg-surface-container-low p-3 rounded flex flex-col items-center text-center space-y-1">
 <span class="material-symbols-outlined text-secondary text-[22px]">local_shipping</span>
-<span class="font-label-caps-sm text-label-caps-sm uppercase tracking-wide text-primary font-semibold">Gratis Ongkir</span>
+<span class="font-label-caps-sm text-label-caps-sm uppercase tracking-wide max-sm:tracking-[0.06em] text-primary font-semibold">Gratis Ongkir</span>
 <span class="font-body-sm text-[11px] text-on-surface-variant">Min. Belanja 500rb</span>
 </div>
 <div class="bg-surface-container-low p-3 rounded flex flex-col items-center text-center space-y-1">
 <span class="material-symbols-outlined text-secondary text-[22px]">published_with_changes</span>
-<span class="font-label-caps-sm text-label-caps-sm uppercase tracking-wide text-primary font-semibold">Bebas Retur</span>
+<span class="font-label-caps-sm text-label-caps-sm uppercase tracking-wide max-sm:tracking-[0.06em] text-primary font-semibold">Bebas Retur</span>
 <span class="font-body-sm text-[11px] text-on-surface-variant">Garansi Pas 7 Hari</span>
 </div>
 <div class="bg-surface-container-low p-3 rounded flex flex-col items-center text-center space-y-1">
 <span class="material-symbols-outlined text-secondary text-[22px]">verified</span>
-<span class="font-label-caps-sm text-label-caps-sm uppercase tracking-wide text-primary font-semibold">100% Autentik</span>
+<span class="font-label-caps-sm text-label-caps-sm uppercase tracking-wide max-sm:tracking-[0.06em] text-primary font-semibold">100% Autentik</span>
 <span class="font-body-sm text-[11px] text-on-surface-variant">Material Natural Asli</span>
 </div>
 </div>
@@ -191,25 +203,25 @@ a.bg-primary:hover,button.bg-primary:hover{background-color:#8F6658}
 </div>
 </section>
 <!-- Detailed Specifications & Tabs Section -->
-<section class="w-full bg-surface-container-low py-16">
+<section class="w-full bg-surface-container-low py-10 sm:py-16">
 <div class="max-w-[1440px] mx-auto px-margin-mobile lg:px-margin">
 <!-- Interactive Tab Header -->
-<div class="flex overflow-x-auto gap-8 justify-start lg:justify-center pb-4 scrollbar-none" id="product-tab-headers">
-<button class="tab-trigger font-label-caps-lg text-label-caps-lg uppercase tracking-widest text-primary font-bold pb-2 shadow-[0_2px_0_0_currentColor] transition-all" data-target="desc" onclick="switchTab('desc')" type="button">
+<div class="flex overflow-x-auto gap-6 sm:gap-8 justify-start lg:justify-center pb-4 scrollbar-none -mx-margin-mobile px-margin-mobile lg:mx-0 lg:px-0" id="product-tab-headers">
+<button class="tab-trigger shrink-0 whitespace-nowrap font-label-caps-lg text-label-caps-lg uppercase tracking-widest text-primary font-bold pb-2 shadow-[0_2px_0_0_currentColor] transition-all" data-target="desc" onclick="switchTab('desc')" type="button">
           Deskripsi &amp; Filosofi
         </button>
-<button class="tab-trigger font-label-caps-lg text-label-caps-lg uppercase tracking-widest text-on-surface-variant font-medium pb-2 hover:text-primary transition-all" data-target="material" onclick="switchTab('material')" type="button">
+<button class="tab-trigger shrink-0 whitespace-nowrap font-label-caps-lg text-label-caps-lg uppercase tracking-widest text-on-surface-variant font-medium pb-2 hover:text-primary transition-all" data-target="material" onclick="switchTab('material')" type="button">
           Karakteristik Kain
         </button>
-<button class="tab-trigger font-label-caps-lg text-label-caps-lg uppercase tracking-widest text-on-surface-variant font-medium pb-2 hover:text-primary transition-all" data-target="care" onclick="switchTab('care')" type="button">
+<button class="tab-trigger shrink-0 whitespace-nowrap font-label-caps-lg text-label-caps-lg uppercase tracking-widest text-on-surface-variant font-medium pb-2 hover:text-primary transition-all" data-target="care" onclick="switchTab('care')" type="button">
           Panduan Perawatan
         </button>
-<button class="tab-trigger font-label-caps-lg text-label-caps-lg uppercase tracking-widest text-on-surface-variant font-medium pb-2 hover:text-primary transition-all" data-target="shipping" onclick="switchTab('shipping')" type="button">
+<button class="tab-trigger shrink-0 whitespace-nowrap font-label-caps-lg text-label-caps-lg uppercase tracking-widest text-on-surface-variant font-medium pb-2 hover:text-primary transition-all" data-target="shipping" onclick="switchTab('shipping')" type="button">
           Pengiriman &amp; Retur
         </button>
 </div>
 <!-- Tab Content Area -->
-<div class="max-w-4xl mx-auto pt-8">
+<div class="max-w-4xl mx-auto pt-6 sm:pt-8">
 <!-- Tab 1: Deskripsi & Filosofi -->
 <div class="tab-panel space-y-6" id="tab-desc">
 <div class="grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
@@ -219,21 +231,21 @@ a.bg-primary:hover,button.bg-primary:hover{background-color:#8F6658}
                 Zen Abaya hadir dengan aksen cheongsam yang cantik dan unik. Cuttingan semi bisht dengan V neck membuatnya longgar, jatuh rapi, dan tetap anggun untuk dipakai harian maupun acara.
 </p>
 <ul class="space-y-2.5 font-body-sm text-body-sm text-on-surface">
-<li class="flex items-center gap-2">
-<span class="material-symbols-outlined text-secondary text-[18px]">check_circle</span>
+<li class="flex items-start gap-2">
+<span class="material-symbols-outlined text-secondary text-[18px] shrink-0 mt-px">check_circle</span>
 <span><strong>Akses Wudhu Loose:</strong> Lengan longgar sehingga mudah digulung saat berwudhu.</span>
 </li>
-<li class="flex items-center gap-2">
-<span class="material-symbols-outlined text-secondary text-[18px]">check_circle</span>
+<li class="flex items-start gap-2">
+<span class="material-symbols-outlined text-secondary text-[18px] shrink-0 mt-px">check_circle</span>
 <span><strong>Saku Kanan &amp; Kiri:</strong> Dua saku fungsional untuk ponsel dan barang kecil.</span>
 </li>
-<li class="flex items-center gap-2">
-<span class="material-symbols-outlined text-secondary text-[18px]">check_circle</span>
+<li class="flex items-start gap-2">
+<span class="material-symbols-outlined text-secondary text-[18px] shrink-0 mt-px">check_circle</span>
 <span><strong>Akses Busui Kancing:</strong> Kancing depan yang ramah ibu menyusui.</span>
 </li>
 </ul>
 </div>
-<div class="h-80 rounded overflow-hidden shadow-sm bg-surface-container">
+<div class="h-64 sm:h-80 rounded overflow-hidden shadow-sm bg-surface-container">
 <img class="w-full h-full object-cover" data-alt="Atmospheric editorial capture of model wearing flowing sand taupe linen gamis displaying relaxed drape in serene sunlight" src="assets/img/foto/look-trio-studio.jpg">
 </div>
 </div>
@@ -241,17 +253,17 @@ a.bg-primary:hover,button.bg-primary:hover{background-color:#8F6658}
 <!-- Tab 2: Detail Kain -->
 <div class="tab-panel hidden space-y-6" id="tab-material">
 <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
-<div class="bg-surface p-6 rounded shadow-sm space-y-2">
+<div class="bg-surface p-5 sm:p-6 rounded shadow-sm space-y-2">
 <span class="material-symbols-outlined text-secondary text-[28px]">air</span>
 <h4 class="font-headline-sm text-headline-sm text-primary">Sirkulasi Alami</h4>
 <p class="font-body-sm text-body-sm text-on-surface-variant">Cottonblended sandwash 80% katun &amp; 20% polyester: adem, lembut, dan nyaman dipakai seharian.</p>
 </div>
-<div class="bg-surface p-6 rounded shadow-sm space-y-2">
+<div class="bg-surface p-5 sm:p-6 rounded shadow-sm space-y-2">
 <span class="material-symbols-outlined text-secondary text-[28px]">shield</span>
 <h4 class="font-headline-sm text-headline-sm text-primary">Kerapatan Tenun</h4>
 <p class="font-body-sm text-body-sm text-on-surface-variant">Kain lebih kokoh dan tidak nerawang, aman dipakai tanpa furing tambahan.</p>
 </div>
-<div class="bg-surface p-6 rounded shadow-sm space-y-2">
+<div class="bg-surface p-5 sm:p-6 rounded shadow-sm space-y-2">
 <span class="material-symbols-outlined text-secondary text-[28px]">flare</span>
 <h4 class="font-headline-sm text-headline-sm text-primary">Tekstur Khas Tiap Warna</h4>
 <p class="font-body-sm text-body-sm text-on-surface-variant">Efek sandwash memberi tekstur kain yang berbeda di tiap warna, sehingga setiap varian punya karakter sendiri.</p>
@@ -260,7 +272,7 @@ a.bg-primary:hover,button.bg-primary:hover{background-color:#8F6658}
 </div>
 <!-- Tab 3: Perawatan -->
 <div class="tab-panel hidden space-y-4" id="tab-care">
-<div class="bg-surface p-8 rounded shadow-sm">
+<div class="bg-surface p-5 sm:p-8 rounded shadow-sm">
 <h4 class="font-headline-sm text-headline-sm text-primary mb-4">Petunjuk Perawatan Zen Abaya</h4>
 <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 font-body-sm text-body-sm text-on-surface-variant">
 <div class="flex items-start gap-3">
@@ -296,7 +308,7 @@ a.bg-primary:hover,button.bg-primary:hover{background-color:#8F6658}
 </div>
 <!-- Tab 4: Pengiriman & Garansi Retur -->
 <div class="tab-panel hidden space-y-4" id="tab-shipping">
-<div class="bg-surface p-8 rounded shadow-sm space-y-4">
+<div class="bg-surface p-5 sm:p-8 rounded shadow-sm space-y-4">
 <div class="flex items-start gap-4">
 <span class="material-symbols-outlined text-secondary text-[26px]">local_shipping</span>
 <div>
@@ -317,11 +329,11 @@ a.bg-primary:hover,button.bg-primary:hover{background-color:#8F6658}
 </div>
 </section>
 <!-- Complete The Look / Cross-Sell Section -->
-<section class="max-w-[1440px] mx-auto w-full px-margin-mobile lg:px-margin py-20">
-<div class="flex flex-col md:flex-row md:items-end justify-between mb-10 gap-4">
+<section class="max-w-[1440px] mx-auto w-full px-margin-mobile lg:px-margin py-12 sm:py-20">
+<div class="flex flex-col md:flex-row md:items-end justify-between mb-8 sm:mb-10 gap-4">
 <div>
 <span class="text-secondary font-label-caps-sm text-label-caps-sm uppercase tracking-widest font-semibold block mb-1">Inspirasi Padu Padan</span>
-<h2 class="font-headline-lg text-headline-lg text-primary">Padukan Dengan Ini</h2>
+<h2 class="font-headline-lg text-headline-lg max-sm:text-[32px] max-sm:leading-[38px] text-primary">Padukan Dengan Ini</h2>
 </div>
 <button class="bg-primary text-on-primary px-6 py-3 rounded font-label-caps-lg text-label-caps-lg uppercase tracking-wider hover:bg-primary-container transition-colors shadow-sm self-start md:self-auto" type="button">
         Beli Satu Set • Hemat Rp65.000
@@ -342,7 +354,7 @@ a.bg-primary:hover,button.bg-primary:hover{background-color:#8F6658}
 </div>
 <div class="flex items-center justify-between pt-2">
 <span class="font-body-md text-body-md font-bold text-primary">Rp189.000</span>
-<button class="bg-surface text-primary px-4 py-2 rounded font-label-caps-sm text-label-caps-sm uppercase tracking-wider font-semibold hover:bg-primary hover:text-on-primary transition-colors shadow-sm" type="button">
+<button class="bg-surface text-primary px-4 py-2 max-sm:min-h-[40px] rounded font-label-caps-sm text-label-caps-sm uppercase tracking-wider font-semibold hover:bg-primary hover:text-on-primary transition-colors shadow-sm" type="button">
               + Tambah
             </button>
 </div>
@@ -362,14 +374,14 @@ a.bg-primary:hover,button.bg-primary:hover{background-color:#8F6658}
 </div>
 <div class="flex items-center justify-between pt-2">
 <span class="font-body-md text-body-md font-bold text-primary">Rp479.000</span>
-<button class="bg-surface text-primary px-4 py-2 rounded font-label-caps-sm text-label-caps-sm uppercase tracking-wider font-semibold hover:bg-primary hover:text-on-primary transition-colors shadow-sm" type="button">
+<button class="bg-surface text-primary px-4 py-2 max-sm:min-h-[40px] rounded font-label-caps-sm text-label-caps-sm uppercase tracking-wider font-semibold hover:bg-primary hover:text-on-primary transition-colors shadow-sm" type="button">
               + Tambah
             </button>
 </div>
 </div>
 </div>
 <!-- Total Look Set Card -->
-<div class="bg-primary text-on-primary rounded p-8 shadow-md flex flex-col justify-between space-y-6">
+<div class="bg-primary text-on-primary rounded p-6 sm:p-8 shadow-md flex flex-col justify-between space-y-6">
 <div class="space-y-3">
 <div class="flex items-center gap-2">
 <span class="material-symbols-outlined text-secondary-fixed text-[24px]">auto_awesome</span>
@@ -380,12 +392,12 @@ a.bg-primary:hover,button.bg-primary:hover{background-color:#8F6658}
             Dapatkan Zen Abaya bersama Pastan Zhaa &amp; Otba Abaya 2in1 dalam satu palet monokromatik serasi yang memukau.
           </p>
 </div>
-<div class="space-y-4 bg-primary-container p-6 rounded">
+<div class="space-y-4 bg-primary-container p-5 sm:p-6 rounded">
 <div class="flex justify-between items-center text-on-primary-container font-body-sm text-body-sm">
 <span>Harga Normal (3 Produk)</span>
 <span class="line-through">Rp1.097.000</span>
 </div>
-<div class="flex justify-between items-baseline">
+<div class="flex flex-wrap justify-between items-baseline gap-x-3">
 <span class="font-label-caps-lg text-label-caps-lg uppercase text-secondary-fixed">Harga Bundling</span>
 <span class="font-headline-md text-headline-md text-on-primary font-bold">Rp1.032.000</span>
 </div>
@@ -397,13 +409,13 @@ a.bg-primary:hover,button.bg-primary:hover{background-color:#8F6658}
 </div>
 </section>
 <!-- Customer Reviews Section with Photos -->
-<section class="w-full bg-surface-container-low py-20" id="ulasan-section">
+<section class="w-full bg-surface-container-low py-12 sm:py-20" id="ulasan-section">
 <div class="max-w-[1440px] mx-auto px-margin-mobile lg:px-margin">
 <!-- Section Header with Stats -->
-<div class="flex flex-col lg:flex-row lg:items-end justify-between gap-6 mb-12">
+<div class="flex flex-col lg:flex-row lg:items-end justify-between gap-6 mb-8 sm:mb-12">
 <div class="space-y-2">
 <span class="text-secondary font-label-caps-sm text-label-caps-sm uppercase tracking-widest font-semibold">Testimoni Pelanggan</span>
-<h2 class="font-headline-lg text-headline-lg text-primary">Ulasan Terverifikasi (84)</h2>
+<h2 class="font-headline-lg text-headline-lg max-sm:text-[32px] max-sm:leading-[38px] text-primary">Ulasan Terverifikasi (84)</h2>
 </div>
 <div class="flex flex-wrap items-center gap-6 bg-surface p-4 rounded shadow-sm">
 <div class="flex items-center gap-3 pr-6">
@@ -427,22 +439,22 @@ a.bg-primary:hover,button.bg-primary:hover{background-color:#8F6658}
 <!-- Reviews Grid -->
 <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
 <!-- Review Card 1 (Jakarta) -->
-<div class="bg-surface p-6 rounded shadow-sm space-y-4">
-<div class="flex items-center justify-between">
-<div class="flex items-center gap-3">
-<div class="w-10 h-10 rounded-full bg-secondary-container text-on-secondary-container font-semibold flex items-center justify-center font-label-caps-lg text-label-caps-lg">
+<div class="bg-surface p-5 sm:p-6 rounded shadow-sm space-y-4">
+<div class="flex items-start sm:items-center justify-between gap-3">
+<div class="flex items-center gap-3 min-w-0">
+<div class="w-10 h-10 shrink-0 rounded-full bg-secondary-container text-on-secondary-container font-semibold flex items-center justify-center font-label-caps-lg text-label-caps-lg">
                 SA
               </div>
 <div>
 <h4 class="font-body-md text-body-md font-semibold text-primary">Siti Andini</h4>
-<div class="flex items-center gap-1.5 text-on-surface-variant font-label-caps-sm text-label-caps-sm">
+<div class="flex flex-wrap items-center gap-x-1.5 text-on-surface-variant font-label-caps-sm text-label-caps-sm">
 <span>Jakarta Selatan</span>
 <span class="text-outline-variant">•</span>
 <span class="text-secondary flex items-center gap-0.5"><span class="material-symbols-outlined text-[14px]">verified</span> Pembeli Terverifikasi</span>
 </div>
 </div>
 </div>
-<span class="font-label-caps-sm text-label-caps-sm text-outline">3 hari lalu</span>
+<span class="font-label-caps-sm text-label-caps-sm text-outline whitespace-nowrap shrink-0">3 hari lalu</span>
 </div>
 <div class="flex text-secondary text-[16px]">
 <span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">star</span>
@@ -455,7 +467,7 @@ a.bg-primary:hover,button.bg-primary:hover{background-color:#8F6658}
             “Linennya beneran premium, seratnya halus dan adem banget dipakai siang hari di Jakarta. Warnanya Buttercream sangat soft dan elegan. Saku sampingnya luas muat ponsel tanpa bikin kain menggembung. Langsung jadi gamis favorit!”
           </p>
 <div class="flex items-center gap-3 pt-2">
-<div class="w-16 h-20 rounded bg-surface-container overflow-hidden shadow-sm">
+<div class="w-16 h-20 shrink-0 rounded bg-surface-container overflow-hidden shadow-sm">
 <img class="w-full h-full object-cover" data-alt="Customer mirror selfie photo showing modest sand taupe linen gamis worn in bright contemporary living room" src="assets/img/foto/look-khimar-mauve.jpg">
 </div>
 <div class="text-on-surface-variant font-label-caps-sm text-label-caps-sm">
@@ -465,22 +477,22 @@ a.bg-primary:hover,button.bg-primary:hover{background-color:#8F6658}
 </div>
 </div>
 <!-- Review Card 2 (Surabaya) -->
-<div class="bg-surface p-6 rounded shadow-sm space-y-4">
-<div class="flex items-center justify-between">
-<div class="flex items-center gap-3">
-<div class="w-10 h-10 rounded-full bg-secondary-container text-on-secondary-container font-semibold flex items-center justify-center font-label-caps-lg text-label-caps-lg">
+<div class="bg-surface p-5 sm:p-6 rounded shadow-sm space-y-4">
+<div class="flex items-start sm:items-center justify-between gap-3">
+<div class="flex items-center gap-3 min-w-0">
+<div class="w-10 h-10 shrink-0 rounded-full bg-secondary-container text-on-secondary-container font-semibold flex items-center justify-center font-label-caps-lg text-label-caps-lg">
                 RN
               </div>
 <div>
 <h4 class="font-body-md text-body-md font-semibold text-primary">Rania Nurul</h4>
-<div class="flex items-center gap-1.5 text-on-surface-variant font-label-caps-sm text-label-caps-sm">
+<div class="flex flex-wrap items-center gap-x-1.5 text-on-surface-variant font-label-caps-sm text-label-caps-sm">
 <span>Surabaya</span>
 <span class="text-outline-variant">•</span>
 <span class="text-secondary flex items-center gap-0.5"><span class="material-symbols-outlined text-[14px]">verified</span> Pembeli Terverifikasi</span>
 </div>
 </div>
 </div>
-<span class="font-label-caps-sm text-label-caps-sm text-outline">1 minggu lalu</span>
+<span class="font-label-caps-sm text-label-caps-sm text-outline whitespace-nowrap shrink-0">1 minggu lalu</span>
 </div>
 <div class="flex text-secondary text-[16px]">
 <span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">star</span>
@@ -493,7 +505,7 @@ a.bg-primary:hover,button.bg-primary:hover{background-color:#8F6658}
             “Awalnya ragu beli linen karena takut mudah lecek parah, tapi gamis Alma ini kualitas tenunnya stabil. Kancing mansetnya sangat memudahkan pas wudhu di kantor. Pengiriman ke Surabaya super cepat dan kemasan boxnya sangat wangi eksklusif.”
           </p>
 <div class="flex items-center gap-3 pt-2">
-<div class="w-16 h-20 rounded bg-surface-container overflow-hidden shadow-sm">
+<div class="w-16 h-20 shrink-0 rounded bg-surface-container overflow-hidden shadow-sm">
 <img class="w-full h-full object-cover" data-alt="Customer full body outfit photo wearing sand taupe linen gamis in an outdoor garden cafe in Surabaya" src="assets/img/foto/look-khimar-cokelat.jpg">
 </div>
 <div class="text-on-surface-variant font-label-caps-sm text-label-caps-sm">
@@ -507,7 +519,7 @@ a.bg-primary:hover,button.bg-primary:hover{background-color:#8F6658}
 </section>
 <!-- Size Guide Modal Dialog Overlay -->
 <div class="fixed inset-0 z-50 bg-inverse-surface/50 backdrop-blur-xs flex items-center justify-center p-4 hidden opacity-0 transition-opacity duration-300" id="size-guide-modal">
-<div class="bg-surface max-w-2xl w-full rounded p-6 lg:p-8 shadow-xl relative max-h-[921px] overflow-y-auto transform scale-95 transition-transform duration-300" id="size-modal-box">
+<div class="bg-surface max-w-2xl w-full rounded p-5 sm:p-6 lg:p-8 shadow-xl relative max-h-[90vh] overflow-y-auto transform scale-95 transition-transform duration-300" id="size-modal-box">
 <!-- Modal Header -->
 <div class="flex items-center justify-between pb-4 border-b border-outline-variant/30">
 <div>
@@ -523,8 +535,8 @@ a.bg-primary:hover,button.bg-primary:hover{background-color:#8F6658}
 <p class="font-body-sm text-body-sm text-on-surface-variant">
           Semua pengukuran dalam satuan centimeter (cm). Diukur saat busana dibentangkan di atas permukaan datar. Toleransi 2-3 cm karena pemotongan massal. Tersedia juga size XS (LD 120 cm, PP 130 cm).
         </p>
-<div class="overflow-x-auto">
-<table class="w-full text-left font-body-sm text-body-sm">
+<div class="overflow-x-auto -mx-5 px-5 sm:mx-0 sm:px-0">
+<table class="w-full min-w-[520px] text-left font-body-sm text-body-sm">
 <thead class="bg-surface-container-high text-primary font-label-caps-sm text-label-caps-sm uppercase">
 <tr>
 <th class="py-3 px-4 rounded-l">Ukuran</th>
@@ -543,8 +555,8 @@ a.bg-primary:hover,button.bg-primary:hover{background-color:#8F6658}
 <td class="py-3.5 px-4">190 cm</td>
 </tr>
 <tr class="bg-secondary-container/20 hover:bg-secondary-container/40 transition-colors">
-<td class="py-3.5 px-4 font-bold text-primary flex items-center gap-1.5">
-                  M <span class="bg-secondary text-on-secondary px-1.5 py-0.2 rounded text-[10px]">Populer</span>
+<td class="py-3.5 px-4 font-bold text-primary whitespace-nowrap">
+                  M <span class="bg-secondary text-on-secondary px-1.5 py-0.5 ml-1 rounded text-[10px] align-middle">Populer</span>
 </td>
 <td class="py-3.5 px-4 font-semibold text-primary">128 cm</td>
 <td class="py-3.5 px-4 font-semibold text-primary">138 cm</td>
@@ -581,7 +593,7 @@ a.bg-primary:hover,button.bg-primary:hover{background-color:#8F6658}
 </div>
 </div>
 <!-- Toast Notification Feedback -->
-<div class="fixed bottom-6 right-6 z-50 bg-primary text-on-primary px-5 py-4 rounded shadow-xl flex items-center gap-3 transform translate-y-20 opacity-0 transition-all duration-300 pointer-events-none" id="cart-toast">
+<div class="fixed bottom-4 left-4 right-4 sm:left-auto sm:bottom-6 sm:right-6 z-50 bg-primary text-on-primary px-5 py-4 rounded shadow-xl flex items-center gap-3 transform translate-y-20 opacity-0 transition-all duration-300 pointer-events-none" id="cart-toast">
 <span class="material-symbols-outlined text-secondary-fixed text-[24px]">check_circle</span>
 <div>
 <span class="font-label-caps-sm text-label-caps-sm uppercase block font-semibold text-secondary-fixed">Berhasil Ditambahkan</span>

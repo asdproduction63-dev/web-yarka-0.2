@@ -32,6 +32,21 @@ a.bg-primary:hover,button.bg-primary:hover{background-color:#8F6658}
 .yk-sw:focus-visible{outline:2px solid #A67C6E;outline-offset:3px}
 [data-produk] img.yk-img{transition:opacity .25s ease,transform .5s ease}
 [data-produk] img.yk-img.is-fading{opacity:.35}
+</style><style id="yarka-mobile-css">
+@media (max-width:639px){
+[data-produk]>div:last-child{padding:12px}
+[data-produk]>div:last-child>div:first-child>span:first-child{display:block;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;letter-spacing:.1em}
+[data-produk] .yk-swatches{gap:7px}
+[data-produk] .yk-sw{width:18px;height:18px}
+[data-produk] .yk-color-name{display:block;letter-spacing:.04em;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+[data-produk] .yk-swatches+.yk-color-name+p{font-size:14px;line-height:20px}
+.yk-sw,.wishlist-btn,[data-home-filter]{position:relative}
+.yk-sw::after{content:"";position:absolute;inset:-4px}
+.wishlist-btn::after{content:"";position:absolute;inset:-6px}
+[data-home-filter]{min-height:36px;flex-shrink:0}
+[data-home-filter]::after{content:"";position:absolute;inset:-4px 0}
+}
+@media (max-width:767px){#testimonials-grid{display:flex;overflow-x:auto;scroll-snap-type:x mandatory;margin-left:-1.25rem;margin-right:-1.25rem;padding:0 1.25rem 4px;scroll-padding:0 1.25rem;scrollbar-width:none}#testimonials-grid>*{flex:0 0 85%;scroll-snap-align:start}#testimonials-grid::-webkit-scrollbar{display:none}}
 </style></head><body class="bg-surface font-body-md text-on-surface antialiased"><header class="fixed top-0 left-0 right-0 z-50"><div class="bg-primary text-on-primary py-2 px-margin-mobile lg:px-margin text-center tracking-widest uppercase font-label-caps-sm text-label-caps-sm"><p class="truncate">Gratis Pengiriman ke Seluruh Indonesia untuk Pesanan di atas Rp500.000</p></div><div class="h-20 bg-surface/90 backdrop-blur-md border-b border-outline-variant/60 shadow-[0_10px_30px_-10px_rgba(26,26,26,0.05)]"><div class="max-w-[1440px] mx-auto h-full px-margin-mobile lg:px-margin flex items-center justify-between gap-space-md"><div class="relative z-10 flex items-center gap-space-md lg:w-1/3"><button aria-label="Menu Navigasi" class="lg:hidden text-on-surface p-1 hover:text-on-surface-variant transition-colors" id="mobile-nav-toggle" type="button"><span class="material-symbols-outlined text-[24px]">menu</span></button><nav class="hidden lg:flex items-center gap-4 xl:gap-7 whitespace-nowrap" data-active-classes="text-primary font-bold border-b border-primary pb-0.5"><a class="text-on-surface-variant font-label-caps-lg text-label-caps-lg uppercase transition-colors hover:text-on-surface" data-path="koleksi" href="#">Koleksi</a><a class="text-on-surface-variant font-label-caps-lg text-label-caps-lg uppercase transition-colors hover:text-on-surface" data-path="cerita" href="#"><span class="xl:hidden">Cerita</span><span class="hidden xl:inline">Cerita Kami</span></a><a class="text-on-surface-variant font-label-caps-lg text-label-caps-lg uppercase transition-colors hover:text-on-surface" data-path="gamis" href="#">Abaya</a><a class="text-on-surface-variant font-label-caps-lg text-label-caps-lg uppercase transition-colors hover:text-on-surface" data-path="hijab" href="#">Khimar</a><a class="text-on-surface-variant font-label-caps-lg text-label-caps-lg uppercase transition-colors hover:text-on-surface" data-path="outer" href="#">Bergo</a><a class="text-on-surface-variant font-label-caps-lg text-label-caps-lg uppercase transition-colors hover:text-on-surface" data-path="set" href="#">Niqab</a></nav></div><div class="flex items-center justify-center lg:w-1/3"><a class="flex items-center gap-space-sm group" data-path="beranda" href="#"><img alt="Yarka Moslem Wear" class="h-10 w-auto object-contain" src="assets/img/logo.png"></a></div><div class="flex items-center justify-end gap-space-md lg:gap-space-lg lg:w-1/3"><a aria-label="Wishlist" class="relative text-on-surface hover:text-on-surface-variant transition-colors p-1" data-path="wishlist" href="#"><span class="material-symbols-outlined text-[22px]">favorite</span><span class="absolute top-0 right-0 w-4 h-4 bg-secondary text-on-secondary rounded-full font-label-caps-sm text-label-caps-sm flex items-center justify-center leading-none" style="display:none"></span></a><button aria-label="Keranjang Belanja" class="relative text-on-surface hover:text-on-surface-variant transition-colors p-1" id="cart-drawer-toggle" type="button"><span class="material-symbols-outlined text-[22px]">shopping_bag</span><span class="absolute top-0 right-0 w-4 h-4 bg-primary text-on-primary rounded-full font-label-caps-sm text-label-caps-sm flex items-center justify-center leading-none" style="display:none"></span></button><a aria-label="Akun Profil" class="flex items-center gap-space-xs pl-1 text-on-surface hover:text-on-surface-variant transition-colors" data-path="akun" href="#"><img alt="Profile" class="w-8 h-8 rounded-full object-cover border border-outline-variant/60" src="assets/img/foto/look-trio-studio.jpg"></a></div></div></div></header><div class="fixed inset-0 bg-inverse-surface/40 backdrop-blur-xs z-50 hidden transition-opacity" id="cart-overlay"></div><aside class="fixed top-0 right-0 bottom-0 w-full sm:w-[440px] bg-surface-container-lowest z-50 transform translate-x-full transition-transform duration-300 ease-in-out shadow-[0_24px_48px_-12px_rgba(26,26,26,0.08)] flex flex-col" id="cart-drawer"><div class="h-20 px-space-lg flex items-center justify-between border-b border-outline-variant/40"><div class="flex items-center gap-space-sm"><span class="material-symbols-outlined text-primary text-[24px]">shopping_bag</span><h2 class="font-headline-sm text-headline-sm text-primary">Keranjang Butik</h2><span class="bg-surface-container px-2 py-0.5 rounded text-on-surface-variant font-label-caps-sm text-label-caps-sm">2 Item</span></div><button aria-label="Tutup Keranjang" class="text-on-surface-variant hover:text-primary transition-colors p-1.5" id="cart-drawer-close" type="button"><span class="material-symbols-outlined text-[22px]">close</span></button></div><div class="bg-secondary-container/60 px-space-lg py-2.5 flex items-center justify-between border-b border-secondary-container"><div class="flex items-center gap-2"><span class="material-symbols-outlined text-secondary text-[20px]">local_shipping</span><p class="font-label-text text-label-text text-on-secondary-container">Tersisa <strong>Rp21.000</strong> untuk Bebas Ongkir</p></div><span class="font-label-caps-sm text-label-caps-sm text-secondary uppercase font-semibold">96%</span></div><div class="flex-1 overflow-y-auto p-space-lg space-y-space-md"><div class="flex gap-space-md pb-space-md border-b border-outline-variant/30"><div class="w-20 h-24 bg-surface-container-high rounded overflow-hidden flex-shrink-0"><div class="w-full h-full bg-surface-container flex items-center justify-center text-outline-variant"><span class="material-symbols-outlined text-[28px]">styler</span></div></div><div class="flex-1 flex flex-col justify-between"><div><div class="flex justify-between items-start"><h3 class="font-body-md text-body-md text-primary font-medium line-clamp-1">Otba Abaya</h3><button class="text-outline hover:text-error transition-colors"><span class="material-symbols-outlined text-[18px]">delete</span></button></div><p class="font-label-caps-sm text-label-caps-sm text-on-surface-variant uppercase mt-1">Terracotta • Size L</p></div><div class="flex items-center justify-between mt-2"><div class="flex items-center border border-outline-variant rounded"><button class="px-2 py-0.5 text-on-surface-variant hover:text-primary transition-colors">−</button><span class="px-2 text-label-text font-label-text text-primary">1</span><button class="px-2 py-0.5 text-on-surface-variant hover:text-primary transition-colors">+</button></div><span class="font-body-md text-body-md text-primary font-semibold">Rp479.000</span></div></div></div></div><div class="p-space-lg bg-surface border-t border-outline-variant/40 space-y-space-sm"><div class="flex items-center justify-between text-on-surface-variant font-body-sm text-body-sm"><span>Subtotal Produk</span><span class="text-primary font-medium">Rp479.000</span></div><div class="flex items-center justify-between text-on-surface-variant font-body-sm text-body-sm"><span>Estimasi Pajak &amp; Ongkir</span><span class="text-secondary font-medium">Dihitung saat checkout</span></div><div class="flex items-center justify-between pt-space-xs border-t border-outline-variant/30 font-headline-sm text-headline-sm text-primary"><span>Total</span><span>Rp479.000</span></div><a class="block w-full text-center bg-primary text-on-primary py-3.5 rounded font-label-caps-lg text-label-caps-lg uppercase tracking-wider hover:bg-primary-container transition-colors" data-path="checkout" href="#">Lanjut ke Pembayaran</a><p class="text-center font-label-caps-sm text-label-caps-sm text-outline uppercase">Material Premium Original Yarka</p></div></aside><main class="w-full pt-28 bg-surface"><div class="flex flex-col w-full">
 <!-- 1. Hero Section -->
 <section class="relative w-full overflow-hidden -mt-28 pt-28">
@@ -55,22 +70,22 @@ a.bg-primary:hover,button.bg-primary:hover{background-color:#8F6658}
 <!-- Quick Trust Highlight Bar -->
 <div class="w-full bg-surface-container-low py-6 shadow-sm">
 <div class="max-w-[1440px] mx-auto px-margin-mobile lg:px-margin">
-<div class="grid grid-cols-1 md:grid-cols-3 gap-y-4 md:gap-y-0 gap-x-space-lg text-center md:text-left">
-<div class="flex items-center justify-center md:justify-start gap-space-sm">
+<div class="grid grid-cols-1 md:grid-cols-3 gap-y-4 md:gap-y-0 gap-x-space-lg text-left">
+<div class="flex items-center justify-start gap-space-sm max-md:gap-space-md max-md:max-w-sm max-md:mx-auto max-md:w-full">
 <span class="material-symbols-outlined text-secondary text-[26px]">eco</span>
 <div>
 <h4 class="font-label-caps-lg text-label-caps-lg text-primary uppercase font-semibold tracking-wider">Material Pilihan</h4>
 <p class="font-body-sm text-body-sm text-on-surface-variant">Cotton sandwash, cupro jacquard &amp; Yaviya Anti UV</p>
 </div>
 </div>
-<div class="flex items-center justify-center md:justify-start gap-space-sm">
+<div class="flex items-center justify-start gap-space-sm max-md:gap-space-md max-md:max-w-sm max-md:mx-auto max-md:w-full">
 <span class="material-symbols-outlined text-secondary text-[26px]">straighten</span>
 <div>
 <h4 class="font-label-caps-lg text-label-caps-lg text-primary uppercase font-semibold tracking-wider">Jahitan Atelier Presisi</h4>
 <p class="font-body-sm text-body-sm text-on-surface-variant">Kampuh bersih tanpa obras terbuka, awet &amp; rapi</p>
 </div>
 </div>
-<div class="flex items-center justify-center md:justify-start gap-space-sm">
+<div class="flex items-center justify-start gap-space-sm max-md:gap-space-md max-md:max-w-sm max-md:mx-auto max-md:w-full">
 <span class="material-symbols-outlined text-secondary text-[26px]">local_shipping</span>
 <div>
 <h4 class="font-label-caps-lg text-label-caps-lg text-primary uppercase font-semibold tracking-wider">Pengiriman Seluruh Nusantara</h4>
@@ -87,65 +102,65 @@ a.bg-primary:hover,button.bg-primary:hover{background-color:#8F6658}
 <div class="flex flex-col md:flex-row md:items-end justify-between gap-space-md">
 <div>
 <span class="font-label-caps-sm text-label-caps-sm text-secondary uppercase tracking-widest font-semibold">Kategori Eksklusif</span>
-<h2 class="font-headline-lg text-headline-lg text-primary mt-1">Struktur Siluet yang Bersahaja</h2>
+<h2 class="font-headline-lg text-headline-lg max-sm:text-[32px] max-sm:leading-[38px] text-primary mt-1">Struktur Siluet yang Bersahaja</h2>
 </div>
-<p class="font-body-md text-body-md text-on-surface-variant max-w-md">
+<p class="font-body-md text-body-md max-sm:text-body-sm text-on-surface-variant max-w-md">
           Pilihan busana berpotongan longgar yang mempertahankan kesantunan syar’i dalam sentuhan estetika kontemporer.
         </p>
 </div>
 <!-- Categories 4-Card Grid -->
-<div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-gutter">
+<div class="grid grid-cols-2 lg:grid-cols-4 gap-gutter-mobile sm:gap-gutter">
 <!-- Card 1 -->
-<a class="group relative flex flex-col h-[460px] rounded overflow-hidden bg-surface-container shadow-sm hover:shadow-xl transition-all duration-500" href="katalog.html?k=abaya">
+<a class="group relative flex flex-col h-[250px] sm:h-[460px] rounded overflow-hidden bg-surface-container shadow-sm hover:shadow-xl transition-all duration-500" href="katalog.html?k=abaya">
 <div class="absolute inset-0 bg-cover bg-center transition-transform duration-700 ease-out group-hover:scale-105" data-alt="Abaya Yarka" style="background-image: url('assets/img/foto/look-hawa-grup.jpg')">
 </div>
 <div class="absolute inset-0 bg-gradient-to-t from-primary/80 via-primary/20 to-transparent"></div>
-<div class="relative mt-auto p-space-lg text-on-primary">
-<span class="font-label-caps-sm text-label-caps-sm uppercase tracking-widest text-secondary-fixed">01 • 8 Model</span>
-<h3 class="font-headline-sm text-headline-sm text-surface-container-lowest mt-1 group-hover:text-secondary-fixed transition-colors">Abaya</h3>
-<p class="font-body-sm text-body-sm text-surface-container-low/80 mt-1 line-clamp-2">Hawa, Karaz, Hanna V.2, Ruwa, Ara, dan koleksi abaya Yarka lainnya.</p>
+<div class="relative mt-auto p-4 sm:p-space-lg text-on-primary">
+<span class="font-label-caps-sm text-label-caps-sm uppercase tracking-widest max-sm:tracking-wider text-secondary-fixed">01 • 8 Model</span>
+<h3 class="font-headline-sm text-headline-sm max-sm:text-[20px] max-sm:leading-[24px] text-surface-container-lowest mt-1 group-hover:text-secondary-fixed transition-colors">Abaya</h3>
+<p class="font-body-sm text-body-sm text-surface-container-low/80 mt-1 line-clamp-2 max-sm:hidden">Hawa, Karaz, Hanna V.2, Ruwa, Ara, dan koleksi abaya Yarka lainnya.</p>
 <div class="inline-flex items-center gap-1.5 mt-3 font-label-caps-sm text-label-caps-sm tracking-wider uppercase text-surface">
               Eksplorasi <span class="material-symbols-outlined text-[16px] group-hover:translate-x-1 transition-transform">arrow_forward</span>
 </div>
 </div>
 </a>
 <!-- Card 2 -->
-<a class="group relative flex flex-col h-[460px] rounded overflow-hidden bg-surface-container shadow-sm hover:shadow-xl transition-all duration-500" href="katalog.html?k=bergo-tali">
+<a class="group relative flex flex-col h-[250px] sm:h-[460px] rounded overflow-hidden bg-surface-container shadow-sm hover:shadow-xl transition-all duration-500" href="katalog.html?k=bergo-tali">
 <div class="absolute inset-0 bg-cover bg-center transition-transform duration-700 ease-out group-hover:scale-105" data-alt="Bergo Tali Yarka" style="background-image: url('assets/img/foto/look-ruwa-grup.jpg')">
 </div>
 <div class="absolute inset-0 bg-gradient-to-t from-primary/80 via-primary/20 to-transparent"></div>
-<div class="relative mt-auto p-space-lg text-on-primary">
-<span class="font-label-caps-sm text-label-caps-sm uppercase tracking-widest text-secondary-fixed">02 • 4 Model</span>
-<h3 class="font-headline-sm text-headline-sm text-surface-container-lowest mt-1 group-hover:text-secondary-fixed transition-colors">Bergo Tali</h3>
-<p class="font-body-sm text-body-sm text-surface-container-low/80 mt-1 line-clamp-2">Berlin Zela, Pastan Zhaa, Berlin Zhaa &amp; Berlin Zanera: ringan dan flowy.</p>
+<div class="relative mt-auto p-4 sm:p-space-lg text-on-primary">
+<span class="font-label-caps-sm text-label-caps-sm uppercase tracking-widest max-sm:tracking-wider text-secondary-fixed">02 • 4 Model</span>
+<h3 class="font-headline-sm text-headline-sm max-sm:text-[20px] max-sm:leading-[24px] text-surface-container-lowest mt-1 group-hover:text-secondary-fixed transition-colors">Bergo Tali</h3>
+<p class="font-body-sm text-body-sm text-surface-container-low/80 mt-1 line-clamp-2 max-sm:hidden">Berlin Zela, Pastan Zhaa, Berlin Zhaa &amp; Berlin Zanera: ringan dan flowy.</p>
 <div class="inline-flex items-center gap-1.5 mt-3 font-label-caps-sm text-label-caps-sm tracking-wider uppercase text-surface">
               Eksplorasi <span class="material-symbols-outlined text-[16px] group-hover:translate-x-1 transition-transform">arrow_forward</span>
 </div>
 </div>
 </a>
 <!-- Card 3 -->
-<a class="group relative flex flex-col h-[460px] rounded overflow-hidden bg-surface-container shadow-sm hover:shadow-xl transition-all duration-500" href="katalog.html?k=khimar-segi-empat">
+<a class="group relative flex flex-col h-[250px] sm:h-[460px] rounded overflow-hidden bg-surface-container shadow-sm hover:shadow-xl transition-all duration-500" href="katalog.html?k=khimar-segi-empat">
 <div class="absolute inset-0 bg-cover bg-center transition-transform duration-700 ease-out group-hover:scale-105" data-alt="Khimar & French Square Yarka" style="background-image: url('assets/img/foto/look-ara-grup.jpg')">
 </div>
 <div class="absolute inset-0 bg-gradient-to-t from-primary/80 via-primary/20 to-transparent"></div>
-<div class="relative mt-auto p-space-lg text-on-primary">
-<span class="font-label-caps-sm text-label-caps-sm uppercase tracking-widest text-secondary-fixed">03 • 1 Model</span>
-<h3 class="font-headline-sm text-headline-sm text-surface-container-lowest mt-1 group-hover:text-secondary-fixed transition-colors">Khimar &amp; French Square</h3>
-<p class="font-body-sm text-body-sm text-surface-container-low/80 mt-1 line-clamp-2">French Square Rubina: corn skin cotton, minim kusut, 7 pilihan warna.</p>
+<div class="relative mt-auto p-4 sm:p-space-lg text-on-primary">
+<span class="font-label-caps-sm text-label-caps-sm uppercase tracking-widest max-sm:tracking-wider text-secondary-fixed">03 • 1 Model</span>
+<h3 class="font-headline-sm text-headline-sm max-sm:text-[20px] max-sm:leading-[24px] text-surface-container-lowest mt-1 group-hover:text-secondary-fixed transition-colors">Khimar &amp; French Square</h3>
+<p class="font-body-sm text-body-sm text-surface-container-low/80 mt-1 line-clamp-2 max-sm:hidden">French Square Rubina: corn skin cotton, minim kusut, 7 pilihan warna.</p>
 <div class="inline-flex items-center gap-1.5 mt-3 font-label-caps-sm text-label-caps-sm tracking-wider uppercase text-surface">
               Eksplorasi <span class="material-symbols-outlined text-[16px] group-hover:translate-x-1 transition-transform">arrow_forward</span>
 </div>
 </div>
 </a>
 <!-- Card 4 -->
-<a class="group relative flex flex-col h-[460px] rounded overflow-hidden bg-surface-container shadow-sm hover:shadow-xl transition-all duration-500" href="katalog.html">
+<a class="group relative flex flex-col h-[250px] sm:h-[460px] rounded overflow-hidden bg-surface-container shadow-sm hover:shadow-xl transition-all duration-500" href="katalog.html">
 <div class="absolute inset-0 bg-cover bg-center transition-transform duration-700 ease-out group-hover:scale-105" data-alt="Semua Koleksi Yarka" style="background-image: url('assets/img/foto/look-hanna-v2-navy.jpg')">
 </div>
 <div class="absolute inset-0 bg-gradient-to-t from-primary/80 via-primary/20 to-transparent"></div>
-<div class="relative mt-auto p-space-lg text-on-primary">
-<span class="font-label-caps-sm text-label-caps-sm uppercase tracking-widest text-secondary-fixed">04 • 14 Model</span>
-<h3 class="font-headline-sm text-headline-sm text-surface-container-lowest mt-1 group-hover:text-secondary-fixed transition-colors">Semua Koleksi</h3>
-<p class="font-body-sm text-body-sm text-surface-container-low/80 mt-1 line-clamp-2">Lihat seluruh koleksi Yarka, termasuk rilisan terbaru Sep–Okt 2026.</p>
+<div class="relative mt-auto p-4 sm:p-space-lg text-on-primary">
+<span class="font-label-caps-sm text-label-caps-sm uppercase tracking-widest max-sm:tracking-wider text-secondary-fixed">04 • 14 Model</span>
+<h3 class="font-headline-sm text-headline-sm max-sm:text-[20px] max-sm:leading-[24px] text-surface-container-lowest mt-1 group-hover:text-secondary-fixed transition-colors">Semua Koleksi</h3>
+<p class="font-body-sm text-body-sm text-surface-container-low/80 mt-1 line-clamp-2 max-sm:hidden">Lihat seluruh koleksi Yarka, termasuk rilisan terbaru Sep–Okt 2026.</p>
 <div class="inline-flex items-center gap-1.5 mt-3 font-label-caps-sm text-label-caps-sm tracking-wider uppercase text-surface">
               Eksplorasi <span class="material-symbols-outlined text-[16px] group-hover:translate-x-1 transition-transform">arrow_forward</span>
 </div>
@@ -160,9 +175,9 @@ a.bg-primary:hover,button.bg-primary:hover{background-color:#8F6658}
 <div class="flex flex-col sm:flex-row sm:items-end justify-between gap-space-md">
 <div>
 <span class="font-label-caps-sm text-label-caps-sm text-secondary uppercase tracking-widest font-semibold">Rilisan Terbaru Yarka</span>
-<h2 class="font-headline-lg text-headline-lg text-primary mt-1">Koleksi Terbaru</h2>
+<h2 class="font-headline-lg text-headline-lg max-sm:text-[32px] max-sm:leading-[38px] text-primary mt-1">Koleksi Terbaru</h2>
 </div>
-<div class="flex items-center gap-space-xs overflow-x-auto pb-1"><button class="px-4 py-1.5 rounded-full bg-primary text-on-primary font-label-caps-sm text-label-caps-sm uppercase tracking-wider" data-home-filter="semua">Semua</button><button class="px-4 py-1.5 rounded-full bg-surface-container text-on-surface-variant hover:text-primary font-label-caps-sm text-label-caps-sm uppercase tracking-wider transition-colors" data-home-filter="abaya">Abaya</button><button class="px-4 py-1.5 rounded-full bg-surface-container text-on-surface-variant hover:text-primary font-label-caps-sm text-label-caps-sm uppercase tracking-wider transition-colors" data-home-filter="bergo-tali">Bergo Tali</button></div>
+<div class="flex items-center gap-space-xs overflow-x-auto pb-1 max-sm:py-1 max-sm:-mx-margin-mobile max-sm:px-margin-mobile"><button class="px-4 py-1.5 rounded-full bg-primary text-on-primary font-label-caps-sm text-label-caps-sm uppercase tracking-wider" data-home-filter="semua">Semua</button><button class="px-4 py-1.5 rounded-full bg-surface-container text-on-surface-variant hover:text-primary font-label-caps-sm text-label-caps-sm uppercase tracking-wider transition-colors" data-home-filter="abaya">Abaya</button><button class="px-4 py-1.5 rounded-full bg-surface-container text-on-surface-variant hover:text-primary font-label-caps-sm text-label-caps-sm uppercase tracking-wider transition-colors" data-home-filter="bergo-tali">Bergo Tali</button></div>
 </div>
 <!-- Product Grid -->
 <div class="grid grid-cols-2 md:grid-cols-3 xl:grid-cols-4 gap-gutter-mobile lg:gap-gutter">
@@ -358,7 +373,7 @@ a.bg-primary:hover,button.bg-primary:hover{background-color:#8F6658}
 <div class="max-w-[1440px] mx-auto px-margin-mobile lg:px-margin">
 <div class="bg-primary text-on-primary rounded-xl overflow-hidden shadow-xl">
 <div class="grid grid-cols-1 lg:grid-cols-12 min-h-[580px]">
-<div class="lg:col-span-7 p-8 md:p-14 lg:p-20 flex flex-col justify-between space-y-space-lg">
+<div class="lg:col-span-7 p-6 sm:p-8 md:p-14 lg:p-20 flex flex-col justify-between space-y-space-lg">
 <div class="space-y-space-md">
 <div class="inline-flex items-center gap-2 px-3 py-1 bg-surface-container-high/15 rounded-full">
 <span class="material-symbols-outlined text-secondary-fixed text-[18px]">auto_awesome</span>
@@ -366,7 +381,7 @@ a.bg-primary:hover,button.bg-primary:hover{background-color:#8F6658}
 </div>
 <h2 class="font-display-hero text-display-hero-mobile lg:text-display-hero text-surface-container-lowest leading-tight">
 Hawa Abaya <br>
-<span class="font-headline-sm text-headline-sm text-surface-container-highest italic font-light">Timeless Elegance • Casual • Versatile</span>
+<span class="font-headline-sm text-headline-sm text-surface-container-highest italic font-light max-lg:block max-lg:mt-2 max-sm:text-[19px] max-sm:leading-[26px]">Timeless Elegance • Casual • Versatile</span>
 </h2>
 <p class="font-body-md text-body-md text-surface-container-highest/90 max-w-lg font-light leading-relaxed">Abaya V neck dengan fitted sleeves dan sulaman (embroidery) yang anggun. Bahan cotton sandwash bertekstur dengan washed look yang matte, adem, dan jatuh.</p>
 <ul class="grid grid-cols-1 sm:grid-cols-2 gap-x-6 gap-y-2 max-w-lg font-body-sm text-body-sm text-surface-container-highest/90">
@@ -390,14 +405,14 @@ Hawa Abaya <br>
 </div>
 <div class="pt-2 flex flex-wrap items-center gap-space-md">
 <a class="inline-flex items-center px-8 h-12 bg-secondary text-on-secondary rounded font-label-caps-lg text-label-caps-lg uppercase tracking-wider hover:bg-secondary/90 transition-colors shadow-sm" href="produk.html?p=hawa" id="spot-cta">Lihat Hawa Abaya</a>
-<a class="font-label-caps-lg text-label-caps-lg text-surface-container-highest uppercase tracking-wider hover:text-white transition-colors flex items-center gap-1" href="https://wa.me/6281384767525?text=Halo%20Yarka%2C%20saya%20tertarik%20dengan%20Hawa%20Abaya." target="_blank" rel="noopener">Pesan via WhatsApp <span class="material-symbols-outlined text-[16px]">arrow_forward</span></a>
+<a class="font-label-caps-lg text-label-caps-lg text-surface-container-highest uppercase tracking-wider hover:text-white transition-colors flex items-center gap-1 max-sm:min-h-[44px]" href="https://wa.me/6281384767525?text=Halo%20Yarka%2C%20saya%20tertarik%20dengan%20Hawa%20Abaya." target="_blank" rel="noopener">Pesan via WhatsApp <span class="material-symbols-outlined text-[16px]">arrow_forward</span></a>
 </div>
 </div>
 </div>
-<div class="lg:col-span-5 relative min-h-[460px] lg:min-h-full">
+<div class="lg:col-span-5 relative min-h-[420px] sm:min-h-[460px] lg:min-h-full">
 <img alt="Hawa Abaya warna Peony Pink" class="absolute inset-0 w-full h-full object-cover transition-opacity duration-300" id="spot-img" src="assets/img/foto/produk-hawa-peony-pink.jpg">
 <div class="absolute inset-0 bg-gradient-to-t lg:bg-gradient-to-l from-primary/50 via-transparent to-transparent pointer-events-none"></div>
-<div class="absolute bottom-6 left-6 right-6 p-4 bg-surface-container-lowest/85 backdrop-blur-md rounded text-primary">
+<div class="absolute bottom-4 left-4 right-4 sm:bottom-6 sm:left-6 sm:right-6 p-4 bg-surface-container-lowest/85 backdrop-blur-md rounded text-primary">
 <span class="font-label-caps-sm text-label-caps-sm text-secondary uppercase font-semibold">Material</span>
 <p class="font-body-sm text-body-sm font-medium mt-0.5">Cotton sandwash tekstur: matte, adem, dan jatuh</p>
 </div>
@@ -415,17 +430,17 @@ lbl.textContent=b.getAttribute('data-warna');cta.href='produk.html?p=hawa&w='+b.
 </section>
 <!-- 5. Brand Pillars / Story -->
 <section class="w-full py-space-xl bg-surface-container-low" id="story" style="scroll-margin-top:7rem">
-<div class="max-w-[1440px] mx-auto px-margin-mobile lg:px-margin space-y-space-xl">
+<div class="max-w-[1440px] mx-auto px-margin-mobile lg:px-margin space-y-space-lg sm:space-y-space-xl">
 <div class="text-center max-w-xl mx-auto space-y-2">
 <span class="font-label-caps-sm text-label-caps-sm text-secondary uppercase tracking-widest font-semibold">Dedikasi Butik</span>
-<h2 class="font-headline-lg text-headline-lg text-primary">Mengapa Memilih Yarka?</h2>
+<h2 class="font-headline-lg text-headline-lg max-sm:text-[32px] max-sm:leading-[38px] text-primary">Mengapa Memilih Yarka?</h2>
 <p class="font-body-md text-body-md text-on-surface-variant">
           Filosofi kami berakar pada rasa hormat mendalam terhadap martabat berbusana, ketelitian pengerjaan tangan, dan kenyamanan pemakai.
         </p>
 </div>
 <div class="grid grid-cols-1 md:grid-cols-3 gap-gutter">
 <!-- Pillar 1 -->
-<div class="bg-surface p-8 rounded-lg shadow-sm hover:shadow-md transition-shadow space-y-space-md flex flex-col justify-between">
+<div class="bg-surface p-6 sm:p-8 rounded-lg shadow-sm hover:shadow-md transition-shadow space-y-space-md flex flex-col justify-between">
 <div class="space-y-space-md">
 <div class="w-14 h-14 rounded-full bg-secondary-container flex items-center justify-center text-secondary">
 <span class="material-symbols-outlined text-[28px]">spa</span>
@@ -442,7 +457,7 @@ lbl.textContent=b.getAttribute('data-warna');cta.href='produk.html?p=hawa&w='+b.
           </div>
 </div>
 <!-- Pillar 2 -->
-<div class="bg-surface p-8 rounded-lg shadow-sm hover:shadow-md transition-shadow space-y-space-md flex flex-col justify-between">
+<div class="bg-surface p-6 sm:p-8 rounded-lg shadow-sm hover:shadow-md transition-shadow space-y-space-md flex flex-col justify-between">
 <div class="space-y-space-md">
 <div class="w-14 h-14 rounded-full bg-secondary-container flex items-center justify-center text-secondary">
 <span class="material-symbols-outlined text-[28px]">design_services</span>
@@ -459,7 +474,7 @@ lbl.textContent=b.getAttribute('data-warna');cta.href='produk.html?p=hawa&w='+b.
           </div>
 </div>
 <!-- Pillar 3 -->
-<div class="bg-surface p-8 rounded-lg shadow-sm hover:shadow-md transition-shadow space-y-space-md flex flex-col justify-between">
+<div class="bg-surface p-6 sm:p-8 rounded-lg shadow-sm hover:shadow-md transition-shadow space-y-space-md flex flex-col justify-between">
 <div class="space-y-space-md">
 <div class="w-14 h-14 rounded-full bg-secondary-container flex items-center justify-center text-secondary">
 <span class="material-symbols-outlined text-[28px]">shield_with_heart</span>
@@ -481,16 +496,16 @@ lbl.textContent=b.getAttribute('data-warna');cta.href='produk.html?p=hawa&w='+b.
 <!-- 6. Customer Notes (Testimonials) -->
 <section class="w-full py-space-xl lg:py-24 bg-surface">
 <div class="max-w-[1440px] mx-auto px-margin-mobile lg:px-margin space-y-space-lg">
-<div class="flex flex-col sm:flex-row sm:items-end justify-between gap-space-md">
+<div class="flex flex-row items-end justify-between gap-space-md">
 <div>
 <span class="font-label-caps-sm text-label-caps-sm text-secondary uppercase tracking-widest font-semibold">Suara Sahabat Butik</span>
-<h2 class="font-headline-lg text-headline-lg text-primary mt-1">Catatan Kepercayaan</h2>
+<h2 class="font-headline-lg text-headline-lg max-sm:text-[32px] max-sm:leading-[38px] text-primary mt-1">Catatan Kepercayaan</h2>
 </div>
-<div class="flex items-center gap-2">
-<button aria-label="Sebelumnya" class="w-10 h-10 rounded-full bg-surface-container hover:bg-primary hover:text-on-primary text-primary flex items-center justify-center transition-colors" id="testi-prev">
+<div class="flex items-center gap-2 flex-shrink-0">
+<button aria-label="Sebelumnya" class="w-11 h-11 sm:w-10 sm:h-10 rounded-full bg-surface-container hover:bg-primary hover:text-on-primary text-primary flex items-center justify-center transition-colors" id="testi-prev">
 <span class="material-symbols-outlined text-[20px]">chevron_left</span>
 </button>
-<button aria-label="Selanjutnya" class="w-10 h-10 rounded-full bg-surface-container hover:bg-primary hover:text-on-primary text-primary flex items-center justify-center transition-colors" id="testi-next">
+<button aria-label="Selanjutnya" class="w-11 h-11 sm:w-10 sm:h-10 rounded-full bg-surface-container hover:bg-primary hover:text-on-primary text-primary flex items-center justify-center transition-colors" id="testi-next">
 <span class="material-symbols-outlined text-[20px]">chevron_right</span>
 </button>
 </div>
@@ -498,7 +513,7 @@ lbl.textContent=b.getAttribute('data-warna');cta.href='produk.html?p=hawa&w='+b.
 <!-- Testimonials Carousel Container -->
 <div class="grid grid-cols-1 md:grid-cols-3 gap-gutter" id="testimonials-grid">
 <!-- Review 1 -->
-<div class="bg-surface-container-low p-8 rounded-lg shadow-sm flex flex-col justify-between space-y-space-md">
+<div class="bg-surface-container-low p-6 sm:p-8 rounded-lg shadow-sm flex flex-col justify-between space-y-space-md">
 <div class="space-y-space-sm">
 <div class="flex text-[#D4AF37] gap-0.5">
 <span class="material-symbols-outlined text-[18px]" style="font-variation-settings: 'FILL' 1;">star</span>
@@ -507,7 +522,7 @@ lbl.textContent=b.getAttribute('data-warna');cta.href='produk.html?p=hawa&w='+b.
 <span class="material-symbols-outlined text-[18px]" style="font-variation-settings: 'FILL' 1;">star</span>
 <span class="material-symbols-outlined text-[18px]" style="font-variation-settings: 'FILL' 1;">star</span>
 </div>
-<p class="font-headline-sm text-headline-sm text-primary font-normal italic">
+<p class="font-headline-sm text-headline-sm max-sm:text-[20px] max-sm:leading-[27px] text-primary font-normal italic">
               “Zen Abaya benar-benar sejuk untuk mobilitas seharian di kantor Jakarta. Bahannya bernapas bebas dan jahitannya luar biasa rapi.”
             </p>
 </div>
@@ -522,7 +537,7 @@ lbl.textContent=b.getAttribute('data-warna');cta.href='produk.html?p=hawa&w='+b.
 </div>
 </div>
 <!-- Review 2 -->
-<div class="bg-surface-container-low p-8 rounded-lg shadow-sm flex flex-col justify-between space-y-space-md">
+<div class="bg-surface-container-low p-6 sm:p-8 rounded-lg shadow-sm flex flex-col justify-between space-y-space-md">
 <div class="space-y-space-sm">
 <div class="flex text-[#D4AF37] gap-0.5">
 <span class="material-symbols-outlined text-[18px]" style="font-variation-settings: 'FILL' 1;">star</span>
@@ -531,7 +546,7 @@ lbl.textContent=b.getAttribute('data-warna');cta.href='produk.html?p=hawa&w='+b.
 <span class="material-symbols-outlined text-[18px]" style="font-variation-settings: 'FILL' 1;">star</span>
 <span class="material-symbols-outlined text-[18px]" style="font-variation-settings: 'FILL' 1;">star</span>
 </div>
-<p class="font-headline-sm text-headline-sm text-primary font-normal italic">
+<p class="font-headline-sm text-headline-sm max-sm:text-[20px] max-sm:leading-[27px] text-primary font-normal italic">
               “Jatuhnya bahan Abaya Rayyan sangat mewah dan berbobot tanpa terasa gerah. Selalu menjadi andalan saya untuk resepsi pernikahan keluarga.”
             </p>
 </div>
@@ -546,7 +561,7 @@ lbl.textContent=b.getAttribute('data-warna');cta.href='produk.html?p=hawa&w='+b.
 </div>
 </div>
 <!-- Review 3 -->
-<div class="bg-surface-container-low p-8 rounded-lg shadow-sm flex flex-col justify-between space-y-space-md">
+<div class="bg-surface-container-low p-6 sm:p-8 rounded-lg shadow-sm flex flex-col justify-between space-y-space-md">
 <div class="space-y-space-sm">
 <div class="flex text-[#D4AF37] gap-0.5">
 <span class="material-symbols-outlined text-[18px]" style="font-variation-settings: 'FILL' 1;">star</span>
@@ -555,7 +570,7 @@ lbl.textContent=b.getAttribute('data-warna');cta.href='produk.html?p=hawa&w='+b.
 <span class="material-symbols-outlined text-[18px]" style="font-variation-settings: 'FILL' 1;">star</span>
 <span class="material-symbols-outlined text-[18px]" style="font-variation-settings: 'FILL' 1;">star</span>
 </div>
-<p class="font-headline-sm text-headline-sm text-primary font-normal italic">
+<p class="font-headline-sm text-headline-sm max-sm:text-[20px] max-sm:leading-[27px] text-primary font-normal italic">
               “Pastan Zhaa mudah sekali dibentuk, tidak licin sama sekali dan warna sand taupe-nya sangat versatile dengan semua busana saya.”
             </p>
 </div>
@@ -577,17 +592,17 @@ lbl.textContent=b.getAttribute('data-warna');cta.href='produk.html?p=hawa&w='+b.
 <!-- 8. Newsletter Club Section -->
 <section class="w-full py-space-xl lg:py-24 bg-surface">
 <div class="max-w-[1440px] mx-auto px-margin-mobile lg:px-margin">
-<div class="bg-surface-container rounded-xl p-8 md:p-16 lg:p-20 text-center max-w-4xl mx-auto space-y-space-md shadow-sm">
+<div class="bg-surface-container rounded-xl px-5 py-8 sm:p-8 md:p-16 lg:p-20 text-center max-w-4xl mx-auto space-y-space-md shadow-sm">
 <div class="w-12 h-12 rounded-full bg-secondary-container text-secondary mx-auto flex items-center justify-center">
 <span class="material-symbols-outlined text-[24px]">mark_email_read</span>
 </div>
 <span class="font-label-caps-sm text-label-caps-sm text-secondary uppercase tracking-widest font-semibold block">Klub Sahabat Yarka</span>
-<h2 class="font-headline-lg text-headline-lg text-primary">Dapatkan Kabar Koleksi Terbaru</h2>
+<h2 class="font-headline-lg text-headline-lg max-sm:text-[32px] max-sm:leading-[38px] text-primary">Dapatkan Kabar Koleksi Terbaru</h2>
 <p class="font-body-md text-body-md text-on-surface-variant max-w-xl mx-auto">
           Daftarkan surel Anda untuk menerima undangan peluncuran eksklusif, panduan padu-padan musiman.
         </p>
 <form class="pt-2 max-w-md mx-auto flex flex-col sm:flex-row gap-2" onsubmit="event.preventDefault(); alert('Terima kasih! Kabar koleksi terbaru Yarka akan dikirim ke email Anda.');">
-<input class="flex-1 h-12 px-4 bg-surface-container-lowest text-primary rounded font-body-sm text-body-sm placeholder:text-outline outline-none shadow-xs focus:ring-0" placeholder="Masukkan alamat surel Anda..." required="" type="email">
+<input class="w-full sm:w-auto sm:flex-1 min-w-0 h-12 px-4 bg-surface-container-lowest text-primary rounded font-body-sm text-body-sm placeholder:text-outline outline-none shadow-xs focus:ring-0" placeholder="Masukkan alamat surel Anda..." required="" type="email">
 <button class="h-12 px-8 bg-primary text-on-primary rounded font-label-caps-lg text-label-caps-lg uppercase tracking-wider hover:bg-primary-container transition-colors shadow-xs" type="submit">
             Gabung
           </button>
@@ -599,7 +614,7 @@ lbl.textContent=b.getAttribute('data-warna');cta.href='produk.html?p=hawa&w='+b.
 </div>
 </section>
 <!-- Quick Add Notification Toast -->
-<div class="fixed bottom-6 right-6 z-50 transform translate-y-24 opacity-0 transition-all duration-300 pointer-events-none bg-primary text-on-primary px-5 py-3 rounded shadow-xl flex items-center gap-3" id="quick-toast">
+<div class="fixed bottom-6 right-6 max-sm:left-4 max-sm:right-4 max-sm:bottom-4 z-50 transform translate-y-24 opacity-0 transition-all duration-300 pointer-events-none bg-primary text-on-primary px-5 py-3 rounded shadow-xl flex items-center gap-3" id="quick-toast">
 <span class="material-symbols-outlined text-secondary-fixed text-[22px]">check_circle</span>
 <div>
 <h4 class="font-label-caps-sm text-label-caps-sm uppercase tracking-wider text-surface-container-low font-semibold">Berhasil Ditambahkan</h4>
@@ -702,4 +717,8 @@ var on="px-4 py-1.5 rounded-full bg-primary text-on-primary font-label-caps-sm t
 b.forEach(function(x){x.addEventListener('click',function(){var k=x.dataset.homeFilter;
 c.forEach(function(d){d.style.display=(k==='semua'||d.dataset.category===k)?'':'none'});
 b.forEach(function(y){var a=y===x;(a?off:on).forEach(function(z){y.classList.remove(z)});(a?on:off).forEach(function(z){y.classList.add(z)})});});});})();
+</script><script id="yarka-testi-nav">
+(function(){var g=document.getElementById("testimonials-grid"),p=document.getElementById("testi-prev"),n=document.getElementById("testi-next");if(!g||!p||!n)return;
+function go(d){var c=g.firstElementChild;while(c&&c.nodeType!==1)c=c.nextElementSibling;var w=c?c.getBoundingClientRect().width+(parseFloat(getComputedStyle(g).columnGap)||0):g.clientWidth;g.scrollBy({left:d*w,behavior:"smooth"});}
+p.addEventListener("click",function(){go(-1)});n.addEventListener("click",function(){go(1)});})();
 </script></body></html>

@@ -6,7 +6,7 @@ a.bg-primary:hover,button.bg-primary:hover{background-color:#8F6658}
 </style><style id="yarka-katalog-mobile">
 /* Ponsel & layar sentuh: kartu produk lebih lega, target sentuh lebih besar */
 @media (max-width:639px){
-  [data-produk] .p-3.5{padding:12px 12px 14px}
+  [data-produk] [class~="p-3.5"]{padding:12px 12px 14px}
   [data-produk] h3{font-size:14px;line-height:20px}
   [data-produk] p.font-headline-sm{font-size:17px;line-height:22px;letter-spacing:-.01em;margin-top:4px}
   [data-produk] .yk-swatches{gap:10px;padding-left:2px}
@@ -1330,7 +1330,7 @@ a.bg-primary:hover,button.bg-primary:hover{background-color:#8F6658}
   var bahan=[].slice.call(document.querySelectorAll('[data-bahan-filter]'));
   var slider=document.getElementById('price-slider'), priceLbl=document.getElementById('price-max-display');
   var sort=document.getElementById('sort-select');
-  var names={"abaya":"Abaya","set":"Set","bergo-tali":"Bergo Tali","pashmina-instan":"Pashmina Instan","khimar":"Khimar","khimar":"Khimar","french-khimar":"French Khimar","khimar-segi-empat":"Khimar Segi Empat","niqab-cadar":"Niqab & Cadar"}, famNames={"hitam":"Hitam","abu":"Abu-abu","krem":"Krem & Sand","cokelat":"Cokelat","oranye":"Terracotta","pink":"Pink","ungu":"Ungu","biru":"Biru & Navy","hijau":"Hijau & Sage"};
+  var names={"abaya":"Abaya","set":"Set","bergo-tali":"Bergo Tali","pashmina-instan":"Pashmina Instan","khimar":"Khimar","french-khimar":"French Khimar","khimar-segi-empat":"Khimar Segi Empat","niqab-cadar":"Niqab & Cadar"}, famNames={"hitam":"Hitam","abu":"Abu-abu","krem":"Krem & Sand","cokelat":"Cokelat","oranye":"Terracotta","pink":"Pink","ungu":"Ungu","biru":"Biru & Navy","hijau":"Hijau & Sage"};
   var MAXP=Math.max.apply(null,[].map.call(document.querySelectorAll('[data-price]'),function(c){return +c.dataset.price||0}).concat([700000]));
   var S={cat:'semua',fam:null,size:null,bahan:[],max:MAXP,sort:'newest'};
   var empty=null;

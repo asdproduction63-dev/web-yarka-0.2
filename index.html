@@ -767,4 +767,40 @@ b.forEach(function(y){var a=y===x;(a?off:on).forEach(function(z){y.classList.rem
 (function(){var g=document.getElementById("testimonials-grid"),p=document.getElementById("testi-prev"),n=document.getElementById("testi-next");if(!g||!p||!n)return;
 function go(d){var c=g.firstElementChild;while(c&&c.nodeType!==1)c=c.nextElementSibling;var w=c?c.getBoundingClientRect().width+(parseFloat(getComputedStyle(g).columnGap)||0):g.clientWidth;g.scrollBy({left:d*w,behavior:"smooth"});}
 p.addEventListener("click",function(){go(-1)});n.addEventListener("click",function(){go(1)});})();
+</script>
+<!-- Tombol WhatsApp Admin (melayang) -->
+<style id="yarka-wa-float">
+.yk-wa{position:fixed;right:24px;bottom:24px;z-index:45;display:flex;align-items:center;gap:12px;opacity:0;transform:translateY(18px) scale(.92);animation:ykWaIn .9s cubic-bezier(.22,1,.36,1) 1.2s forwards}
+.yk-wa-btn{position:relative;width:58px;height:58px;border-radius:9999px;display:flex;align-items:center;justify-content:center;color:#fff;background:linear-gradient(145deg,#2FBE6E 0%,#1C9A57 100%);box-shadow:0 0 0 3px #FDF8F6,0 0 0 4px rgba(166,124,110,.55),0 14px 30px -10px rgba(28,154,87,.55);transition:transform .45s cubic-bezier(.22,1,.36,1),box-shadow .45s ease;text-decoration:none;outline:none}
+.yk-wa-btn::before,.yk-wa-btn::after{content:"";position:absolute;inset:-4px;border-radius:9999px;border:1px solid rgba(166,124,110,.6);opacity:0;animation:ykWaHalo 3.6s cubic-bezier(.22,1,.36,1) 2.4s infinite;pointer-events:none}
+.yk-wa-btn::after{animation-delay:4.2s}
+.yk-wa-ico{width:28px;height:28px;fill:currentColor;transition:transform .5s cubic-bezier(.22,1,.36,1)}
+.yk-wa-btn:hover,.yk-wa-btn:focus-visible{transform:translateY(-4px);box-shadow:0 0 0 3px #FDF8F6,0 0 0 4.5px #A67C6E,0 22px 40px -12px rgba(28,154,87,.6)}
+.yk-wa-btn:hover .yk-wa-ico,.yk-wa-btn:focus-visible .yk-wa-ico{transform:rotate(-10deg) scale(1.06)}
+.yk-wa-btn:focus-visible{outline:2px solid #A67C6E;outline-offset:6px}
+.yk-wa-tip{position:relative;max-width:240px;padding:12px 16px;background:#FFFFFF;color:#1A1A1A;border:1px solid #EDE4DE;border-radius:14px 14px 4px 14px;box-shadow:0 18px 40px -18px rgba(58,38,32,.35);font-family:Inter,sans-serif;font-size:13px;line-height:19px;opacity:0;transform:translateX(10px);pointer-events:none;transition:opacity .6s ease,transform .6s cubic-bezier(.22,1,.36,1)}
+.yk-wa-tip b{display:block;font-family:"Cormorant Garamond",serif;font-size:17px;line-height:22px;font-weight:600;color:#7A5548;margin-bottom:2px}
+.yk-wa-tip-x{position:absolute;top:4px;right:6px;width:22px;height:22px;border:0;background:none;color:#8C817C;font-size:16px;line-height:22px;cursor:pointer;border-radius:9999px}
+.yk-wa-tip-x:hover{color:#1A1A1A;background:#F5EDE8}
+.yk-wa.tip-on .yk-wa-tip,.yk-wa:hover .yk-wa-tip{opacity:1;transform:none;pointer-events:auto}
+.yk-wa.tip-off .yk-wa-tip{opacity:0!important;transform:translateX(10px)!important;pointer-events:none!important}
+@keyframes ykWaIn{to{opacity:1;transform:none}}
+@keyframes ykWaHalo{0%{opacity:.9;transform:scale(1)}70%{opacity:0;transform:scale(1.55)}100%{opacity:0;transform:scale(1.55)}}
+@media (max-width:639px){.yk-wa{right:16px;bottom:16px}.yk-wa-btn{width:54px;height:54px}.yk-wa-ico{width:26px;height:26px}.yk-wa-tip{max-width:200px;font-size:12px;line-height:17px;padding:10px 14px}.yk-wa-tip b{font-size:15px;line-height:20px}}
+@media (hover:none){.yk-wa:hover .yk-wa-tip{opacity:0;pointer-events:none}.yk-wa.tip-on:hover .yk-wa-tip{opacity:1;pointer-events:auto}}
+@media (prefers-reduced-motion:reduce){.yk-wa{animation:none;opacity:1;transform:none}.yk-wa-btn::before,.yk-wa-btn::after{animation:none}.yk-wa-btn,.yk-wa-ico,.yk-wa-tip{transition:none}}
+</style>
+<div class="yk-wa" id="yk-wa">
+<div class="yk-wa-tip" role="status"><button type="button" class="yk-wa-tip-x" aria-label="Tutup pesan">&times;</button><b>Assalamu'alaikum</b>Ada yang bisa kami bantu? Chat admin Yarka di WhatsApp.</div>
+<a class="yk-wa-btn" href="https://wa.me/6285282437954?text=Assalamu%27alaikum%20Admin%20Yarka%2C%20saya%20ingin%20bertanya%20tentang%20produk%20Yarka." target="_blank" rel="noopener" aria-label="Chat Admin Yarka via WhatsApp"><svg class="yk-wa-ico" viewBox="0 0 24 24" aria-hidden="true"><use href="#ykso-whatsapp"/></svg></a>
+</div>
+<script>
+(function(){
+  var w=document.getElementById('yk-wa');if(!w)return;
+  var seen=false;try{seen=sessionStorage.getItem('ykWaTip')==='1'}catch(e){}
+  function hide(){w.classList.remove('tip-on');w.classList.add('tip-off');try{sessionStorage.setItem('ykWaTip','1')}catch(e){}}
+  w.querySelector('.yk-wa-tip-x').addEventListener('click',hide);
+  w.addEventListener('mouseenter',function(){w.classList.remove('tip-off')});
+  if(!seen){setTimeout(function(){w.classList.add('tip-on')},3500);setTimeout(hide,11000);}
+})();
 </script></body></html>

@@ -1,6 +1,6 @@
 // Keranjang & Wishlist Yarka (tersimpan di browser pengunjung via localStorage).
 // - Badge header (wishlist & keranjang) selalu sesuai isi.
-// - Laci keranjang: ubah jumlah, hapus, progres bebas ongkir, lanjut ke checkout.
+// - Laci keranjang: ubah jumlah, hapus, lanjut ke checkout.
 // - Kartu produk: tombol hati = simpan ke wishlist, "Tambah Cepat" = masuk keranjang.
 // - Halaman produk: "Tambah ke Keranjang" & tombol hati memakai warna/ukuran/jumlah yang dipilih.
 // - Halaman wishlist.html dirender dari data wishlist.
@@ -149,13 +149,6 @@
       '<div class="flex items-center justify-between mt-2">' + qtyBox(it) +
       '<span class="font-body-md text-body-md text-primary font-semibold">' + Y.rp(it.total) + '</span></div></div></div>';
   }
-  function ongkirBar(sub) {
-    var sisa = ONGKIR_GRATIS - sub, pct = Math.min(100, Math.round(sub / ONGKIR_GRATIS * 100));
-    var txt = sisa > 0 ? 'Tambah <strong>' + Y.rp(sisa) + '</strong> lagi untuk Bebas Ongkir JNE' : '<strong>Selamat!</strong> Pesanan Anda dapat Bebas Ongkir JNE';
-    return '<div class="flex items-center gap-2"><span class="material-symbols-outlined text-secondary text-[20px]">local_shipping</span>' +
-      '<p class="font-label-text text-label-text text-on-secondary-container">' + txt + '</p></div>' +
-      '<div class="mt-2 h-1.5 rounded-full bg-surface-container-lowest/70 overflow-hidden"><div class="h-full rounded-full bg-secondary transition-all duration-500" style="width:' + pct + '%"></div></div>';
-  }
   function buildDrawer() {
     drawer = document.getElementById('cart-drawer');
     overlay = document.getElementById('cart-overlay');
@@ -167,7 +160,6 @@
       '<h2 class="font-headline-sm text-headline-sm text-primary">Keranjang Belanja</h2>' +
       '<span class="bg-surface-container px-2 py-0.5 rounded text-on-surface-variant font-label-caps-sm text-label-caps-sm" data-yk="count">0 Item</span></div>' +
       '<button type="button" class="text-on-surface-variant hover:text-primary transition-colors p-1.5" data-act="close" aria-label="Tutup keranjang"><span class="material-symbols-outlined text-[22px]">close</span></button></div>' +
-      '<div class="bg-secondary-container/60 px-6 py-3 border-b border-secondary-container shrink-0" data-yk="ongkir"></div>' +
       '<div class="flex-1 overflow-y-auto px-6 py-5 space-y-4" data-yk="list"></div>' +
       '<div class="p-6 bg-surface border-t border-outline-variant/40 space-y-3 shrink-0" data-yk="foot"></div>';
     drawer.addEventListener('click', function (e) {
@@ -188,9 +180,9 @@
     if (!drawer) return;
     var items = cartItems(), sub = subtotal(), n = cartCount();
     drawer.querySelector('[data-yk="count"]').textContent = n + ' Item';
-    var ong = drawer.querySelector('[data-yk="ongkir"]'), list = drawer.querySelector('[data-yk="list"]'), foot = drawer.querySelector('[data-yk="foot"]');
+    var list = drawer.querySelector('[data-yk="list"]'), foot = drawer.querySelector('[data-yk="foot"]');
     if (!items.length) {
-      ong.style.display = 'none'; foot.style.display = 'none';
+      foot.style.display = 'none';
       list.innerHTML = '<div class="h-full flex flex-col items-center justify-center text-center gap-4 py-10">' +
         '<div class="w-20 h-20 rounded-full bg-surface-container flex items-center justify-center"><span class="material-symbols-outlined text-outline text-[36px]">shopping_bag</span></div>' +
         '<div><h3 class="font-headline-sm text-headline-sm text-primary">Keranjang masih kosong</h3>' +
@@ -199,8 +191,7 @@
         (wishList().length ? '<a href="' + root + 'wishlist.html" class="font-label-caps-sm text-label-caps-sm uppercase tracking-wider text-secondary underline underline-offset-4">Lihat Wishlist (' + wishList().length + ')</a>' : '') + '</div>';
       return;
     }
-    ong.style.display = ''; foot.style.display = '';
-    ong.innerHTML = ongkirBar(sub);
+    foot.style.display = '';
     list.innerHTML = items.map(itemRow).join('');
     foot.innerHTML =
       '<div class="flex items-center justify-between text-on-surface-variant font-body-sm text-body-sm"><span>Subtotal (' + n + ' item)</span><span class="text-primary font-medium">' + Y.rp(sub) + '</span></div>' +

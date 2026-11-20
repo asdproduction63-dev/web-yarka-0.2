@@ -20,8 +20,9 @@
   function $$(s, r) { return [].slice.call((r || document).querySelectorAll(s)); }
   function esc(s) { return String(s).replace(/&/g, '&amp;').replace(/</g, '&lt;'); }
 
-  function setMain(src, alt) {
+  function setMain(src, alt, awal) {
     var m = $('#main-product-img'); if (!m) return;
+    if (awal) { m.src = src; m.alt = alt || p.name; return; } // foto pertama: langsung, tanpa efek redup
     m.style.transition = 'opacity .25s ease'; m.style.opacity = '.35';
     m.onload = m.onerror = function () { m.style.opacity = "1"; };
     m.src = src; m.alt = alt || p.name;
@@ -77,7 +78,7 @@
       state.color = c.n;
       if (label) label.textContent = c.n;
       $$('.yk-sw').forEach(function (b) { var on = b.getAttribute('data-warna') === c.n; b.classList.toggle('is-on', on); b.setAttribute('aria-pressed', on); });
-      setMain(c.img, p.name + ' warna ' + c.n);
+      setMain(c.img, p.name + ' warna ' + c.n, !push);
       buildGallery(c);
       if (push) try { history.replaceState(null, '', location.pathname + '?p=' + p.id + '&w=' + Y.slug(c.n)); } catch (e) {}
     }
@@ -198,6 +199,14 @@
     });
 
     pickColor(col, false);
+    tampilkan();
+  }
+  // Tampilkan halaman setelah foto utama produk siap (maks 1,2 detik), agar tidak sempat terlihat isi bawaan template.
+  function tampilkan() {
+    var d = document.documentElement, m = $('#main-product-img'), done = false;
+    function go() { if (!done) { done = true; d.classList.add('yk-pd-siap'); } }
+    if (!m || (m.complete && m.naturalWidth)) return go();
+    m.addEventListener('load', go); m.addEventListener('error', go); setTimeout(go, 1200);
   }
   if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', init); else init();
 })();

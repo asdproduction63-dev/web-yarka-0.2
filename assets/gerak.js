@@ -11,8 +11,9 @@
 
   var EASE = 'cubic-bezier(.22,.61,.36,1)';
   var css =
-    '.gk-rv{opacity:0;translate:0 28px;transition:opacity .9s ' + EASE + ',translate .9s ' + EASE + ';transition-delay:var(--gk-d,0ms)}' +
-    '.gk-rv.gk-in{opacity:1;translate:0 0}' +
+    // selektor dibuat lebih kuat agar tidak tertimpa transisi efek tekan di yarka-hover.css
+    'html body .gk-rv{opacity:0;translate:0 28px;transition:opacity .9s ' + EASE + ' var(--gk-d,0ms),translate .9s ' + EASE + ' var(--gk-d,0ms),transform .35s ' + EASE + ',box-shadow .35s ease}' +
+    'html body .gk-rv.gk-in{opacity:1;translate:0 0}' +
     '.gk-px{will-change:translate}' +
     '.gk-px-img{scale:1.18}';
   var st = document.createElement('style'); st.textContent = css; document.head.appendChild(st);

@@ -1,0 +1,29 @@
+/* Tampilan halus & stabil untuk semua halaman (dimuat setelah tailwind.css). */
+
+/* 1. Transisi antarhalaman: konten berganti dengan fade lembut, navbar tetap diam.
+      Didukung Chrome/Android & Safari iOS 18.2+; browser lain berpindah seperti biasa. */
+@view-transition { navigation: auto; }
+::view-transition-old(root),
+::view-transition-new(root) { animation-duration: .3s; animation-timing-function: cubic-bezier(.22, .61, .36, 1); }
+header.fixed { view-transition-name: yk-header; }
+::view-transition-group(yk-header) { animation: none; }
+::view-transition-old(yk-header) { display: none; }
+::view-transition-new(yk-header) { animation: none; }
+
+/* 2. Ikon navbar berukuran tetap, jadi tidak melebar/bergeser selama font ikon dimuat. */
+header .material-symbols-outlined { width: 1em; overflow: hidden; }
+
+/* 3. Area sentuh ikon navbar ≥ 44px sejak awal (dulu baru dipasang nav.js setelah halaman tampil,
+      sehingga ikon sempat bergeser). */
+@media (max-width: 1023px) {
+  header #mobile-nav-toggle, header a[aria-label], header button[aria-label] {
+    min-width: 44px; min-height: 44px; display: inline-flex; align-items: center; justify-content: center;
+  }
+}
+
+/* 4. Ketuk di HP tanpa kilatan abu-abu bawaan browser. */
+a, button { -webkit-tap-highlight-color: transparent; }
+
+@media (prefers-reduced-motion: reduce) {
+  ::view-transition-group(*), ::view-transition-old(*), ::view-transition-new(*) { animation: none !important; }
+}

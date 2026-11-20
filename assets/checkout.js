@@ -114,7 +114,7 @@
       if ($('co-simpan') && $('co-simpan').checked) localStorage.setItem(KA, JSON.stringify(data));
     } catch (er) {}
     var P = window.YarkaPelanggan;
-    if (!$('co-repeat') || !$('co-repeat').checked || !P) { location.href = 'pembayaran.html'; return; }
+    if (!P) { location.href = 'pembayaran.html'; return; }
     var next = $('co-next'); next.setAttribute('aria-disabled', 'true'); next.classList.add('opacity-50');
     P.simpanRepeatOrder(order).then(function () { location.href = 'pembayaran.html'; });
   }

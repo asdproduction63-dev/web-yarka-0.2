@@ -334,69 +334,6 @@
       gallery: [F + 'khimar-earth-tone', F + 'pastan-jannah-warna', F + 'pastan-jannah-cashmere-blue', F + 'pastan-jannah-maroon'],
       sizeTable: { cols: ['Lingkar Wajah', 'Panjang', 'Lebar'], rows: [['Kecil', 60, 150, 75], ['Besar', 60, 180, 90]] }
     },
-    npjannah: {
-      name: 'Nonpad Jannah', cat: 'khimar', catLabel: 'Khimar', bahan: 'maheen', bahanLabel: 'Maheen Anti UV',
-      price: 219000, priceNote: 'All Size', sizes: ['ALL'],
-      tagline: 'Nonpad dengan Cuttingan Runcing',
-      desc: 'Nonpad 1 layer dengan 1 jahitan tepi dan cuttingan runcing. Langsung pakai, membuat tampilan terlihat lebih langsing.',
-      features: [['Langsung Pakai', 'Nonpad tanpa pad, praktis untuk harian.'], ['Anti UV', 'Bahan Maheen yang ringan dan flowy.'], ['Cuttingan Runcing', 'Membuat siluet tampak lebih ramping.']],
-      material: 'Maheen Anti UV: lembut, halus, ringan, handfeel dingin, dan flowy.',
-      colors: cs([['Mauve', '#9E7A82', 'ungu'], ['Shell', '#E6D9CC', 'krem'], ['Blossom', '#D9A7A6', 'pink'], ['Cream Sand', '#D8C6AA', 'krem'], ['Pecan Brown', '#7A5238', 'cokelat'],
-        ['Lint', '#BDB79F', 'krem'], ['Dried Herb', '#8A8B6A', 'hijau'], ['Maroon', '#5E1F27', 'ungu'], ['Moon Grape', '#584A5C', 'ungu'], ['Navy', '#1E2A44', 'biru'], ['Black', '#1F1F21', 'hitam']], 'np-jannah-mauve'),
-      gallery: [F + 'np-jannah-mauve', 'foto/look-khimar-mauve'],
-      sizeTable: { cols: K4, rows: [['All Size', 52, 108, 130, 75]] }
-    },
-    yumna: {
-      name: 'FK & Nonpad Yumna', cat: 'khimar', catLabel: 'Khimar', bahan: 'ilyana-silk', bahanLabel: 'Ilyana Silk',
-      price: 209000, priceMax: 219000, priceNote: 'French Khimar Rp219.000 • Nonpad Rp209.000',
-      sizes: ['FK', 'NONPAD'], sizeLabels: { FK: 'French Khimar', NONPAD: 'Nonpad' }, sizePrice: { FK: 219000, NONPAD: 209000 },
-      tagline: 'Khimar Pendamping Yumna Abaya',
-      desc: 'Tersedia dalam dua model: French Khimar bertali yang bisa disesuaikan dengan lingkar kepala, dan Nonpad dengan 1 tepi jahitan. Serasi dipadukan dengan Yumna Abaya.',
-      features: [['Tali Fleksibel', 'FK dengan tali yang bebas disesuaikan.'], ['Tidak Nerawang', 'Ilyana Silk yang adem dan ringan.'], ['Dua Model', 'Pilih French Khimar atau Nonpad.']],
-      material: 'Ilyana Silk: lembut, halus, agak stretchy, handfeel dingin, adem, tidak nerawang, dan ringan.',
-      colors: cs([['After Dark', '#6B5F5A', 'cokelat'], ['Burgundy', '#5E1E2D', 'ungu'], ['Chocolate Plum', '#4E3437', 'ungu'], ['Chocolate Brown', '#5B3E2E', 'cokelat'],
-        ['Espresso', '#3B2A22', 'cokelat'], ['Black', '#1F1F21', 'hitam'], ['Navy', '#1E2A44', 'biru']], 'fk-yumna-after-dark'),
-      gallery: [F + 'fk-yumna-after-dark', F + 'trio-mocca'],
-      sizeTable: { cols: K4, rows: [['French Khimar', 64, 105, 145, 60], ['Nonpad', 54, 120, 140, 75]] }
-    },
-    yumnaabaya: {
-      name: 'Yumna Abaya', cat: 'abaya', catLabel: 'Abaya', bahan: 'ilyana-silk', bahanLabel: 'Ilyana Silk',
-      price: 279000, priceMax: 299000, priceNote: 'XS–M Rp279.000 • L–XL Rp289.000 • XXL Rp299.000',
-      sizes: ['XS', 'S', 'M', 'L', 'XL', 'XXL'], sizePrice: { L: 289000, XL: 289000, XXL: 299000 },
-      tagline: 'Abaya dengan Kerut Karet di Lengan',
-      desc: 'Abaya round neck dengan desain kerut karet di bagian lengan. Akses busui zipper, saku depan kanan-kiri, dan lengan berkancing. Tersedia hingga ukuran XXL.',
-      features: [['Busui Zipper', 'Resleting depan yang ramah ibu menyusui.'], ['Lengan Berkancing', 'Kerut karet cantik dan mudah untuk wudhu.'], ['Saku Kanan & Kiri', 'Saku depan untuk barang kecil.']],
-      material: 'Ilyana Silk: lembut, halus, agak stretchy, handfeel dingin, adem, tidak nerawang, dan ringan.',
-      colors: cs([['Chocolate Brown', '#5B3E2E', 'cokelat'], ['After Dark', '#6B5F5A', 'cokelat', 'trio-mocca'], ['Burgundy', '#5E1E2D', 'ungu'], ['Chocolate Plum', '#4E3437', 'ungu'],
-        ['Espresso', '#3B2A22', 'cokelat'], ['Black', '#1F1F21', 'hitam'], ['Navy', '#1E2A44', 'biru']], 'abaya-mocca'),
-      gallery: [F + 'abaya-mocca', F + 'trio-mocca'],
-      sizeTable: { cols: A6, rows: [['XS', 148, 34, 18, 132, 65, 224], ['S', 152, 38, 18, 135, 65, 232], ['M', 164, 38, 18, 138, 67, 232], ['L', 168, 44, 22, 140, 67, 242], ['XL', 168, 48, 22, 145, 70, 246], ['XXL', 168, 48, 22, 150, 70, 246]] }
-    },
-    freia: {
-      name: 'Freia Abaya', cat: 'abaya', catLabel: 'Abaya', bahan: 'shiny-cotton-print', bahanLabel: 'Shiny Cotton Print',
-      price: 299000, priceNote: 'Semua ukuran Rp299.000',
-      sizes: ['XS-S', 'M-L', 'XL'], sizeLabels: { 'XS-S': 'XS–S', 'M-L': 'M–L' },
-      tagline: 'Abaya Cotton Silk dengan Printing Tie-dye',
-      desc: 'Abaya cotton silk yang mewah dengan printing tie-dye. Cuttingan bisht, akses busui zipper, akses wudhu loose, dan saku kanan-kiri.',
-      features: [['Busui Zipper', 'Resleting depan yang ramah ibu menyusui.'], ['Wudhu Loose', 'Lengan longgar, mudah digulung saat wudhu.'], ['Motif Tie-dye', 'Agak berkilau saat terkena cahaya.']],
-      material: 'Shiny Cotton Print: flowy, adem, dan agak shiny jika terkena cahaya.',
-      colors: cs([['Satin Chemise', '#D9C3BC', 'pink'], ['Lavender Gray', '#A9A2B4', 'ungu'], ['Lead Crystal', '#8B8F96', 'abu'], ['Rose Gold', '#C99A8B', 'pink'], ['Golden Eagle', '#B08A52', 'cokelat'],
-        ['Eucalyptus', '#8FA393', 'hijau'], ['Shadow Sheen', '#6E6A6B', 'abu'], ['Silver Shadow', '#B9BBBD', 'abu'], ['Glass Sea', '#7FA3A6', 'biru']], 'freia-satin-chemise'),
-      gallery: [F + 'freia-satin-chemise', F + 'freia-detail'],
-      sizeTable: { cols: A6, rows: [['XS–S', 156, 40, 34, 135, 70, 212], ['M–L', 156, 46, 40, 138, 72, 216], ['XL', 164, 46, 42, 145, 73, 220]] }
-    },
-    mecca: {
-      name: 'Mecca Abaya', cat: 'abaya', catLabel: 'Abaya', bahan: 'jetblack-mta', bahanLabel: 'Jetblack MTA & Brukat',
-      price: 349000, priceMax: 359000, priceNote: 'XS–M Rp349.000 • L–XL Rp359.000',
-      sizes: ['XS', 'S', 'M', 'L', 'XL'],
-      tagline: 'Abaya Bisht Hitam dengan Aksen Motif',
-      desc: 'Abaya bisht hitam dipadukan dengan brukat atau cotton etnik di bagian lengan dan saku. Round neck, akses busui kancing, dan wudhu friendly zipper.',
-      features: [['Busui Kancing', 'Kancing depan yang ramah ibu menyusui.'], ['Wudhu Zipper', 'Resleting di lengan untuk akses wudhu.'], ['Mix Motif', 'Pilihan aksen brukat atau cotton etnik.']],
-      material: 'Jetblack MTA hitam pekat, serat padat, ringan, tidak nerawang. Aksen brukat (halus di dalam, bertekstur di luar) atau cotton etnik (stretchy).',
-      colors: cs([['Cotton Etnik', '#2A2624', 'hitam'], ['Brukat', '#1F1F21', 'hitam']], 'mecca-nonpad-jeba'),
-      gallery: [F + 'mecca-nonpad-jeba'],
-      sizeTable: { cols: A6, rows: [['XS', 140, 32, 20, 130, 74, 250], ['S', 144, 36, 20, 135, 74, 256], ['M', 148, 36, 22, 138, 74, 270], ['L', 156, 38, 22, 140, 77, 272], ['XL', 158, 40, 24, 145, 77, 280]] }
-    },
     noora: {
       name: 'Noora Abaya', cat: 'abaya', catLabel: 'Abaya', bahan: 'mazza-cupro', bahanLabel: 'Mazza Cupro',
       price: 529000, priceMax: 549000, priceNote: 'XS–M Rp529.000 • L–XL Rp549.000',
@@ -423,80 +360,6 @@
       gallery: [F + 'abaya-motif-sage', F + 'abaya-motif-grey'],
       sizeTable: { cols: A6, rows: [['XS', 132, 48, 48, 130, 66, 178], ['S', 136, 48, 48, 135, 70, 188], ['M', 140, 48, 48, 138, 72, 200], ['L', 150, 48, 48, 142, 74, 210], ['XL', 150, 48, 48, 145, 76, 220]] }
     },
-    maira: {
-      name: 'Maira Abaya', cat: 'abaya', catLabel: 'Abaya', bahan: 'jeansweet', bahanLabel: 'Jeansweet & Alaska',
-      price: 279000, priceMax: 299000, priceNote: 'XS–M Rp279.000 • L–XL Rp289.000 • XXL Rp299.000',
-      sizes: ['XS', 'S', 'M', 'L', 'XL', 'XXL'], sizePrice: { L: 289000, XL: 289000, XXL: 299000 },
-      tagline: 'Abaya Jeans dengan Aksen Belt di Lengan',
-      desc: 'Abaya bernuansa jeans dengan aksen belt di bagian lengan. Round neck, akses busui zipper, akses wudhu belt, dan saku depan kanan-kiri.',
-      features: [['Busui Zipper', 'Resleting depan yang ramah ibu menyusui.'], ['Wudhu Belt', 'Belt di lengan memudahkan saat berwudhu.'], ['Kokoh & Ringan', 'Adem dan tidak nerawang.']],
-      material: 'Jeansweet & Alaska: cukup ringan, adem, kokoh, dan tidak nerawang.',
-      colors: cs([['Dark Denim', '#34465E', 'biru'], ['Navy Blue', '#1E2A44', 'biru'], ['Black', '#1F1F21', 'hitam'], ['Faded Grey', '#8C9196', 'abu']], 'dark-denim-navy'),
-      gallery: [F + 'dark-denim-navy'],
-      sizeTable: { cols: A6, rows: [['XS', 144, 36, 30, 133, 66, 156], ['S', 152, 38, 30, 135, 68, 160], ['M', 152, 40, 32, 138, 69, 166], ['L', 160, 44, 36, 140, 72, 174], ['XL', 160, 46, 36, 145, 72, 174], ['XXL', 160, 48, 38, 150, 73, 180]] }
-    },
-    seema: {
-      name: 'Seema Abaya', cat: 'abaya', catLabel: 'Abaya', bahan: 'lady-shafiyyah', bahanLabel: 'Lady Shafiyyah',
-      price: 219000, priceMax: 229000, priceNote: 'XS–M Rp219.000 • L–XL Rp229.000',
-      sizes: ['XS', 'S', 'M', 'L', 'XL'],
-      tagline: 'Abaya dengan Aksen Rampel Susun',
-      desc: 'Abaya dengan aksen rampel susun dan tekstur kain yang unik, membuat penampilan lebih ciamik. Akses busui zipper, saku depan kanan-kiri, dan lengan loose.',
-      features: [['Busui Zipper', 'Resleting depan yang ramah ibu menyusui.'], ['Lengan Loose', 'Nyaman dan mudah untuk wudhu.'], ['Rampel Susun', 'Detail bertingkat yang manis.']],
-      material: 'Lady Shafiyyah: halus di dalam, bertekstur salur di luar, ringan, adem, dan tidak nerawang.',
-      colors: cs([['Black', '#1F1F21', 'hitam'], ['Navy', '#1E2A44', 'biru'], ['Grey', '#8E8F93', 'abu'], ['Caramel', '#A9744A', 'cokelat'], ['Honey Mustard', '#9A9468', 'hijau'], ['Dawn Cream', '#E5D7C0', 'krem']], 'seema-black-navy'),
-      gallery: [F + 'seema-black-navy'],
-      sizeTable: { cols: A6, rows: [['XS', 144, 38, 32, 130, 69, 160], ['S', 152, 38, 32, 135, 72, 184], ['M', 152, 38, 32, 138, 74, 186], ['L', 160, 42, 36, 140, 76, 188], ['XL', 160, 42, 36, 145, 80, 192]] }
-    },
-    syuura: {
-      name: 'French Khimar Syuura', cat: 'khimar', catLabel: 'Khimar', bahan: 'ceruty-babydoll', bahanLabel: 'Ceruty Baby Doll Luxury',
-      price: 179000, priceNote: 'All Size', sizes: ['ALL'],
-      tagline: 'French Khimar 2 Layer yang Melangsingkan',
-      desc: 'French khimar cantik 2 layer dengan cuttingan yang membuat tampilan terlihat langsing. Bagian belakang oval, bagian depan runcing.',
-      features: [['2 Layer', 'Menutup sempurna dan tidak menerawang.'], ['Cuttingan Runcing', 'Depan runcing, belakang oval.'], ['Ceruty Premium', 'Serat lebih padat dari ceruty biasa.']],
-      material: 'Ceruty Baby Doll Luxury: serat lebih padat dari ceruty biasa, bertekstur pasir, halus, jatuh, dan lembut.',
-      colors: cs([['Mali Brown', '#6A4A3A', 'cokelat'], ['Summer Sand', '#D8C8B4', 'krem'], ['Roasted Cashew', '#B58F6E', 'cokelat'], ['Cream Pink', '#E6C8BE', 'pink'], ['Sunkiss', '#E2B08A', 'oranye'],
-        ['Antler', '#8D7766', 'cokelat'], ['Maroon', '#5E1F27', 'ungu'], ['Black', '#1F1F21', 'hitam'], ['Navy', '#1E2A44', 'biru']], 'fk-syuura-mali-brown'),
-      gallery: [F + 'fk-syuura-mali-brown'],
-      sizeTable: { cols: K4, rows: [['All Size', 60, 103, 142, 65]] }
-    },
-    liya: {
-      name: 'FK, Berlin & Nonpad Liya', cat: 'khimar', catLabel: 'Khimar', bahan: 'marbella-silk', bahanLabel: 'Marbella Silk Anti UV',
-      price: 189000, priceMax: 199000, priceNote: 'French Khimar Rp199.000 • Berlin Rp189.000 • Nonpad Rp189.000',
-      sizes: ['FK', 'BERLIN', 'NONPAD'], sizeLabels: { FK: 'French Khimar', BERLIN: 'Berlin', NONPAD: 'Nonpad' }, sizePrice: { FK: 199000, BERLIN: 189000, NONPAD: 189000 },
-      tagline: 'Satu Bahan, Tiga Model Khimar',
-      desc: 'Seri Liya hadir dalam tiga model: French Khimar bertali, Berlin (khimar bandana) dengan depan runcing belakang oval, dan Nonpad dengan cuttingan oval.',
-      features: [['Anti UV', 'Marbella Silk yang halus dan ringan.'], ['Tiga Model', 'French Khimar, Berlin, atau Nonpad.'], ['Adem & Klemer', 'Jatuh rapi dan nyaman seharian.']],
-      material: 'Marbella Silk Anti UV: halus, ringan, adem, dan klemer.',
-      colors: cs([['Grey Maze', '#6E6E70', 'abu'], ['Nirvana', '#A79CB0', 'ungu', 'fk-set-lavender'], ['Cinder', '#5B5654', 'abu'], ['Dark Shadow', '#3E3E41', 'abu'], ['Desert Palm', '#9A8A6A', 'cokelat'],
-        ['Coffee Bean', '#4A3529', 'cokelat'], ['Pageant Blue', '#2E3F66', 'biru'], ['Deep Navy', '#1B2236', 'biru'], ['Black Onyx', '#26272A', 'hitam'], ['Black', '#1F1F21', 'hitam']], 'fk-berlin-liya-grey-maze'),
-      gallery: [F + 'fk-berlin-liya-grey-maze', F + 'fk-set-lavender'],
-      sizeTable: { cols: K4, rows: [['French Khimar', 62, 110, 150, 65], ['Berlin', 64, 95, 150, 72], ['Nonpad', 54, 82, 135, 80]] }
-    },
-    lily: {
-      name: 'Square Hijab Lily', cat: 'khimar', catLabel: 'Khimar', bahan: 'arabian-voile', bahanLabel: 'Arabian Voile',
-      price: 159000, priceNote: 'All Size 140 × 140 cm', sizes: ['ALL'],
-      tagline: 'Khimar Segiempat dengan Lasercut',
-      desc: 'Khimar segiempat berukuran 140 × 140 cm dengan tepi lasercut. Aman dilipat segitiga seperti biasa dan nyaman dipakai seharian.',
-      features: [['Lasercut', 'Tepi rapi tanpa jahitan tebal.'], ['Serap Keringat', 'Katun mix polyester yang ringan.'], ['Ukuran Lebar', '140 × 140 cm, menutup dada.']],
-      material: 'Arabian Voile (katun mix polyester): halus, lembut, sedikit transparan (aman dilipat segitiga), menyerap keringat, dan ringan.',
-      colors: cs([['Black', '#1F1F21', 'hitam'], ['Macchiato', '#B39A80', 'cokelat'], ['Grey', '#9A9A9C', 'abu'], ['Peachy Rose', '#E2B3A5', 'pink'], ['Ice Blue', '#BFD0DC', 'biru'], ['Navy', '#1E2A44', 'biru']], 'lily-square-black'),
-      gallery: [F + 'lily-square-black'],
-      sizeTable: { cols: ['Panjang', 'Lebar'], rows: [['All Size', 140, 140]] }
-    },
-    baluna: {
-      name: 'Khimar Baluna', cat: 'khimar', catLabel: 'Khimar', bahan: 'shakilla', bahanLabel: 'Shakilla Premium',
-      price: 149000, priceNote: 'Feist (FK Instan) & Nonpad Rp149.000 • Free Cadar',
-      sizes: ['FEIST', 'NONPAD'], sizeLabels: { FEIST: 'Feist (FK Instan)', NONPAD: 'Nonpad' },
-      tagline: 'Khimar Stretchy, Free Cadar',
-      desc: 'Khimar berbahan stretchy yang nyaman untuk harian. Pilih Feist Baluna (French Khimar instan dengan karet, cuttingan short cocok untuk petite) atau Nonpad Baluna dengan 1 jahitan. Gratis cadar.',
-      features: [['Free Cadar', 'Setiap pembelian mendapat cadar.'], ['Stretchy', 'Lembut, ringan, dan tidak nerawang.'], ['Dua Model', 'Feist (instan karet) atau Nonpad.']],
-      material: 'Shakilla Premium: lembut, stretchy, ringan, dan tidak nerawang.',
-      colors: cs([['Black', '#1F1F21', 'hitam'], ['Beige Khaki', '#C9B796', 'krem'], ['Eucalyptus', '#8FA393', 'hijau'], ['Coffee Bean', '#4A3529', 'cokelat'], ['Sugar Honey', '#C99B63', 'oranye'],
-        ['Twilight Mauve', '#8E7180', 'ungu'], ['Night Wine', '#4E2532', 'ungu'], ['Blue Stone', '#5E7280', 'biru'], ['Ensign Blue', '#3B4B6B', 'biru'], ['Navy', '#1E2A44', 'biru'],
-        ['Silver', '#BDBEC0', 'abu'], ['Mineral Green', '#55705F', 'hijau']], 'khimar-baluna-black'),
-      gallery: [F + 'khimar-baluna-black'],
-      sizeTable: { cols: K4, rows: [['Feist', 62, 75, 118, 52], ['Nonpad', 52, 107, 140, 70]] }
-    },
     mishra: {
       name: 'Mishra Abaya', cat: 'abaya', catLabel: 'Abaya', bahan: 'jacquard', bahanLabel: 'Jacquard',
       price: 389000, priceMax: 399000, priceNote: 'XS–M Rp389.000 • L–XL Rp399.000',
@@ -508,57 +371,9 @@
       colors: cs([['Black', '#1F1F21', 'hitam'], ['Brown', '#5B3E2E', 'cokelat'], ['Navy', '#1E2A44', 'biru'], ['Dark Eden', '#2F3B33', 'hijau']], 'ibu-anak'),
       gallery: [F + 'ibu-anak'],
       sizeTable: { cols: A6, rows: [['XS', 130, 46, 36, 130, 70, 196], ['S', 140, 46, 40, 135, 72, 210], ['M', 140, 46, 40, 138, 74, 214], ['L', 150, 48, 44, 140, 76, 218], ['XL', 150, 48, 44, 145, 78, 224]] }
-    },
-    kemkomishra: {
-      name: 'Kemko Mishra Kiddy', cat: 'set', catLabel: 'Anak', bahan: 'jacquard', bahanLabel: 'Jacquard',
-      price: 179000, priceMax: 199000, priceNote: 'S–M Rp179.000 • L–XL Rp199.000',
-      sizes: ['S', 'M', 'L', 'XL'],
-      tagline: 'Kemeja Koko Anak, Kembaran dengan Mishra Abaya',
-      desc: 'Kemeja koko anak dengan pattern abstrak yang unik. Kerah shanghai, 6 kancing hidup, dan saku depan kiri. Cocok dipakai kembaran dengan Mishra Abaya.',
-      features: [['Kerah Shanghai', 'Tampilan rapi untuk acara maupun harian.'], ['6 Kancing Hidup', 'Mudah dipakai dan dilepas.'], ['Adem', 'Jacquard ringan dan tidak mudah kusut.']],
-      material: 'Jacquard: ringan, halus, tidak mudah kusut, dan adem.',
-      colors: cs([['Black', '#1F1F21', 'hitam'], ['Brown', '#5B3E2E', 'cokelat'], ['Navy', '#1E2A44', 'biru'], ['Dark Eden', '#2F3B33', 'hijau']], 'ibu-anak'),
-      gallery: [F + 'ibu-anak'],
-      sizeTable: { cols: ['Lingkar Dada', 'Lingkar Lengan', 'Panjang Produk', 'Panjang Lengan'], rows: [['S', 72, 37, 50, 12], ['M', 80, 38, 52, 16], ['L', 84, 40, 55, 16], ['XL', 92, 42, 58, 20]] }
-    },
-    nayya: {
-      name: 'Nayya Abaya', cat: 'abaya', catLabel: 'Abaya', bahan: 'kaos-katun', bahanLabel: 'Kaos Katun',
-      price: 279000, priceNote: 'S, M, L Rp279.000', sizes: ['S', 'M', 'L'],
-      tagline: 'Abaya Kaos Katun, Casual & Simple',
-      desc: 'Abaya kaos katun yang adem untuk tampilan lebih casual dan simple. Cuttingan bisht, round neck, busui friendly zipper, akses wudhu lengan loose, dan saku depan kanan-kiri.',
-      features: [['Busui Zipper', 'Resleting depan yang ramah ibu menyusui.'], ['Serap Keringat', 'Berbahan dasar katun, nyaman seharian.'], ['Lengan Loose', 'Mudah digulung saat wudhu.']],
-      material: 'Kaos katun: halus, agak stretchy, menyerap keringat. Warna Black & Sage memiliki gramasi lebih ringan.',
-      colors: cs([['Maroon', '#5A2430', 'ungu'], ['Sage', '#97A784', 'hijau'], ['Grey', '#C8C9CB', 'abu'], ['Misty Grey', '#9C9D9F', 'abu'], ['Choco Brown', '#7A5E50', 'cokelat'],
-        ['Misty Black (Navy)', '#262C3A', 'biru'], ['Navy', '#1E2A44', 'biru'], ['Black', '#1F1F21', 'hitam']], 'khimar-plum'),
-      gallery: [F + 'khimar-plum'],
-      sizeTable: { cols: A6, rows: [['S', 130, 38, 32, 133, 70, 142], ['M', 130, 40, 34, 138, 72, 144], ['L', 130, 42, 36, 143, 74, 150]] }
-    },
-    kalaya: {
-      name: 'Kalaya Abaya', cat: 'abaya', catLabel: 'Abaya', bahan: 'linen', bahanLabel: 'Linen',
-      price: 289000, priceMax: 299000, priceNote: 'XS–S & M–L Rp289.000 • XL Rp299.000',
-      sizes: ['XS-S', 'M-L', 'XL'], sizeLabels: { 'XS-S': 'XS–S', 'M-L': 'M–L' }, sizePrice: { 'XS-S': 289000, 'M-L': 289000, XL: 299000 },
-      tagline: 'Abaya Simple dengan 2 Saku Luas',
-      desc: 'Abaya linen yang cantik dan simple dengan 2 saku luas di depan. Round neck, busui friendly zipper, akses wudhu loose dengan kancing cetet, dan split di bagian belakang.',
-      features: [['Saku Luas', 'Dua saku besar di depan.'], ['Busui Zipper', 'Resleting depan yang ramah ibu menyusui.'], ['Split Belakang', 'Leluasa bergerak dan melangkah.']],
-      material: 'Linen: adem, tidak nerawang, dan ketebalan pas.',
-      colors: cs([['Grey Blue', '#A9AEAD', 'abu'], ['Dark Matcha', '#B8BCB0', 'hijau'], ['Caramel', '#D9B9A8', 'krem']], 'khimar-olive'),
-      gallery: [F + 'khimar-olive'],
-      sizeTable: { cols: A6, rows: [['XS–S', 160, 40, 34, 135, 70, 160], ['M–L', 160, 42, 36, 140, 72, 162], ['XL', 160, 44, 38, 145, 74, 162]] }
-    },
-    balunaabaya: {
-      name: 'Baluna Abaya', cat: 'abaya', catLabel: 'Abaya', bahan: 'spandex-rayon', bahanLabel: 'Spandex Rayon Premium',
-      price: 229000, priceMax: 239000, priceNote: 'XS–M Rp229.000 • L–XL Rp239.000',
-      sizes: ['XS', 'S', 'M', 'L', 'XL'],
-      tagline: 'Abaya dengan Aksen Balon yang Gemas',
-      desc: 'Abaya dengan aksen balon yang gemas dan material lembut seperti baju bayi. Round neck, busui friendly zipper, wudhu friendly karet, dan saku kanan-kiri.',
-      features: [['Busui Zipper', 'Resleting depan yang ramah ibu menyusui.'], ['Wudhu Karet', 'Lengan berkaret, mudah ditarik saat wudhu.'], ['Lembut & Stretchy', 'Adem seperti baju bayi.']],
-      material: 'Spandex Rayon Premium: halus, lembut, stretchy, dan adem seperti baju bayi.',
-      colors: cs([['Burnt Olive', '#5D5A49', 'hijau'], ['Navy', '#1E2A44', 'biru'], ['Black', '#1F1F21', 'hitam']], 'baluna-abaya-trio'),
-      gallery: [F + 'baluna-abaya-trio', F + 'khimar-baluna-black'],
-      sizeTable: { cols: A6, rows: [['XS', 102, 50, 18, 130, 58, 276], ['S', 102, 50, 20, 135, 58, 276], ['M', 106, 50, 20, 138, 62, 278], ['L', 120, 52, 22, 140, 64, 284], ['XL', 130, 54, 22, 145, 66, 296]] }
     }
   };
-  var ORDER = ['halia', 'noora', 'zafeera', 'jannah', 'mishra', 'kemkomishra', 'kalaya', 'nayya', 'yumnaabaya', 'yumna', 'mecca', 'freia', 'maira', 'liya', 'syuura', 'npjannah', 'balunaabaya', 'seema', 'lily', 'baluna'];
+  var ORDER = ['halia', 'noora', 'zafeera', 'jannah', 'mishra'];
   ORDER.forEach(function (id, i) {
     var p = ARSIP[id]; p.id = id; p.urut = 14 + i; p.baru = false; p.arsip = true;
     window.YARKA_PRODUCTS[id] = p;
@@ -568,8 +383,7 @@
   // memakai satu foto untuk semua warna: assets/img/warna/<id>-<slug warna>.jpg
   var PER_WARNA = {
     zen: ['Cocoa', 'Hazelnut Brown', 'Gray White'],
-    halia: '*', noora: '*', mishra: '*', kalaya: '*', nayya: '*', yumnaabaya: '*',
-    mecca: '*', freia: '*', maira: '*', balunaabaya: '*', seema: '*'
+    halia: '*', noora: '*', mishra: '*'
   };
   function slugW(s) { return String(s).toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/^-|-$/g, ''); }
   Object.keys(PER_WARNA).forEach(function (id) {

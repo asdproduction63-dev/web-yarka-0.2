@@ -9,7 +9,7 @@
   if (!P || !Y) return;
   var root = /\/mobile\//.test(location.pathname.replace(/\\/g, '/')) ? '../' : '';
   var page = (location.pathname.split('/').pop() || 'index.html').toLowerCase(); if (!/\.html$/.test(page)) page += '.html'; // URL bersih (/katalog) -> katalog.html
-  var KC = 'yarka_cart', KW = 'yarka_wish', ONGKIR_GRATIS = 500000, MAX_QTY = 10;
+  var KC = 'yarka_cart', KW = 'yarka_wish', MAX_QTY = 10;
   var SIZE_LABEL = { ALL: 'All Size', KECIL: 'Kecil (Shoulder)', BESAR: 'Besar (Berlin)' };
   var mem = {}, subs = [];
 
@@ -325,7 +325,7 @@
   window.YarkaToko = {
     cartItems: cartItems, cartCount: cartCount, subtotal: subtotal, add: add, setQty: setQty, remove: remove, clearCart: clearCart,
     wishList: wishList, inWish: inWish, toggleWish: toggleWish, harga: harga, sizeLabel: sizeLabel, imgSrc: imgSrc,
-    openCart: openCart, closeCart: closeCart, toast: toast, onChange: function (fn) { subs.push(fn); }, ONGKIR_GRATIS: ONGKIR_GRATIS
+    openCart: openCart, closeCart: closeCart, toast: toast, onChange: function (fn) { subs.push(fn); }
   };
 
   function init() {

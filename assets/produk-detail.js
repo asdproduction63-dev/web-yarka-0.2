@@ -30,7 +30,14 @@
   }
 
   function init() {
-    document.title = p.name + ' – Yarka Indonesia';
+    document.title = p.name + ' · Yarka Moslem Wear';
+    var ringkas = p.name + (p.catLabel ? ' – ' + p.catLabel : '') + ' dari Yarka Moslem Wear' + (p.bahanLabel ? ', bahan ' + p.bahanLabel : '') + '. Pilih warna & ukuran, pesan langsung di website resmi Yarka.';
+    [['meta[name="description"]', ringkas], ['meta[property="og:description"]', ringkas], ['meta[property="og:title"]', document.title]].forEach(function (x) {
+      var el = document.querySelector(x[0]); if (el) el.setAttribute('content', x[1]);
+    });
+    var can = document.querySelector('link[rel="canonical"]');
+    if (!can) { can = document.createElement('link'); can.rel = 'canonical'; document.head.appendChild(can); }
+    can.href = 'https://web-yarka-02.vercel.app/produk?p=' + encodeURIComponent(p.id);
     // Breadcrumb & judul
     var bc = $$('nav span.text-primary.font-semibold')[0]; if (bc) bc.textContent = p.name;
     var bcCat = bc && bc.parentElement ? $$('a', bc.parentElement).filter(function (a) { return a.textContent.trim() === 'Abaya'; })[0] : null;

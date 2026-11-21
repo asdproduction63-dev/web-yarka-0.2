@@ -71,7 +71,7 @@
     var plus = o.kurir.id === 'paxel' ? [0, 0] : o.kurir.id === 'sicepat' ? [1, 1] : [1, 2];
     a.setDate(a.getDate() + plus[0]); b.setDate(b.getDate() + plus[1]);
     set('24 – 26 Maret 2025', a.getDate() === b.getDate() ? a.getDate() + ' ' + BLN[a.getMonth()] + ' ' + a.getFullYear() : a.getDate() + ' – ' + b.getDate() + ' ' + BLN[b.getMonth()] + ' ' + b.getFullYear());
-    set('Biaya Pengiriman (Bebas Ongkir)', o.ongkir ? 'Biaya Pengiriman (' + o.kurir.label + ')' : 'Biaya Pengiriman (Bebas Ongkir)');
+    set('Biaya Pengiriman', 'Biaya Pengiriman (' + o.kurir.label + ')');
     set('Asuransi Pengiriman Premium', 'Asuransi Pengiriman');
     leaves(function (t) { return t === 'Rp0'; }).forEach(function (el) { el.textContent = ongTxt; });
     var head = leaves(function (t) { return t === 'Rincian Busana Dipesan'; })[0];

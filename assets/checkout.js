@@ -4,7 +4,7 @@
   var T = window.YarkaToko, Y = window.YARKA;
   if (!T || !Y) return;
   var KURIR = {
-    jne: { label: 'JNE Reguler / YES', eta: '1–2 hari kerja', cost: 22000, gratis: true },
+    jne: { label: 'JNE Reguler / YES', eta: '1–2 hari kerja', cost: 22000 },
     sicepat: { label: 'SiCepat BEST', eta: 'Besok sampai sebelum 18.00 WIB', cost: 25000 },
     paxel: { label: 'Paxel Instant', eta: 'Hari ini, 4–6 jam (Jabodetabek)', cost: 35000 }
   };
@@ -13,10 +13,10 @@
   function $(id) { return document.getElementById(id); }
   function esc(s) { return String(s).replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/"/g, '&quot;'); }
   function kurir() { var r = document.querySelector('input[name="shipping_service"]:checked'); return r ? r.value : 'jne'; }
-  function ongkir(k, sub) { var c = KURIR[k] || KURIR.jne; return c.gratis && sub >= T.ONGKIR_GRATIS ? 0 : c.cost; }
+  function ongkir(k) { return (KURIR[k] || KURIR.jne).cost; }
 
   function render() {
-    var items = T.cartItems(), sub = T.subtotal(), n = T.cartCount(), k = kurir(), ong = ongkir(k, sub);
+    var items = T.cartItems(), sub = T.subtotal(), n = T.cartCount(), k = kurir(), ong = ongkir(k);
     var list = $('co-items'), empty = $('co-empty');
     $('co-count').textContent = n + ' Produk';
     list.style.display = items.length ? '' : 'none';
@@ -39,16 +39,9 @@
     $('co-sub-label').textContent = 'Subtotal Produk (' + n + ' Item)';
     $('co-sub').textContent = Y.rp(sub);
     $('co-ship-name').textContent = 'Ongkir ' + KURIR[k].label;
-    $('co-ship').innerHTML = !items.length ? '<span class="font-medium text-primary">–</span>' : ong === 0
-      ? '<span class="line-through text-outline text-[12px] mr-1.5">' + Y.rp(KURIR[k].cost) + '</span><span class="font-bold text-secondary">Bebas Ongkir!</span>'
-      : '<span class="font-medium text-primary">' + Y.rp(ong) + '</span>';
+    $('co-ship').innerHTML = !items.length ? '<span class="font-medium text-primary">–</span>' : '<span class="font-medium text-primary">' + Y.rp(ong) + '</span>';
     $('co-ins').textContent = items.length ? Y.rp(ASURANSI) : '–';
     $('co-total').textContent = Y.rp(items.length ? sub + ong + ASURANSI : 0);
-    // label harga JNE di pilihan kurir
-    var free = sub >= T.ONGKIR_GRATIS;
-    $('co-jne-old').style.display = free ? '' : 'none';
-    $('co-jne-now').textContent = free ? 'Rp0' : Y.rp(KURIR.jne.cost);
-    $('co-jne-badge').textContent = free ? 'Bebas Ongkir' : 'Gratis ≥ Rp500rb';
     var next = $('co-next');
     next.classList.toggle('opacity-50', !items.length);
     next.classList.toggle('cursor-not-allowed', !items.length);

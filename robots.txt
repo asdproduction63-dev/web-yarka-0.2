@@ -1,0 +1,11 @@
+User-agent: *
+Allow: /
+Disallow: /checkout
+Disallow: /pembayaran
+Disallow: /pesanan-berhasil
+Disallow: /ulasan-terkirim
+Disallow: /akun
+Disallow: /wishlist
+Disallow: /mobile/
+
+Sitemap: https://web-yarka-02.vercel.app/sitemap.xml

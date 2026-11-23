@@ -6,7 +6,7 @@
   var o; try { o = JSON.parse(localStorage.getItem('yarka_order') || 'null'); } catch (e) { o = null; }
   if (!Y || !o || !o.items) return;
   var root = /\/mobile\//.test(location.pathname.replace(/\\/g, '/')) ? '../' : '';
-  function esc(s) { return String(s == null ? '' : s).replace(/&/g, '&amp;').replace(/</g, '&lt;'); }
+  function esc(s) { return String(s == null ? '' : s).replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/"/g, '&quot;').replace(/'/g, '&#39;'); }
   var main = function () { return document.querySelector('main') || document.body; };
   // elemen tanpa anak elemen yang teksnya cocok
   function leaves(test) {

@@ -1,4 +1,5 @@
 -- Yarka: daftar email "Berlangganan" (footer & beranda).
+-- CATATAN: versi terbaru simpan_repeat_order & daftar_newsletter ada di supabase/migrations/001_hardening.sql.
 -- Jalankan sekali di Supabase Dashboard > SQL Editor > New query > Run.
 -- Tabel dikunci (RLS tanpa policy); website hanya bisa memanggil daftar_newsletter().
 

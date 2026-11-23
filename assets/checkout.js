@@ -11,7 +11,13 @@
   var ASURANSI = 2500, KA = 'yarka_alamat', KO = 'yarka_order';
   var FIELDS = ['email', 'wa', 'nama', 'telp2', 'prov', 'kota', 'kec', 'alamat', 'catatan'];
   function $(id) { return document.getElementById(id); }
-  function esc(s) { return String(s).replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/"/g, '&quot;'); }
+  // 6 karakter hex acak (16 juta kemungkinan per hari), sulit ditebak & hampir tidak mungkin bentrok
+  function acak() {
+    var c = window.crypto || window.msCrypto, b = new Uint8Array(3);
+    if (c && c.getRandomValues) c.getRandomValues(b); else for (var i = 0; i < 3; i++) b[i] = Math.floor(Math.random() * 256);
+    return Array.prototype.map.call(b, function (x) { return ('0' + x.toString(16)).slice(-2); }).join('').toUpperCase();
+  }
+  function esc(s) { return String(s == null ? '' : s).replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/"/g, '&quot;').replace(/'/g, '&#39;'); }
   function kurir() { var r = document.querySelector('input[name="shipping_service"]:checked'); return r ? r.value : 'jne'; }
   function ongkir(k) { return (KURIR[k] || KURIR.jne).cost; }
 
@@ -93,7 +99,7 @@
     var k = kurir(), sub = T.subtotal(), ong = ongkir(k, sub), d = new Date();
     var pad = function (x) { return (x < 10 ? '0' : '') + x; };
     var order = {
-      ref: 'YRK-' + d.getFullYear() + pad(d.getMonth() + 1) + pad(d.getDate()) + '-' + String(Math.floor(1000 + Math.random() * 9000)),
+      ref: 'YRK-' + d.getFullYear() + pad(d.getMonth() + 1) + pad(d.getDate()) + '-' + acak(),
       dibuat: d.toISOString(),
       items: items.map(function (it) { return { id: it.id, s: it.s, nama: it.p.name, cat: it.p.catLabel, bahan: it.p.bahanLabel, warna: it.col.n, ukuran: it.sLabel, q: it.q, unit: it.unit, total: it.total, img: it.col.img }; }),
       kontak: data,

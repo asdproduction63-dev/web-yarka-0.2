@@ -1,3 +1,10 @@
 # Tidak ikut di-deploy ke Vercel (tetap tersimpan di GitHub)
 Telegram_Assets
 DESIGN.md
+README.md
+supabase/
+tailwind.config.js
+assets/tailwind.input.css
+mobile/
+.vercel/
+node_modules/

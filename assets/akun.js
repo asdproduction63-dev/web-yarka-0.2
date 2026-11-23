@@ -1,12 +1,12 @@
-// Halaman Akun / Pesanan Saya: daftar pesanan, filter status, dan pembatalan pesanan.
-// Sumber data: pesanan dari checkout (localStorage "yarka_orders", diisi pesanan.js)
-// ditambah dua contoh pesanan. Status pembatalan disimpan di "yarka_order_status".
+// Halaman Akun / Pesanan Saya: riwayat pesanan dari perangkat ini (localStorage "yarka_orders", diisi pesanan.js).
+// Ini hanya catatan di browser pembeli; status resmi dikonfirmasi admin lewat WhatsApp.
+// Pembatalan tidak diubah di browser, melainkan dikirim sebagai permintaan ke WhatsApp admin.
 (function () {
   var Y = window.YARKA, P = window.YARKA_PRODUCTS || {}, T = window.YarkaToko;
-  var KS = 'yarka_order_status', KL = 'yarka_orders';
+  var KL = 'yarka_orders', WA_ADMIN = '6285282437954';
+  try { localStorage.removeItem('yarka_order_status'); } catch (e) {} // sisa versi lama (pembatalan lokal)
   function get(k, d) { try { var v = JSON.parse(localStorage.getItem(k) || 'null'); return v == null ? d : v; } catch (e) { return d; } }
-  function put(k, v) { try { localStorage.setItem(k, JSON.stringify(v)); } catch (e) {} }
-  function esc(s) { return String(s == null ? '' : s).replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/"/g, '&quot;'); }
+  function esc(s) { return String(s == null ? '' : s).replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/"/g, '&quot;').replace(/'/g, '&#39;'); }
   var $ = function (id) { return document.getElementById(id); };
 
   var STATUS = {
@@ -18,23 +18,11 @@
   };
   var STEPS = ['Dipesan', 'Dibayar', 'Dikirim', 'Diterima'];
 
-  function item(id, warna, sizeKey, sizeLabel, q) {
-    var p = P[id]; if (!p) return null;
-    var col = Y.color(p, warna), unit = (p.sizePrice && p.sizePrice[sizeKey]) || p.price;
-    return { id: id, s: sizeKey, nama: p.name, cat: p.catLabel, warna: col.n, ukuran: sizeLabel, q: q, unit: unit, total: unit * q, img: col.img };
-  }
-  function contoh() {
-    var a = [item('zen', 'Buttercream', 'M', 'Ukuran M', 1), item('zhaa', 'Summer Sand', 'M', 'Ukuran M', 1)].filter(Boolean);
-    var b = [item('otba', 'Terracotta', 'ALL', 'All Size', 1)].filter(Boolean);
-    function tot(x) { return x.reduce(function (s, i) { return s + i.total; }, 0); }
-    return [
-      { ref: 'YRK-202503-8821', dibuat: '2025-03-22T07:10:00Z', items: a, total: tot(a) + 2500, status: 'diproses', kurir: { label: 'SiCepat BEST' }, contoh: true },
-      { ref: 'YRK-202502-1402', dibuat: '2025-02-14T02:45:00Z', items: b, total: tot(b) + 2500, status: 'selesai', kurir: { label: 'JNE REG' }, contoh: true }
-    ];
-  }
   function semua() {
-    var over = get(KS, {}), list = get(KL, []).concat(contoh());
-    return list.map(function (o) { if (over[o.ref]) { o.status = over[o.ref].status; o.alasan = over[o.ref].alasan; o.wasPaid = over[o.ref].wasPaid; } return o; })
+    var list = get(KL, []);
+    if (!Array.isArray(list)) list = [];
+    return list.filter(function (o) { return o && o.ref && Array.isArray(o.items); })
+      .map(function (o) { if (!STATUS[o.status] || o.status === 'dibatalkan') o.status = 'diproses'; return o; })
       .sort(function (x, y) { return new Date(y.dibuat) - new Date(x.dibuat); });
   }
 
@@ -110,9 +98,7 @@
     current = o; lastFocus = document.activeElement; modal = $('yo-modal');
     $('yo-m-ref').textContent = '#' + o.ref;
     $('yo-m-title').textContent = o.status === 'menunggu' ? 'Tidak jadi beli?' : 'Batalkan pesanan ini?';
-    $('yo-m-info').textContent = o.status === 'menunggu'
-      ? 'Pesanan belum dibayar, jadi tidak ada dana yang ditagihkan. Busana akan dikembalikan ke stok.'
-      : 'Pesanan masih diproses dan belum dikirim. Dana akan dikembalikan ke metode pembayaran Anda dalam 1–3 hari kerja.';
+    $('yo-m-info').textContent = 'Pembatalan diproses oleh admin Yarka. Setelah memilih alasan, WhatsApp akan terbuka dengan pesan pembatalan yang sudah terisi, tinggal tekan kirim.';
     [].forEach.call(modal.querySelectorAll('input[name="yo-alasan"]'), function (r) { r.checked = false; });
     $('yo-m-lain').value = ''; $('yo-m-lain-wrap').classList.add('hidden'); $('yo-m-err').classList.add('hidden');
     modal.classList.remove('hidden'); document.body.style.overflow = 'hidden';
@@ -128,11 +114,11 @@
     var r = modal.querySelector('input[name="yo-alasan"]:checked');
     if (!r) { $('yo-m-err').classList.remove('hidden'); return; }
     var alasan = r.value === 'Lainnya' ? ($('yo-m-lain').value.trim() || 'Lainnya') : r.value;
-    var over = get(KS, {}); over[current.ref] = { status: 'dibatalkan', alasan: alasan, pada: new Date().toISOString(), wasPaid: current.status !== 'menunggu' };
-    put(KS, over);
-    var unpaid = current.status === 'menunggu', ref = current.ref;
-    closeModal(); filter = 'all'; render();
-    if (T) T.toast('Pesanan #' + ref + ' dibatalkan.' + (unpaid ? ' Tidak ada dana yang ditagihkan.' : ' Dana dikembalikan dalam 1–3 hari kerja.'));
+    var msg = 'Halo Yarka, saya ingin membatalkan pesanan #' + current.ref + '. Alasan: ' + alasan + '.';
+    var url = 'https://wa.me/' + WA_ADMIN + '?text=' + encodeURIComponent(msg);
+    closeModal();
+    var w = window.open(url, '_blank', 'noopener'); if (!w) location.href = url;
+    if (T) T.toast('Permintaan pembatalan dikirim lewat WhatsApp. Admin akan mengonfirmasi.');
   }
 
   function beliLagi(o) {

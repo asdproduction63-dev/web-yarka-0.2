@@ -29,7 +29,7 @@
   window.addEventListener('storage', function (e) { if (e.key === KC || e.key === KW) subs.forEach(function (fn) { fn(); }); });
 
   // ---------- harga & label ----------
-  function esc(s) { return String(s).replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/"/g, '&quot;'); }
+  function esc(s) { return String(s == null ? '' : s).replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/"/g, '&quot;').replace(/'/g, '&#39;'); }
   function sizeLabel(p, s) {
     if (p.id === 'zhaa') return s === 'S' ? 'Mini (S)' : 'Medium (M)';
     if (p.sizeLabels && p.sizeLabels[s]) return p.sizeLabels[s];

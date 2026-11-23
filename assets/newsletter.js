@@ -27,10 +27,25 @@
     el.style.color = gagal ? '#ba1a1a' : '#4f6b4a';
   }
 
+  // Kolom jebakan (honeypot): tidak terlihat manusia; bot pengisi form otomatis biasanya mengisinya.
+  function pasangJebakan() {
+    [].forEach.call(document.querySelectorAll('form[data-newsletter]'), function (f) {
+      if (f.querySelector('[name="website"]')) return;
+      var h = document.createElement('input');
+      h.type = 'text'; h.name = 'website'; h.tabIndex = -1;
+      h.setAttribute('autocomplete', 'off'); h.setAttribute('aria-hidden', 'true');
+      h.style.cssText = 'position:absolute;left:-9999px;width:1px;height:1px;opacity:0';
+      f.appendChild(h);
+    });
+  }
+  if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', pasangJebakan); else pasangJebakan();
+
   document.addEventListener('submit', function (e) {
     var form = e.target;
     if (!form || !form.hasAttribute || !form.hasAttribute('data-newsletter')) return;
     e.preventDefault();
+    var jebakan = form.querySelector('[name="website"]');
+    if (jebakan && jebakan.value) return;
     var input = form.querySelector('input[type="email"]'), btn = form.querySelector('button');
     var email = (input && input.value || '').trim().toLowerCase();
     if (!RE.test(email)) { pesan(form, 'Mohon isi alamat email yang valid.', true); if (input) input.focus(); return; }

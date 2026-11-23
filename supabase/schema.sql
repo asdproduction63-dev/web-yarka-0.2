@@ -1,4 +1,5 @@
 -- Yarka: data pelanggan yang ingin repeat order.
+-- CATATAN: versi terbaru simpan_repeat_order & daftar_newsletter ada di supabase/migrations/001_hardening.sql.
 -- Jalankan sekali di Supabase Dashboard > SQL Editor > New query > Run.
 --
 -- Keamanan: website memakai anon key (publik). Tabel dikunci dengan RLS tanpa policy,

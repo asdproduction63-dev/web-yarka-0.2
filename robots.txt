@@ -8,4 +8,4 @@ Disallow: /akun
 Disallow: /wishlist
 Disallow: /mobile/
 
-Sitemap: https://web-yarka-02.vercel.app/sitemap.xml
+Sitemap: https://yarka.vercel.app/sitemap.xml

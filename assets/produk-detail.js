@@ -37,7 +37,7 @@
     });
     var can = document.querySelector('link[rel="canonical"]');
     if (!can) { can = document.createElement('link'); can.rel = 'canonical'; document.head.appendChild(can); }
-    can.href = 'https://web-yarka-02.vercel.app/produk?p=' + encodeURIComponent(p.id);
+    can.href = 'https://yarka.vercel.app/produk?p=' + encodeURIComponent(p.id);
     // Breadcrumb & judul
     var bc = $$('nav span.text-primary.font-semibold')[0]; if (bc) bc.textContent = p.name;
     var bcCat = bc && bc.parentElement ? $$('a', bc.parentElement).filter(function (a) { return a.textContent.trim() === 'Abaya'; })[0] : null;

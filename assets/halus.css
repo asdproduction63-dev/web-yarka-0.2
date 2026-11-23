@@ -27,3 +27,38 @@ a, button { -webkit-tap-highlight-color: transparent; }
 @media (prefers-reduced-motion: reduce) {
   ::view-transition-group(*), ::view-transition-old(*), ::view-transition-new(*) { animation: none !important; }
 }
+
+/* 5. Tombol WhatsApp mengambang (beranda). Di bawah keranjang & menu mobile (z-50/70). */
+.yk-wa-float {
+  position: fixed; right: 20px; bottom: calc(20px + env(safe-area-inset-bottom, 0px)); z-index: 40;
+  width: 56px; height: 56px; border-radius: 9999px; background: #25D366; color: #fff;
+  display: flex; align-items: center; justify-content: center;
+  box-shadow: 0 10px 25px -6px rgba(26, 26, 26, .35), 0 4px 10px -4px rgba(37, 211, 102, .5);
+  transition: transform .25s cubic-bezier(.22, .61, .36, 1), box-shadow .25s ease;
+  animation: yk-wa-masuk .5s cubic-bezier(.22, .61, .36, 1) .8s both;
+}
+.yk-wa-float svg { width: 30px; height: 30px; fill: currentColor; }
+.yk-wa-float::before { /* denyut halus agar terlihat, tanpa mengganggu */
+  content: ""; position: absolute; inset: 0; border-radius: inherit; background: #25D366;
+  z-index: -1; animation: yk-wa-denyut 2.8s ease-out 1.5s infinite;
+}
+.yk-wa-float:hover { transform: translateY(-3px) scale(1.05); }
+.yk-wa-float:focus-visible { outline: 3px solid #A67C6E; outline-offset: 3px; }
+.yk-wa-float-tip {
+  position: absolute; right: calc(100% + 12px); top: 50%; translate: 0 -50%; white-space: nowrap;
+  background: #1A1A1A; color: #fff; font: 500 13px/1 Inter, sans-serif; letter-spacing: .02em;
+  padding: 9px 12px; border-radius: 6px; opacity: 0; pointer-events: none;
+  transition: opacity .2s ease, translate .2s ease;
+}
+@media (hover: hover) {
+  .yk-wa-float:hover .yk-wa-float-tip, .yk-wa-float:focus-visible .yk-wa-float-tip { opacity: 1; translate: -4px -50%; }
+}
+@media (max-width: 639px) {
+  .yk-wa-float { right: 16px; bottom: calc(16px + env(safe-area-inset-bottom, 0px)); width: 52px; height: 52px; }
+  .yk-wa-float svg { width: 28px; height: 28px; }
+}
+@keyframes yk-wa-masuk { from { opacity: 0; transform: translateY(16px) scale(.9); } to { opacity: 1; transform: none; } }
+@keyframes yk-wa-denyut { 0% { transform: scale(1); opacity: .45; } 70%, 100% { transform: scale(1.55); opacity: 0; } }
+@media (prefers-reduced-motion: reduce) {
+  .yk-wa-float, .yk-wa-float::before { animation: none; }
+}

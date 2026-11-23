@@ -44,7 +44,7 @@
   }
   function card(o) {
     var S = STATUS[o.status] || STATUS.diproses, n = o.items.reduce(function (a, b) { return a + b.q; }, 0);
-    var acts = [];
+    var acts = ['<button type="button" class="yo-btn-soft" data-invoice="' + esc(o.ref) + '"><span class="material-symbols-outlined text-[15px]">receipt_long</span>E-Invoice (PDF)</button>'];
     if (S.cancel) acts.push('<button type="button" class="yo-btn-ghost" data-batal="' + esc(o.ref) + '">' + (o.status === 'menunggu' ? 'Tidak Jadi Beli' : 'Batalkan Pesanan') + '</button>');
     if (o.status === 'menunggu') acts.push('<a class="yo-btn" href="pembayaran.html">Bayar Sekarang</a>');
     if (o.status === 'selesai') acts.push('<a class="yo-btn-soft" href="ulasan-terkirim.html"><span class="material-symbols-outlined text-[15px]">star</span>Beri Ulasan</a>');
@@ -140,6 +140,19 @@
       var f = e.target.closest('[data-filter]');
       if (f) { filter = f.getAttribute('data-filter'); render(); return; }
       var b = e.target.closest('[data-batal]'); if (b) { var o = find(b.getAttribute('data-batal')); if (o) openModal(o); return; }
+      var iv = e.target.closest('[data-invoice]');
+      if (iv) {
+        var oi = find(iv.getAttribute('data-invoice'));
+        if (!oi || !window.YarkaInvoice || iv.disabled) return;
+        var label = iv.innerHTML;
+        iv.disabled = true; iv.textContent = 'Membuat PDF…';
+        window.YarkaInvoice.unduh(oi).then(function () {
+          if (T) T.toast('E-Invoice #' + oi.ref + ' berhasil diunduh.');
+        }, function () {
+          if (T) T.toast('Maaf, e-invoice gagal dibuat. Periksa koneksi lalu coba lagi.');
+        }).then(function () { iv.disabled = false; iv.innerHTML = label; });
+        return;
+      }
       var l = e.target.closest('[data-lagi]'); if (l) { var o2 = find(l.getAttribute('data-lagi')); if (o2) beliLagi(o2); return; }
       if (e.target.closest('[data-modal-close]')) closeModal();
     });

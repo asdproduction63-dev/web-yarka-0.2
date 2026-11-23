@@ -94,8 +94,20 @@
   function simpan(status, paksa) {
     var L; try { L = JSON.parse(localStorage.getItem('yarka_orders') || '[]'); } catch (e) { L = []; }
     var ada = L.filter(function (x) { return x.ref === o.ref; })[0];
-    if (ada) { if (paksa) ada.status = status; }
-    else L.unshift({ ref: o.ref, dibuat: o.dibuat, items: o.items, total: o.total, status: status, kurir: { label: o.kurir && o.kurir.label } });
+    // Data lengkap untuk e-invoice (hanya tersimpan di perangkat pembeli)
+    var k = o.kontak || {};
+    var detail = {
+      kontak: { nama: k.nama, wa: k.wa, email: k.email, telp2: k.telp2, alamat: k.alamat, kec: k.kec, kota: k.kota, prov: k.prov, kodepos: k.kodepos },
+      subtotal: o.subtotal, ongkir: o.ongkir, asuransi: o.asuransi, kado: o.kado
+    };
+    if (ada) {
+      if (paksa) ada.status = status;
+      if (!ada.kontak) for (var key in detail) ada[key] = detail[key];
+    } else {
+      var baru = { ref: o.ref, dibuat: o.dibuat, items: o.items, total: o.total, status: status, kurir: { label: o.kurir && o.kurir.label } };
+      for (var kk in detail) baru[kk] = detail[kk];
+      L.unshift(baru);
+    }
     try { localStorage.setItem('yarka_orders', JSON.stringify(L.slice(0, 30))); } catch (e) {}
   }
 

@@ -179,9 +179,20 @@ function siap() {
   if (kurang.length) console.error('Variabel lingkungan belum diisi:', kurang.join(', '));
   return !kurang.length;
 }
+// Jenis error server (tanpa rahasia) agar penyebab bisa diketahui dari jawaban API.
+function kodeError(e) {
+  const m = String((e && e.message) || '') + ' ' + String((e && e.cause && e.cause.code) || '');
+  if (!process.env.SUPABASE_URL || /Invalid URL|ENOTFOUND|EAI_AGAIN|fetch failed/i.test(m)) return 'DB_URL';
+  if (/Supabase 40[13]|Invalid API key|JWT|apikey/i.test(m)) return 'DB_KUNCI';
+  if (/42703|column .* does not exist/i.test(m)) return 'DB_MIGRASI';
+  if (/42P01|relation .* does not exist/i.test(m)) return 'DB_TABEL';
+  if (/42501|permission denied/i.test(m)) return 'DB_IZIN';
+  if (/^Supabase/.test(m)) return 'DB_LAIN';
+  return 'SERVER';
+}
 function siteUrl() { return String(process.env.SITE_URL || 'https://yarka.vercel.app').replace(/\/$/, ''); }
 
 module.exports = {
   REF_RE, hitungTotal, ambilPesanan, ubahPesanan, km, ringkasPembayaran, sinkronStatus,
-  petaStatus, cari, K, dataDari, kirim, siap, siteUrl
+  petaStatus, cari, K, dataDari, kirim, siap, siteUrl, kodeError
 };

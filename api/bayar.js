@@ -84,6 +84,6 @@ module.exports = async function (req, res) {
     L.kirim(res, 200, { status: 'menunggu', bayar: info });
   } catch (e) {
     console.error(e);
-    L.kirim(res, 500, { error: 'Terjadi kesalahan server. Silakan gunakan transfer manual.' });
+    L.kirim(res, 500, { error: 'Terjadi kesalahan server. Silakan gunakan transfer manual.', kode: L.kodeError(e) });
   }
 };

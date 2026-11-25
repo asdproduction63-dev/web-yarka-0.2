@@ -1,7 +1,7 @@
 {
   "cleanUrls": true,
   "functions": {
-    "api/*.js": { "includeFiles": "assets/produk-data.js", "maxDuration": 15 }
+    "api/*.js": { "includeFiles": "assets/{produk-data,produk-koleksi}.js", "maxDuration": 15 }
   },
   "trailingSlash": false,
   "redirects": [

@@ -23,9 +23,12 @@ const REF_RE = /^YRK-[0-9]{8}-[0-9A-F]{6}$/;
 let _produk = null;
 function produk() {
   if (_produk) return _produk;
-  const src = fs.readFileSync(path.join(process.cwd(), 'assets', 'produk-data.js'), 'utf8');
-  const sandbox = { window: {} };
-  vm.runInNewContext(src, sandbox, { timeout: 1000 });
+  // Urutan sama seperti di halaman website: produk-koleksi.js menambah produk baru & menimpa harga.
+  const sandbox = vm.createContext({ window: {} });
+  for (const f of ['produk-data.js', 'produk-koleksi.js']) {
+    const src = fs.readFileSync(path.join(process.cwd(), 'assets', f), 'utf8');
+    vm.runInContext(src, sandbox, { timeout: 1000, filename: f });
+  }
   _produk = { P: sandbox.window.YARKA_PRODUCTS, Y: sandbox.window.YARKA };
   return _produk;
 }
@@ -183,10 +186,10 @@ function siap() {
 function kodeError(e) {
   const m = String((e && e.message) || '') + ' ' + String((e && e.cause && e.cause.code) || '');
   if (!process.env.SUPABASE_URL || /Invalid URL|ENOTFOUND|EAI_AGAIN|fetch failed/i.test(m)) return 'DB_URL';
-  if (/Supabase 40[13]|Invalid API key|JWT|apikey/i.test(m)) return 'DB_KUNCI';
+  if (/42501|permission denied/i.test(m)) return 'DB_IZIN';
   if (/42703|column .* does not exist/i.test(m)) return 'DB_MIGRASI';
   if (/42P01|relation .* does not exist/i.test(m)) return 'DB_TABEL';
-  if (/42501|permission denied/i.test(m)) return 'DB_IZIN';
+  if (/Supabase 40[13]|Invalid API key|JWT|apikey/i.test(m)) return 'DB_KUNCI';
   if (/^Supabase/.test(m)) return 'DB_LAIN';
   return 'SERVER';
 }

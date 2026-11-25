@@ -97,6 +97,14 @@
       $('panel-transfer').classList.toggle('flex', m === 'transfer');
       $('panel-qris').classList.toggle('hidden', m !== 'qris');
       $('panel-qris').classList.toggle('flex', m === 'qris');
+      // Bayar Otomatis (assets/halaman/pembayaran-otomatis.js)
+      if ($('panel-otomatis')) {
+        $('auto-choices').classList.toggle('hidden', m !== 'otomatis');
+        $('panel-otomatis').classList.toggle('hidden', m !== 'otomatis');
+        $('panel-otomatis').classList.toggle('flex', m === 'otomatis');
+      }
+      // Pembayaran otomatis tercek sendiri: tombol "Saya Sudah Membayar" tidak diperlukan
+      if ($('confirm-payment-btn')) $('confirm-payment-btn').classList.toggle('hidden', m === 'otomatis');
     }
     all('input[name="payment_method"]', function (r) { r.addEventListener('change', renderMethod); });
     all('input[name="bank"]', function (r) {

@@ -6,3 +6,7 @@ desktop.ini
 # File uji sementara
 _cek-*.html
 _k*.html
+
+# Kunci rahasia lokal (jangan di-commit)
+.env
+.env.*

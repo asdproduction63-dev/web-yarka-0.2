@@ -8,7 +8,7 @@
       ref: order.ref,
       kontak: order.kontak,
       items: order.items.map(function (it) {
-        return { id: it.id, nama: it.nama, warna: it.warna, ukuran: it.ukuran, q: it.q, unit: it.unit, total: it.total };
+        return { id: it.id, s: it.s, nama: it.nama, warna: it.warna, ukuran: it.ukuran, q: it.q, unit: it.unit, total: it.total };
       }),
       kurir: order.kurir && order.kurir.label,
       kado: order.kado, subtotal: order.subtotal, ongkir: order.ongkir, total: order.total

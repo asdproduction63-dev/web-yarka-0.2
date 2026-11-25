@@ -36,15 +36,8 @@
     return SIZE_LABEL[s] || s;
   }
   function defaultSize(p) { return p.sizes.indexOf('M') > -1 ? 'M' : p.sizes[0]; }
-  function harga(p, warna, s) {
-    if (p.id === 'zela') { var cr = /crinkle/i.test(warna || ''); return s === 'M' ? (cr ? 139000 : 199000) : (cr ? 119000 : 179000); }
-    if (p.id === 'binar') return /^black/i.test(warna || '') ? 219000 : 189000;
-    if (p.sizePrice) return p.sizePrice[s] || p.price;
-    if (!p.priceMax) return p.price;
-    if (s === 'L' || s === 'XL' || s === 'BESAR') return p.priceMax;
-    if (p.sizes.length === 2 && p.sizes[0] === 'S' && s === 'M') return p.priceMax;
-    return p.price;
-  }
+  // Aturan harga ada di produk-data.js (YARKA.harga) agar sama persis dengan hitungan server (api/_lib).
+  function harga(p, warna, s) { return Y.harga(p, warna, s); }
   function imgSrc(col) { return root + col.img; }
 
   // ---------- keranjang ----------

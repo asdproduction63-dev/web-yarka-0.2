@@ -166,11 +166,33 @@
     return doc;
   }
 
-  window.YarkaInvoice = {
-    unduh: function (o) {
-      return Promise.all([jsPDFSiap(), logo()]).then(function (r) {
-        buat(r[0], o, r[1]).save('Invoice-' + String(o.ref).replace(/[^\w-]/g, '') + '.pdf');
-      });
-    }
-  };
+  function unduh(o) {
+    return Promise.all([jsPDFSiap(), logo()]).then(function (r) {
+      buat(r[0], o, r[1]).save('Invoice-' + String(o.ref).replace(/[^\w-]/g, '') + '.pdf');
+    });
+  }
+  window.YarkaInvoice = { unduh: unduh };
+
+  // Tombol [data-invoice-terakhir] (halaman Pesanan Berhasil): invoice untuk pesanan checkout terakhir.
+  function pesananTerakhir() {
+    var o, L;
+    try { o = JSON.parse(localStorage.getItem('yarka_order') || 'null'); } catch (e) { o = null; }
+    if (!o || !o.ref || !Array.isArray(o.items)) return null;
+    try { L = JSON.parse(localStorage.getItem('yarka_orders') || '[]'); } catch (e) { L = []; }
+    var ada = (Array.isArray(L) ? L : []).filter(function (x) { return x && x.ref === o.ref; })[0];
+    var hasil = {};
+    for (var k in o) hasil[k] = o[k];
+    hasil.status = (ada && ada.status) || 'diproses';
+    return hasil;
+  }
+  document.addEventListener('click', function (e) {
+    var b = e.target.closest && e.target.closest('[data-invoice-terakhir]');
+    if (!b || b.disabled) return;
+    var T = window.YarkaToko, o = pesananTerakhir();
+    if (!o) { if (T) T.toast('Data pesanan tidak ditemukan di perangkat ini.'); return; }
+    var isi = b.innerHTML; b.disabled = true; b.textContent = 'Membuat PDF…';
+    unduh(o).then(function () { if (T) T.toast('E-Invoice #' + o.ref + ' berhasil diunduh.'); },
+      function () { if (T) T.toast('Maaf, e-invoice gagal dibuat. Periksa koneksi lalu coba lagi.'); })
+      .then(function () { b.disabled = false; b.innerHTML = isi; });
+  });
 })();

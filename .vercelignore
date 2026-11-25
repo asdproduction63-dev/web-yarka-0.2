@@ -8,3 +8,5 @@ assets/tailwind.input.css
 mobile/
 .vercel/
 node_modules/
+.env
+.env.*

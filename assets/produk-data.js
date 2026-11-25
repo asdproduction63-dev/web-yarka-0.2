@@ -407,6 +407,17 @@
   // Utilitas bersama
   window.YARKA = {
     rp: function (n) { return 'Rp' + Number(n).toLocaleString('id-ID'); },
+    // Harga satuan per produk/warna/ukuran. Dipakai keranjang (toko.js) DAN server pembayaran
+    // (api/_lib/yarka.js) untuk memeriksa total pesanan, jadi ubah harga cukup di file ini.
+    harga: function (p, warna, s) {
+      if (p.id === 'zela') { var cr = /crinkle/i.test(warna || ''); return s === 'M' ? (cr ? 139000 : 199000) : (cr ? 119000 : 179000); }
+      if (p.id === 'binar') return /^black/i.test(warna || '') ? 219000 : 189000;
+      if (p.sizePrice) return p.sizePrice[s] || p.price;
+      if (!p.priceMax) return p.price;
+      if (s === 'L' || s === 'XL' || s === 'BESAR') return p.priceMax;
+      if (p.sizes.length === 2 && p.sizes[0] === 'S' && s === 'M') return p.priceMax;
+      return p.price;
+    },
     priceText: function (p) { return p.priceMax ? this.rp(p.price) + ' – ' + this.rp(p.priceMax).replace('Rp', '') : this.rp(p.price); },
     slug: function (s) { return String(s).toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/^-|-$/g, ''); },
     color: function (p, name) {

@@ -56,12 +56,12 @@ function hitungTotal(order) {
 
 // ---------- Supabase (pakai secret key, melewati RLS) ----------
 function sbHeaders(extra) {
-  const key = process.env.SUPABASE_SERVICE_KEY || '';
+  const key = String(process.env.SUPABASE_SERVICE_KEY || '').trim().replace(/^["']|["']$/g, '');
   const h = Object.assign({ apikey: key, 'Content-Type': 'application/json' }, extra || {});
   if (!/^sb_/.test(key)) h.Authorization = 'Bearer ' + key; // key lama berformat JWT
   return h;
 }
-function sbUrl(p) { return String(process.env.SUPABASE_URL || '').replace(/\/$/, '') + '/rest/v1/' + p; }
+function sbUrl(p) { return String(process.env.SUPABASE_URL || '').trim().replace(/\/+$/, '') + '/rest/v1/' + p; }
 
 const KOLOM = 'ref,items,kontak,subtotal,ongkir,total,status_bayar,metode_bayar,payment_id,payment_info,dibayar_pada';
 async function ambilPesanan(filter) {
@@ -190,9 +190,29 @@ function kodeError(e) {
   if (/^Supabase/.test(m)) return 'DB_LAIN';
   return 'SERVER';
 }
+// Jenis key Supabase yang terpasang (bukan isinya) untuk diagnosis DB_KUNCI.
+function jenisKunci() {
+  const raw = process.env.SUPABASE_SERVICE_KEY || '';
+  const k = raw.trim();
+  let jenis = 'kosong';
+  if (/^sb_secret_/.test(k)) jenis = 'sb_secret';
+  else if (/^sb_publishable_/.test(k)) jenis = 'sb_publishable (SALAH: ini key publik)';
+  else if (/^eyJ/.test(k)) {
+    try {
+      const role = JSON.parse(Buffer.from(k.split('.')[1], 'base64url').toString()).role;
+      jenis = 'jwt role=' + role + (role === 'service_role' ? '' : ' (SALAH: harus service_role)');
+    } catch (e) { jenis = 'jwt tidak terbaca'; }
+  } else if (k) jenis = 'format tidak dikenal';
+  return { jenis, panjang: k.length, spasi: raw !== k, kutip: /^["']|["']$/.test(k) };
+}
+function detailError(e) {
+  const m = String((e && e.message) || '');
+  const pesan = (m.match(/"message"\s*:\s*"([^"]{0,120})/) || [])[1] || m.slice(0, 80);
+  return { pesan: pesan.replace(/(sb_[a-z]+_|eyJ)[A-Za-z0-9._-]+/g, '[key]'), kunci: jenisKunci() };
+}
 function siteUrl() { return String(process.env.SITE_URL || 'https://yarka.vercel.app').replace(/\/$/, ''); }
 
 module.exports = {
   REF_RE, hitungTotal, ambilPesanan, ubahPesanan, km, ringkasPembayaran, sinkronStatus,
-  petaStatus, cari, K, dataDari, kirim, siap, siteUrl, kodeError
+  petaStatus, cari, K, dataDari, kirim, siap, siteUrl, kodeError, detailError
 };
